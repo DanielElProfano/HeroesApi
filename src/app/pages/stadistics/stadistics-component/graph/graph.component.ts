@@ -17,7 +17,7 @@ export class GraphComponent implements OnInit {
   public barChartOptions: ChartOptions = {
     responsive: true,
   };
-  public barChartLabels: Label[] = ['power', 'combat', 'durability', 'speed', 'strenght'];
+  public barChartLabels: Label[] = ['power', 'combat', 'durability', 'speed', 'strenght','Intelligence'];
   public barChartType: ChartType = 'bar';
   public barChartLegend = true;
   public barChartPlugins = [];
@@ -27,7 +27,7 @@ export class GraphComponent implements OnInit {
     // { data: [,,,,,,], label: 'S' }
   ];
 
-  public doughnutChartLabels: Label[] =  ['power', 'combat', 'durability', 'speed', 'strenght'];
+  public doughnutChartLabels: Label[] =  ['power', 'combat', 'durability', 'speed', 'strenght', 'Intelligence'];
   public doughnutChartData: MultiDataSet = [
     [,,],
     [,,12],
@@ -65,7 +65,8 @@ console.log(this.charData);
           this.charData.combat,
           this.charData.durability,
           this.charData.speed,
-          this.charData.strength];
+          this.charData.strength,
+          this.charData.intelligence];
 
           this.barChartData[0].data = data;
           this.barChartData[0].label = this.charData.name;

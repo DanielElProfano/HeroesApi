@@ -1,0 +1,44 @@
+.b-home{
+
+
+background-color: rgb(218, 224, 236);
+display:flex;
+flex-direction: column;
+align-items: center;
+
+
+    &__title{
+
+        font-size: 3rem;
+        color: white;
+
+        &--sub{
+
+            font-size: 2rem;
+            color: yellowgreen;
+        }
+
+    }
+    &__img-container{
+
+        width: 1300px;
+        height: 550px;
+       
+        border: 2px solid white;
+        
+    }
+
+    &__img{
+        object-fit: cover;
+        object-position: center center;
+        width: 1300px;
+        height: 550px;
+    }
+    &__footer{
+        font-size: 2rem;
+        color: rgb(175, 196, 134);
+
+    }
+
+}
+

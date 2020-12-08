@@ -1,7 +1,7 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 import { HeroesService } from 'src/app/services/heroes.service';
-import { InterfaceHeroGeneral } from './../../../../models/Interface-hero-general';
+import { InterfaceHeroGeneral, InterfaceFilteHeroes } from './../../../../models/Interface-hero-general';
 import { NgxSpinnerService } from 'ngx-spinner';
 
 @Component({
@@ -12,12 +12,15 @@ import { NgxSpinnerService } from 'ngx-spinner';
 export class StickerComponent implements OnInit {
 
   @Input() arrayHeroe :  InterfaceHeroGeneral[] | any = [];
+  @Input() arrayFiltrado : InterfaceFilteHeroes[] | any = []; //***PTE DE HACER */ Hacer que muestre de 10 en 10 hasta que se termine el array. Para volver hay que pulsar reset.
+
   @Output() emmitId  = new EventEmitter<number>();
   
   nextPost: number = 20; 
   iterator: number = 11;
   notEmptyPost = true;
   notscrolly = true;
+  form = true
   
   constructor(private spinner : NgxSpinnerService, private heroesService:HeroesService) {} 
 

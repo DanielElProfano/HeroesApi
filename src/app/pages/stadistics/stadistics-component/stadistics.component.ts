@@ -1,4 +1,4 @@
-import { InterfaceHeroGeneral } from './../../../models/Interface-hero-general';
+import { InterfaceHeroGeneral, InterfaceFilteHeroes } from './../../../models/Interface-hero-general';
 import { Component, OnInit } from '@angular/core';
 import { InterfaceHeroDetail, InterfacePowerStats } from 'src/app/models/Interface-hero-general';
 import { HeroesService } from 'src/app/services/heroes.service';
@@ -19,11 +19,13 @@ export class StadisticsComponent implements OnInit {
 
   ngOnInit(): void {
     
-    //  this.getListPowerStats();
+     this.getListPowerStats();
     //  this.postea()
-    this.getListFakeApi();
+    // this.getListFakeApi();
   
   }
+
+
 private getListFakeApi(){
   for(let i= 1; i<=10; i++){
      
@@ -60,17 +62,20 @@ private getListFakeApi(){
    }
 
    public setId(id:number):void{
-   debugger
+   
     this.heroesService.getPowerStats(id).subscribe((result) =>{
     this.powerStats = result;
     this.getDetail(id);
     
     });
   }
-  public setFilterArray(array: any):void{
-    debugger
-    // console.log(array);
-    this.arrayHeroes = array;
+  public setFilterArray(array: InterfaceHeroGeneral[]):void{  ///output del Filter.
+   
+    this.arrayHeroes = [];
+    array.forEach(element => {
+    this.arrayHeroes.push(element);
+    });
+    
   }
 
   getDetail(id:number):void{
