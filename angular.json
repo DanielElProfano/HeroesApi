@@ -124,5 +124,8 @@
       }
     }
   },
-  "defaultProject": "HeroApi"
+  "defaultProject": "HeroApi",
+  "cli": {
+    "analytics": false
+  }
 }

@@ -1,0 +1,27 @@
+
+<div  @myInsertRemoveTrigger class="b-detail">
+    <div class="b-detail__container"> 
+        <div class="b-detail__sup">
+            <img class="b-detail__img" src="{{heroDetail.image}}" alt="imagen de {{heroDetail.name}}">
+            
+            <div class="b-detail__name">
+                <p class="b-text__slide">Name: {{heroDetail.name}}</p>
+                <p>Real name: {{heroDetail.fullName}}</p>
+                <p>Gender: {{heroDetail.gender}}</p>
+                <p>Race: {{heroDetail.race}}</p>
+            </div>
+        </div>
+        <div class="b-detail__description">
+                 <p>alignment: {{heroDetail.alignment}}</p>
+                 <!-- <p>Weight: {{heroDetail.weight[0]}}</p> -->
+                <!-- <p>Height: {{heroDetail.height[0]}}</p> -->
+                <p>Base: {{heroDetail.base}}</p>
+               
+                <p>Affiliations: {{heroDetail.groupAffiliation}}</p>
+                
+                
+        </div>
+        
+    </div>
+    
+</div>

@@ -1,0 +1,29 @@
+<p>stadistics works!</p>
+<div class =" b-stats">
+
+    <div class="b-stats__container">
+
+       <div class="b-filter">    
+           
+           <app-filter (emmitArray)="setFilterArray($event)"></app-filter>  
+       
+       </div>
+
+       <div class="b-gallery">
+           <app-sticker [arrayHeroe]="arrayHeroes"
+                       (emmitId)="setId($event)"></app-sticker>
+       </div>
+   <div class="b-detalles">
+       <div class="b-graphics">
+           <app-graph [charData]="powerStats"></app-graph>
+
+       </div>
+       <div class="b-detail" *ngIf="showDetails">
+           <app-detail [heroDetail]="personaje"></app-detail>
+
+       </div>
+
+   </div>
+   
+
+</div>

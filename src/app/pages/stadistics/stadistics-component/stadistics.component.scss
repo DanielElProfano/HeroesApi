@@ -1,0 +1,38 @@
+.b-stats{
+
+    width: 100%;
+    display:flex;
+    justify-content: space-between;
+    margin-top: 10rem;
+    
+    
+        &__container{
+            width: 96%;
+            display: flex;
+            
+            justify-content: space-between;
+    
+        }
+    
+    }
+    .b-filter{
+       
+        width:20%;
+      
+    }
+    .b-gallery{
+        width:50%;
+        display: flex;
+        flex-direction: column;
+    }
+    
+       
+       
+    
+    .b-detalles{
+        display:flex;
+        width: 30%;
+        flex-direction: column;
+        align-items: center;
+     
+    }

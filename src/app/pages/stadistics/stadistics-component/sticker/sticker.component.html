@@ -1,0 +1,48 @@
+
+
+
+<div  
+      class="search-results"
+      infiniteScroll
+      [infiniteScrollDistance]="2"
+      [infiniteScrollThrottle]="50"
+      (scrolled)="onScroll()"
+> 
+<span>asdfasg</span> 
+
+      <div class =" b-stats" >
+            <div class="b-stats__gallery" *ngFor="let hero of arrayHeroe">
+                 
+                        
+                   <div  id="{{hero.id}}" class="b-stats__stick" [ngClass]="{
+                        'colorBlue': hero.alignment === 'good', 
+                        'colorRed': hero.alignment === 'bad'}">
+                        <img class="b-stats__img" id="{{hero.id}}" src="{{ hero.image }}" alt="" (click)="getId($event)">
+                        <div class="b-stats__label">
+                              <p class ="b-text__slide">{{hero.alignment}}</p>
+                              <p class ="b-text__slide">{{hero.name}}</p>
+                              <a href="" class="b-button">Hire</a> 
+                              <a href="" class="b-button">Modify</a>
+                           
+                        
+                        </div>
+
+                  </div>
+                  
+            </div>
+      </div>
+      <!-- sinner -->
+<div class="spinner">
+      <div class="spinner__position">
+      <ngx-spinner
+      bdOpacity = 0.9
+      bdColor = ""
+      size = "default"
+      color = "#581f87"
+      type = "ball-pulse-sync"
+      [fullScreen] = "false"
+      >
+      </ngx-spinner>
+
+</div>
+

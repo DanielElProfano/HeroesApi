@@ -1,0 +1,57 @@
+.b-stats {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    &__gallery{
+      
+        display: flex;
+ 
+        flex-direction: row ;
+        box-shadow: 1px 1px 10px 0 gray;
+        margin: 1rem .5rem;
+      
+    }
+
+    &__stick{
+
+        display: flex;
+        flex-direction: column;
+        border: 1px solid rgb(175, 175, 175);
+        padding: 1rem;
+        border-radius: 8px;
+       
+        height: 330px;
+        width: 240px;
+        overflow: hidden;
+    }
+
+    &__img{ 
+
+        object-fit: contain;
+        object-position: center center;
+        width: 200px;
+        cursor: pointer;
+          }
+
+    
+
+}
+.colorRed{
+    background-color: rgb(241, 155, 155);
+}
+.colorBlue{
+    background-color: rgb(197, 247, 240);
+}
+
+.spinner{
+    position: relative;
+
+
+    &__position{
+        position:fixed;
+    bottom: 40px;
+    left: 50%;
+    }
+}
