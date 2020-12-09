@@ -1,5 +1,6 @@
-import { InterfaceHeroGeneral, InterfaceFilteHeroes } from './../../../models/Interface-hero-general';
-import { Component, OnInit } from '@angular/core';
+import { ChariotService } from './../../../services/chariot.service';
+import { InterfaceHeroGeneral, InterfaceFilteHeroes, InterfaceEmmitOutput } from './../../../models/Interface-hero-general';
+import { Component, OnInit,EventEmitter, Output } from '@angular/core';
 import { InterfaceHeroDetail, InterfacePowerStats } from 'src/app/models/Interface-hero-general';
 import { HeroesService } from 'src/app/services/heroes.service';
 
@@ -9,13 +10,15 @@ import { HeroesService } from 'src/app/services/heroes.service';
   styleUrls: ['./stadistics.component.scss']
 })
 export class StadisticsComponent implements OnInit {
+@Output() emmitToChariot  = new EventEmitter<InterfaceEmmitOutput>();
 
+ 
   showDetails = false;
   arrayHeroes : InterfaceHeroGeneral | any = []; //array que se pinta en el html
   personaje : InterfaceHeroDetail | any = {}; //detail del personaje.
   powerStats : InterfacePowerStats | any = {}; //datos de la gráfica.
 
-  constructor(private heroesService: HeroesService) { }
+  constructor(private heroesService: HeroesService, private chariotService: ChariotService) { }
 
   ngOnInit(): void {
     
@@ -60,16 +63,24 @@ private getListFakeApi(){
     }
  
    }
+public setId(card:InterfaceEmmitOutput):void{
 
-   public setId(id:number):void{
+   debugger
+     if(card.origenHire === false){
    
-    this.heroesService.getPowerStats(id).subscribe((result) =>{
-    this.powerStats = result;
-    this.getDetail(id);
+        this.heroesService.getPowerStats(card.id).subscribe((result) =>{
+          this.powerStats = result;
+          this.getDetail(card.id);
     
-    });
-  }
-  public setFilterArray(array: InterfaceHeroGeneral[]):void{  ///output del Filter.
+          });
+        }
+
+      else{
+
+       this.chariotService.sendChariot(card)
+      }
+}
+public setFilterArray(array: InterfaceHeroGeneral[]):void{  ///output del Filter.
    
     this.arrayHeroes = [];
     array.forEach(element => {

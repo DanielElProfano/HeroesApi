@@ -71,6 +71,8 @@ export class HeroesService {
    )
  }
 
+
+
   getHeroDetail(id: number){
     const Url = `https://www.superheroapi.com/api.php/10217431065143700/${id}`;
     const fullName = 'full-name';
@@ -309,5 +311,51 @@ export class HeroesService {
     })
     )
 
+  }
+
+  getHeroChariot(id: number){
+    const Url = `https://www.superheroapi.com/api.php/10217431065143700/${id}`;
+    const fullName = 'full-name';
+    const alterEgo ='alter-egos';
+    const groupAffiliation ='group-affiliation';
+    return this.http.get(Url).pipe(
+      
+        map((response: any) => {
+   
+        if(!response){
+          throw new Error('Value expected!');
+        } else {
+        
+            const formatResult : InterfaceHeroDetail = {
+
+            id : response.id,
+            name : response.name,
+            gender : response.appearance.gender,
+            race : response.appearance.race,
+            weight : response.appearance.weight,
+            image : response.image.url,
+            intelligence : response.powerstats.intelligence,
+            strength: response.powerstats.strength,
+            speed: response.powerstats.speed,
+            durability: response.powerstats.durability,
+            power: response.powerstats.power,
+            combat :response.powerstats.combat,
+            height :response.appearance.height,
+            base: response.work.base,
+            fullName : response.biography[fullName],
+            groupAffiliation: response.connections[groupAffiliation],
+            alterEgos: response.biography[alterEgo],
+            alignment: response.biography.alignment,
+                 
+            }
+          
+        return formatResult;
+         
+        }
+      }),
+        catchError((err)=>{
+        throw new Error(err.message);
+      })
+    )
   }
 }

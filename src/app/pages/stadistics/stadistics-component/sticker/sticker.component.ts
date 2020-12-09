@@ -1,7 +1,7 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output, SimpleChanges } from '@angular/core';
 
 import { HeroesService } from 'src/app/services/heroes.service';
-import { InterfaceHeroGeneral, InterfaceFilteHeroes } from './../../../../models/Interface-hero-general';
+import { InterfaceHeroGeneral, InterfaceFilteHeroes, InterfaceEmmitOutput } from './../../../../models/Interface-hero-general';
 import { NgxSpinnerService } from 'ngx-spinner';
 
 @Component({
@@ -13,29 +13,54 @@ export class StickerComponent implements OnInit {
 
   @Input() arrayHeroe :  InterfaceHeroGeneral[] | any = [];
   @Input() arrayFiltrado : InterfaceFilteHeroes[] | any = []; //***PTE DE HACER */ Hacer que muestre de 10 en 10 hasta que se termine el array. Para volver hay que pulsar reset.
-
   @Output() emmitId  = new EventEmitter<number>();
   
   nextPost: number = 20; 
   iterator: number = 11;
   notEmptyPost = true;
   notscrolly = true;
-  form = true
+  form = true;
+  emmitCard: InterfaceEmmitOutput | any = {};
   
   constructor(private spinner : NgxSpinnerService, private heroesService:HeroesService) {} 
 
   ngOnInit(): void {}
+      ngOnChanges(changes: SimpleChanges): void
+  {
+      // debugger
+    // this.pushFilter() 
+
+  }
 
   getId(event: any):void{
-    let heroId = parseInt(event.target.id,10);
-    this.emmitId.emit(heroId);
+    debugger
+    this.emmitCard.origenHire = false;
+    this.emmitCard.id = parseInt(event.target.id,10);
+    if(event.srcElement.innerHTML ==='Hire'){
+      this.emmitCard.origenHire = true;
+    }
+    this.emmitId.emit(this.emmitCard);
     
   }
+  public hireFunction(event){
+  
+    this.emmitCard.origenHire = false;
+    this.emmitCard.id = parseInt(event.target.id,10);
+    if(event.srcElement.innerHTML ==='Hire'){
+      this.emmitCard.origenHire = true;
+    }
+    this.emmitId.emit(this.emmitCard);
+  }
+
+
   onScroll():void{
     
     this.spinner.show();
     this.notscrolly = false;
-    this.loadNextPost();
+    if(!this.notscrolly)
+    {
+        this.loadNextPost();
+    }
   }
 
   loadNextPost():void {
@@ -58,5 +83,13 @@ export class StickerComponent implements OnInit {
     }, 800);
     
   }
-  
+
+  public pushFilter(){
+    debugger
+    if(this.arrayFiltrado.lenght>0) //SI DETECTA CAMBIO EN ARRAYFILTRADDO ???
+    {
+      this.notscrolly = true;
+      
+    }
+  }
 }

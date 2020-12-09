@@ -19,18 +19,22 @@
                               <img class="b-stats__img" id="{{hero.id}}" src="{{ hero.image }}" alt="" (click)="getId($event)">
                         </div>
                         <div class="b-stats__label">
-                              <p class ="b-text__slide">{{hero.alignment}}</p>
-                              <p class ="b-text__slide">{{hero.name}}</p>
-                              <a href="" class="b-button">Hire</a> 
-                              <a href="" class="b-button">Modify</a>
+                              <p class ="b-text__slide b-text__slide--mod">{{hero.name}}</p>
+                              <!-- <p class ="b-text__slide">{{hero.alignment}}</p> -->
                            
-                        
+                        </div>
+                        <div class ="b-stats__button">
+                              <span class="b-button" id="{{hero.id}}" (click)="getId($event)">Hire</span> 
+                              <a href="" class="b-button">Modify</a>
                         </div>
 
-                  </div>
-                  
+                    </div>
             </div>
       </div>
+
+</div>
+                  
+     
       <!-- sinner -->
 <div class="spinner">
       <div class="spinner__position">

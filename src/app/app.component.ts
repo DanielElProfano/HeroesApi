@@ -6,5 +6,17 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
+  public sendToChariot(card){
+    debugger
+    console.log(card)
+
+
+
+  }
   title = 'HeroApi';
+
+
+  
 }
+
+

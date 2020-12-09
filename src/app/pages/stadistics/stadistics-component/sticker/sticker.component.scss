@@ -23,14 +23,14 @@
         
         border-radius: 8px;
        
-        height: 330px;
+        height: 350px;
         width: 200px;
         overflow: hidden;
     }
     &__img-container{
         
         width: 200px;
-        height: 300px;
+        height: 250px;
         overflow: hidden;
 
 
@@ -44,10 +44,41 @@
         border-radius: 8px;
         cursor: pointer;
           }
+    &__label{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        box-shadow: 2px 0px 10px 0 black;
+    }   
+    &__button{
+        display: flex;
+        justify-content: space-evenly;
+        margin-top:1rem;
+        width: 100%;
+        margin: 0;
+       
+    }
 
-    
+  
+  
+}
+.b-text__slide{
+    margin-top: 0;
+
+    &--mod{
+        width: 100%;
+        text-align: center;
+        background-color: rgb(24, 36, 58);
+        color: rgb(255, 255, 255);
+        font-weight: 600;
+        padding:0.5rem;
+    }
+
 
 }
+
+
 .colorRed{
     background-color: rgb(241, 155, 155);
 }
@@ -64,4 +95,15 @@
     bottom: 40px;
     left: 50%;
     }
+}
+.b-button{
+    padding: 0.3rem;
+    background-color: rgba(53, 53, 53, 0.445);
+    color: white;
+    font-weight: 600;
+    border-radius: 4px;
+    text-decoration: none;
+    cursor: pointer;
+    margin-top: 1rem;
+
 }
