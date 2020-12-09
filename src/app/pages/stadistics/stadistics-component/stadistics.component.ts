@@ -65,7 +65,7 @@ private getListFakeApi(){
    }
 public setId(card:InterfaceEmmitOutput):void{
 
-   debugger
+ 
      if(card.origenHire === false){
    
         this.heroesService.getPowerStats(card.id).subscribe((result) =>{

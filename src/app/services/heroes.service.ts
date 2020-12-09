@@ -358,4 +358,47 @@ export class HeroesService {
       })
     )
   }
-}
+
+  getPrueba(id: number){
+    const Url = `https://www.superheroapi.com/api.php/10217431065143700/${id}`;
+    const fullName = 'full-name';
+    const alterEgo ='alter-egos';
+    const groupAffiliation ='group-affiliation';
+    
+    this.http.get(Url).subscribe(data => {
+      console.log(data);
+    });
+  }
+    // .pipe(
+      
+    //     map((response: any) => {
+   
+    //     if(!response){
+    //       throw new Error('Value expected!');
+    //     } else {
+        
+    //       const formatResult : InterfaceFilteHeroes = {
+
+    //         id : parseInt(response.id),
+    //         name : response.name,
+    //         image : response.image.url,
+    //         gender : response.appearance.gender,
+    //         intelligence :  parseInt(response.powerstats.intelligence),
+    //         strength: parseInt( response.powerstats.strength),
+    //         speed:  parseInt(response.powerstats.speed),
+    //         durability:  parseInt(response.powerstats.durability),
+    //         power:  parseInt(response.powerstats.power),
+    //         combat : parseInt(response.powerstats.combat),
+    //         alignment: response.biography.alignment,
+                 
+    //         }
+           
+    //         return formatResult;
+    //     }
+    //   }),
+    //     catchError((err)=>{
+    //     throw new Error(err.message);
+    //   })
+    // )
+  }
+

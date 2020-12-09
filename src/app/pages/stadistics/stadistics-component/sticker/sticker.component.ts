@@ -25,15 +25,9 @@ export class StickerComponent implements OnInit {
   constructor(private spinner : NgxSpinnerService, private heroesService:HeroesService) {} 
 
   ngOnInit(): void {}
-      ngOnChanges(changes: SimpleChanges): void
-  {
-      // debugger
-    // this.pushFilter() 
-
-  }
-
+     
   getId(event: any):void{
-    debugger
+   
     this.emmitCard.origenHire = false;
     this.emmitCard.id = parseInt(event.target.id,10);
     if(event.srcElement.innerHTML ==='Hire'){
@@ -85,7 +79,7 @@ export class StickerComponent implements OnInit {
   }
 
   public pushFilter(){
-    debugger
+    
     if(this.arrayFiltrado.lenght>0) //SI DETECTA CAMBIO EN ARRAYFILTRADDO ???
     {
       this.notscrolly = true;

@@ -56,21 +56,24 @@ export class FilterComponent implements OnInit {
       this.arrayResult = null
       this.arrayResult= this.sortResult(this.recogeArray, form); ///filtrado del array
       this.sendFilterHeroes(this.arrayResult)
-    
-    }, 2000);
+      console.log(this.recogeArray)
+    }, 15000);
     
 }
   public filterForm():InterfaceFilteHeroes[]{
     const heroe = [];
     
-    for(let i = 1; i<=100; i++){
+    for(let i = 1; i<=700; i++){
      
-        this.heroesService.getfilterForm(i).subscribe((result) =>{
+        this.heroesService.getfilterForm(i).subscribe((result =>{ ///modificado
          
         heroe.push(result)
+        // console.log(i + "----" +result)
+       
   
-        });
+        }));
     }
+    
     return heroe;
  }
  private sortArray(array: any, powerStat:string):any[]

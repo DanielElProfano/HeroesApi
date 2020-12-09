@@ -16,8 +16,6 @@ export class ChariotService {
 
   sendChariot(card: any){
     
-   
-    debugger
     this.enviarCardSubject.next(card.id)
   }
 }

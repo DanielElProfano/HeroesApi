@@ -16,7 +16,7 @@ export class HeaderComponent implements OnInit {
    
     this.chariotComponent.enviarCardObservable.subscribe(response => {
       this.id = response;
-    debugger
+    
     if(this.id!=undefined) {
       this.drawChariot(this.id);
     }
@@ -29,7 +29,7 @@ export class HeaderComponent implements OnInit {
 
 
   drawChariot(id:number){
-    debugger
+  
     this.heroesService.getHeroChariot(id).subscribe((response) => {
       this.chariotCard.push(response)
       console.log(this.chariotCard);
