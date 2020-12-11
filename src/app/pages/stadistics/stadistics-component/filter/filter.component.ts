@@ -1,5 +1,5 @@
 import { InterfaceJoin } from './../../../join/models/InterfaceJoin';
-import { InterfaceFilteHeroes, InterfaceHeroGeneral} from './../../../../models/Interface-hero-general';
+import { InterfaceFilteHeroes, InterfaceHeroDetail, InterfaceHeroGeneral} from './../../../../models/Interface-hero-general';
 import { HeroesService } from 'src/app/services/heroes.service';
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { FormGroup, FormBuilder } from '@angular/forms';
@@ -19,7 +19,6 @@ export class FilterComponent implements OnInit {
   @Output() emmitArray  = new EventEmitter<InterfaceHeroGeneral[]>();
   
   public form: FormGroup|any;
-  
   public filter: IfilterForm|any ={}
   public submitted = false;
   public powerStats: powerStats[]|any = [];
@@ -27,15 +26,10 @@ export class FilterComponent implements OnInit {
   public arrayResult: InterfaceFilteHeroes[]=[];
   public filtrado: InterfaceFilteHeroes | any = {}
   arrayAlignment: string[][];
- 
   public formPetition : any = {}
   public heroesArray: any[]
- 
-
+  public arrayAllHeroes: InterfaceFilteHeroes[] = [];
   public recogeArray : InterfaceFilteHeroes[] = []
-
-  
-
   constructor( private heroesService: HeroesService){ 
 
     this.heroesArray = [];
@@ -43,46 +37,51 @@ export class FilterComponent implements OnInit {
 
   ngOnInit(): void {}
   sendFilterHeroes(array: InterfaceHeroGeneral[]){
-    
+   
     this.emmitArray.emit(array);
     
   }
   setForm(form: IfilterForm){ //Output del Form
+ 
+  this.recogeArray = JSON.parse(localStorage.getItem('arrayHeroes')) 
+  if(this.recogeArray.length === 0){
+      this.filterForm(form);
+  }
+  console.log(this.recogeArray)
+  this.arrayResult= this.sortResult(this.recogeArray, form);
+  if(this.arrayResult.length != 0){
+    this.sendFilterHeroes(this.arrayResult)
+  }
+    // setTimeout(() => {
     
-    this.recogeArray = this.filterForm();
-    setTimeout(() => {
-    
-      this.arrayFilter = null
-      this.arrayResult = null
-      this.arrayResult= this.sortResult(this.recogeArray, form); ///filtrado del array
-      this.sendFilterHeroes(this.arrayResult)
-      console.log(this.recogeArray)
-    }, 15000);
+    //   this.arrayFilter = null
+    //   this.arrayResult = null
+    //   this.arrayResult= this.sortResult(this.recogeArray, form); ///filtrado del array
+    //   this.sendFilterHeroes(this.arrayResult)
+    //   console.log(this.recogeArray)
+    // }, 5000);
     
 }
-  public filterForm():InterfaceFilteHeroes[]{
-    const heroe = [];
-    
-    for(let i = 1; i<=700; i++){
-     
-        this.heroesService.getfilterForm(i).subscribe((result =>{ ///modificado
-         
-        heroe.push(result)
-        // console.log(i + "----" +result)
-       
-  
-        }));
-    }
-    
-    return heroe;
+  public filterForm(form){
+             
+     this.heroesService.getfilterForm().subscribe((result) =>{ ///modificado
+     this.arrayAllHeroes = result
+     localStorage.setItem('arrayHeroes', JSON.stringify(result));
+     debugger
+    //  this.arrayAllHeroes.sort((a: any , b:any) => {
+    //  return (b[form.powerStats] - a[form.powerStats])});
+            
+            
+        });
+   
  }
  private sortArray(array: any, powerStat:string):any[]
  {  //oredena el array por powerStats.
-
     array.sort((a: any , b:any) => {
      
     return (b[powerStat] - a[powerStat])});
-
+    
+    debugger
     return array;
 
  }
@@ -90,9 +89,11 @@ export class FilterComponent implements OnInit {
 
       array.forEach(element => {
       let number = element[powerStat];
-      let n = number.toString();
-      if( n != "NaN"){ 
-        this.arrayResult.push(element)
+      if (number != null){
+        let n = number.toString();
+        if( n != "NaN"){ 
+          this.arrayResult.push(element)
+        }
       }
     });
     return this.sortArray(this.arrayResult, powerStat);
@@ -100,7 +101,7 @@ export class FilterComponent implements OnInit {
 
  }
   private sortResult(result: InterfaceFilteHeroes[], form: IfilterForm): any{
-    
+    debugger
     this.arrayFilter = [];
     this.arrayResult = [];
    const alignment = form.alignment[0];
@@ -152,7 +153,7 @@ export class FilterComponent implements OnInit {
       array.forEach(element => {
       
   
-    if(alignment != undefined && (sex != "" || sex != undefined)){ //si align tiene texto
+    if(alignment != undefined && sex != ""){ //si align tiene texto
 
         if((sex === element.gender.toLowerCase() && (sex === 'male')) && ( alignment === 'good') && (element.alignment.toLowerCase()=== 'good')){
         
@@ -171,7 +172,7 @@ export class FilterComponent implements OnInit {
 
     }
     else{
-          if(sex != "" || sex != undefined){
+          if(sex != ""){
           
               if(sex === "male" && element.gender.toLowerCase() === 'male'){
                 this.pushArray(element);
@@ -183,12 +184,13 @@ export class FilterComponent implements OnInit {
 
           }
           if(alignment!=undefined){
-              if(alignment === "good" && element.gender.toLowerCase() === 'good'){
+
+              if(alignment === "good" && element.alignment.toLowerCase() === 'good'){
                 this.pushArray(element);
 
 
               }
-              if(alignment === "bad" && element.gender.toLowerCase() === 'good'){
+              if(alignment === "bad" && element.alignment.toLowerCase() === 'bad'){
                 this.pushArray(element);
               }
           }

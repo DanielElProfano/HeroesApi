@@ -1,0 +1,101 @@
+.uno{
+        position: relative; 
+        margin: 0px;
+        left: 0px; 
+        top: 0px;
+          z-index: 10;
+          height:200px;
+          width:400px;
+
+            
+        background-color: transparent;}
+        // .dos{
+        // position: absolute; 
+        // left: 320px; 
+        // top: 5px;
+        //   z-index: 1;
+        //   height:190px;
+        //   width: 300px;
+        //   transition: all 1s ease;
+        //   box-shadow: 0 0 20px rgba(0,0,0,.6);
+        //   border-radius: 12px;
+            
+        // background-color: red;}
+        // .dos:hover{
+        //    transform: translate(200px, 0px) 
+        // }
+    
+    .b-hero{
+    
+            position:relative;
+            margin-top: 4rem;
+            width: 90%;
+        &__stick{
+    
+            border-radius: 12px;
+            background: radial-gradient(ellipse at top left, #dfe9f5 0%, #030617 100%);
+     
+             
+           
+           
+            height: 200px;
+            width: 400px;
+            margin-bottom: 2rem;
+            display: flex;
+            align-items: center;
+           
+            box-shadow: 0 0 20px rgba(0,0,0,.8);
+            -webkit-transform: skewX(15deg);
+            -moz-transform: skewX(15deg);
+            -ms-transform: skewX(15deg);
+            -o-transform: skewX(15deg);
+            transform: skewX(15deg);
+            }
+        &__info{
+    
+            margin-left: 1rem;
+            width: 100%;
+        }
+    
+        &__description{
+            display:flex;
+            height: 90%;
+            width: 90%;
+            align-items: center;
+    
+            margin: 0;
+    
+            &--notSkew{
+                    -webkit-transform: skewX(-15deg);
+                    -moz-transform: skewX(-15deg);
+                    -ms-transform: skewX(-15deg);
+                    -o-transform: skewX(-15deg);
+                    transform: skewX(-15deg);
+    
+    
+                }
+            }
+            &__img{
+
+                object-fit: contain;
+                object-position: center center;
+                margin-left: 3rem;
+                height: 160px;
+                cursor: pointer;
+                border-radius: 8px;
+              
+                
+            }
+            
+         
+    }
+    .b-text{
+    
+        &__slide{
+            font-size: 1.1rem;
+            color: rgb(224, 224, 224);
+            display: inline;
+            
+        }
+    }
+        

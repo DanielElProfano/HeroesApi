@@ -8,7 +8,14 @@ import { FooterComponent } from './components/footer/footer.component';
 import { HeroesService } from './services/heroes.service';
 import { HttpClientModule } from '@angular/common/http';
 
+import { LottieModule } from 'ngx-lottie';
+import player from 'lottie-web';
+
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+export function playerFactory() {
+  return player;
+}
 @NgModule({
   declarations: [
     AppComponent,
@@ -20,6 +27,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     AppRoutingModule,
     HttpClientModule,
     BrowserAnimationsModule,
+    LottieModule.forRoot({player: playerFactory}),
   
   ],
   providers: [HeroesService],

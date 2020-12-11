@@ -1,31 +1,38 @@
-<form *ngIf="form" novalidate (ngSubmit)="onSubmit()" [formGroup]="form">
+FILTER BY
+
+
+<form class="b-form" *ngIf="form" novalidate (ngSubmit)="onSubmit()" [formGroup]="form">
     <!-- Fieldset del primer campo - name -->
     <fieldset class ="form__field">
-        <legend>Formulario</legend>
+        <legend class="b-form__legend">By name:</legend>
 
+      <input type="text" class ="form__input" id="inputName" name="inputName" vaue="inputName" formControlName="inputName">
+    </fieldset>
+    <fieldset>
       <input  class="form__radioButton" type="radio" id="male" name="sex" value="male" formControlName="sex">
       <label class="form__radio" for="male">male</label><br>
       <input class="form__radioButton" type="radio" id="female" name="sex" value="female" formControlName="sex">
       <label  class="form__radio" for="female">female</label><br>
      
     
-
+    </fieldset>
      
-     
-      
-        <select class="form__select" formControlName="powerStats">
+     <fieldset>
+        <legend class="b-form__legend">By powerstats:</legend>
+        <select class="b-form__select" formControlName="powerStats">
             <option [ngValue]="null" selected="true" disable="disabled">"Elige powerStats:"</option>
             <option *ngFor="let stat of powerStats" [ngValue]="stat">
              {{ stat }}
             </option>
           </select> 
         
-    
+        <legend class="b-form__legend">By alignment:</legend>
       
           <select class="form__select" formControlName="alignment">
               <option [ngValue]="null" selected="true" disable="disabled">"Elige curso:"</option>
               <option *ngFor="let align of arrayAlignment" [ngValue]="align">
-               {{ align}}         </option>
+               {{ align}}         
+              </option>
             </select> 
           
       </fieldset>

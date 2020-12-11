@@ -43,6 +43,7 @@ export class StickerComponent implements OnInit {
     if(event.srcElement.innerHTML ==='Hire'){
       this.emmitCard.origenHire = true;
     }
+    debugger
     this.emmitId.emit(this.emmitCard);
   }
 

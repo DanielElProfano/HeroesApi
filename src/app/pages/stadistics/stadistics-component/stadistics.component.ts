@@ -10,15 +10,16 @@ import { HeroesService } from 'src/app/services/heroes.service';
   styleUrls: ['./stadistics.component.scss']
 })
 export class StadisticsComponent implements OnInit {
-@Output() emmitToChariot  = new EventEmitter<InterfaceEmmitOutput>();
 
- 
   showDetails = false;
   arrayHeroes : InterfaceHeroGeneral | any = []; //array que se pinta en el html
   personaje : InterfaceHeroDetail | any = {}; //detail del personaje.
   powerStats : InterfacePowerStats | any = {}; //datos de la gráfica.
 
-  constructor(private heroesService: HeroesService, private chariotService: ChariotService) { }
+
+  constructor(private heroesService: HeroesService, private chariotService: ChariotService) {
+  
+   }
 
   ngOnInit(): void {
     
@@ -51,21 +52,10 @@ private getListFakeApi(){
       
     }
   }
-  postea(){
-    for(let i= 1; i<=300; i++){
-     
-      this.heroesService.scrapHero(i).subscribe((result) => {
-        this.heroesService.postNewHero(result).subscribe(
-          (data: any) => console.log(data))
-      });
 
-      
-    }
- 
-   }
-public setId(card:InterfaceEmmitOutput):void{
+public setId(card:InterfaceEmmitOutput):void{   //si es Hire ataca al servicio del carrito.
 
- 
+    debugger
      if(card.origenHire === false){
    
         this.heroesService.getPowerStats(card.id).subscribe((result) =>{
@@ -76,7 +66,7 @@ public setId(card:InterfaceEmmitOutput):void{
         }
 
       else{
-
+        debugger
        this.chariotService.sendChariot(card)
       }
 }

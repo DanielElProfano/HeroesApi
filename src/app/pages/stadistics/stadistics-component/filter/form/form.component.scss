@@ -1,0 +1,25 @@
+.b-form{
+
+    border: 1px solid lightblue;
+    padding: 1rem;
+    border-radius: 4px;
+    &__input{
+
+        padding: 0.5rem;
+    }
+    &__select{
+
+        padding: 1rem;
+        border: 2px solid gray;
+    }
+    &__legend{
+
+        padding: 1rem;
+        border: 1px solid lightgrey
+    }
+
+
+
+
+
+}

@@ -1,8 +1,8 @@
 import { SimpleChanges } from '@angular/core';
 import { Component, Input, OnInit } from '@angular/core';
-import { ChartOptions, ChartType, ChartDataSets } from 'chart.js';
+import { ChartOptions, ChartType, ChartDataSets, RadialChartOptions } from 'chart.js';
 import { Label, MultiDataSet } from 'ng2-charts';
-import { InterfacePowerStats } from 'src/app/models/Interface-hero-general';
+
 
 @Component({
   selector: 'app-graph',
@@ -14,11 +14,11 @@ export class GraphComponent implements OnInit {
   @Input() charData : any = {};
   
   dataArray : null = null;
-  public barChartOptions: ChartOptions = {
+  public barChartOptions: RadialChartOptions = {
     responsive: true,
   };
   public barChartLabels: Label[] = ['power', 'combat', 'durability', 'speed', 'strenght','Intelligence'];
-  public barChartType: ChartType = 'bar';
+  public barChartType: ChartType = 'radar';
   public barChartLegend = true;
   public barChartPlugins = [];
 

@@ -7,19 +7,34 @@
         </div>
         <div class="header__nav">
             <nav class="header__menu">
-                <a href="" class="header__menu-options">Home</a>
-                <a href="" role="button" routerLink="/choose" class="header__menu-options">List</a>
-                <a href="" role="button" routerLink="/stadistics" class="header__menu-options">Stadistics</a>
-                <a href="" role="button" routerLink="/join" class="header__menu-options">Join Us</a>
-             
-
-                <div *ngFor = "let char of chariotCard">
-                    {{char.id}} , {{char.name}}
-
+                <div class="header__menu-container">
+                    <a href="" class="header__menu-options">Home</a>
+                    <a href="" role="button" routerLink="/choose" class="header__menu-options">  {{this.id}}List</a>
+                    <a href="" role="button" routerLink="/stadistics" class="header__menu-options">Stadistics</a>
+                    <a href="" role="button" routerLink="/join" class="header__menu-options">Join Us</a>
                 </div>
+                <div class="b-chariot">
+                <div *ngFor = "let char of chariotCard">
+                    <img class="b-chariot__img" src="{{char.image}}" alt="">
+                
+                </div>
+                <a href ="" role="button" routerLink="/chariot">
+                <ng-lottie 
+                name = "hola"
+                width="100px"
+                height="70px"
+                [options]="options" 
+                (loopComplete)="loopComplete($event)"
+                (animationCreated)="animationCreated($event)"
+                ></ng-lottie></a>
+              
+            </div>
+         </nav>
+           
+       
                 
                
-            </nav>
+          
         </div>
     </div>
 </div>

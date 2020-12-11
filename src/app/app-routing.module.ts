@@ -20,6 +20,10 @@ const routes: Routes = [
     path:'join',
     loadChildren:() => import('./pages/join/join.module').then((m) =>m.JoinModule),
   },
+  {
+    path:'chariot',
+    loadChildren:() => import('./pages/chariot/chariot.module').then((m) =>m.ChariotModule),
+  },
 
 ];
 

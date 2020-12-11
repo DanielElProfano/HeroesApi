@@ -24,7 +24,7 @@ export class FormComponent implements OnInit {
 
   constructor(private formBuilder: FormBuilder, private heroesService:HeroesService) { 
     this.arrayAlignment=[
-      [ 'bad'],['good'],['both']
+      [ 'bad'],['good']
     ];
     this.powerStats=[
       ['intelligence'],['strength'],['speed'],

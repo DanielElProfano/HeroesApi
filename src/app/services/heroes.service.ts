@@ -20,8 +20,9 @@ export class HeroesService {
 
   getList(i: number){
      const Url = `https://www.superheroapi.com/api.php/10217431065143700/${i}`;
+    
     return this.http.get(Url).pipe(
-      
+     
         map((response: any) => {
    
         if(!response){
@@ -70,9 +71,6 @@ export class HeroesService {
      })
    )
  }
-
-
-
   getHeroDetail(id: number){
     const Url = `https://www.superheroapi.com/api.php/10217431065143700/${id}`;
     const fullName = 'full-name';
@@ -110,7 +108,6 @@ export class HeroesService {
             }
           
         return formatResult;
-         
         }
       }),
         catchError((err)=>{
@@ -185,40 +182,22 @@ export class HeroesService {
   }
 
   
-  pushFilter(filtrado: InterfaceFilteHeroes[]):void{
+  // pushFilter(filtrado: InterfaceFilteHeroes[]):void{
 
-    this.arrayFilter = filtrado;
-  }
-  getfilterForm(id: number):Observable<InterfaceFilteHeroes>{
-    const Url = `https://www.superheroapi.com/api.php/10217431065143700/${id}`;
-    const fullName = 'full-name';
-    const alterEgo ='alter-egos';
-    const groupAffiliation ='group-affiliation';
-    return this.http.get(Url).pipe(
+  //   this.arrayFilter = filtrado;
+  // }
+  getfilterForm():Observable<InterfaceFilteHeroes[]>{
+    // const Url = `https://www.superheroapi.com/api.php/10217431065143700/${id}`;
+    
+    return this.http.get(`http://localhost:3000/allHeroes`).pipe(
       
-        map((response: any) => {
+        map((response: InterfaceFilteHeroes[]) => {
    
         if(!response){
           throw new Error('Value expected!');
         } else {
         
-          const formatResult : InterfaceFilteHeroes = {
-
-            id : parseInt(response.id),
-            name : response.name,
-            image : response.image.url,
-            gender : response.appearance.gender,
-            intelligence :  parseInt(response.powerstats.intelligence),
-            strength: parseInt( response.powerstats.strength),
-            speed:  parseInt(response.powerstats.speed),
-            durability:  parseInt(response.powerstats.durability),
-            power:  parseInt(response.powerstats.power),
-            combat : parseInt(response.powerstats.combat),
-            alignment: response.biography.alignment,
-                 
-            }
-           
-            return formatResult;
+          return response;
         }
       }),
         catchError((err)=>{
@@ -227,74 +206,74 @@ export class HeroesService {
     )
   }
 
-   pushArray(array: InterfaceFilteHeroes){
+  //  pushArray(array: InterfaceFilteHeroes){
 
-    this.arrayFilter.push(array);
+  //   this.arrayFilter.push(array);
 
 
 
-   }
-   arrayToZero(){
-     this.arrayFilter=[];
-   }
-   getFilter(){
+  //  }
+  //  arrayToZero(){
+  //    this.arrayFilter=[];
+  //  }
+  //  getFilter(){
 
-    return this.arrayFilter;
-  }
-  public scrapHero(id: number): Observable<any>{
-    const Url = `https://www.superheroapi.com/api.php/10217431065143700/${id}`;
-    const fullName = 'full-name';
-    const alterEgo ='alter-egos';
-    const groupAffiliation ='group-affiliation';
-    const eyeColor = 'eye-color';
-    const hairColor = 'hair-color';
-    return this.http.get(Url).pipe(
+  //   return this.arrayFilter;
+  // }
+  // public scrapHero(id: number): Observable<any>{
+  //   const Url = `https://www.superheroapi.com/api.php/10217431065143700/${id}`;
+  //   const fullName = 'full-name';
+  //   const alterEgo ='alter-egos';
+  //   const groupAffiliation ='group-affiliation';
+  //   const eyeColor = 'eye-color';
+  //   const hairColor = 'hair-color';
+  //   return this.http.get(Url).pipe(
       
-      map((response: any) => {
+  //     map((response: any) => {
  
-      if(!response){
-        throw new Error('Value expected!');
-      } else {
+  //     if(!response){
+  //       throw new Error('Value expected!');
+  //     } else {
 
-        const scrapHero={
+  //       const scrapHero={
          
-          id : parseInt(response.id),
-          name : response.name,//
-          gender : response.appearance.gender,
-          race : response.race,//
-          weight : response.appearance.weight,
-          image : response.image.url,
-          intelligence :  parseInt(response.powerstats.intelligence),
-          strength: parseInt( response.powerstats.strength),
-          speed:  parseInt(response.powerstats.speed),
-          durability:  parseInt(response.powerstats.durability),
-          power:  parseInt(response.powerstats.power),
-          combat : parseInt(response.powerstats.combat),
-          height  : response.appearance.height,
-          base : response.work.base,
-          fullName : response.biography[fullName],
-          groupAffiliation: response.connections[groupAffiliation],
-          alterEgos: response.biography[alterEgo],
-          alignment : response.biography.alignment,
-          eyeColor: response.appearance[eyeColor],
-          hairColor:response.appearance[hairColor],
-          occupation: response.work.occupation,
-        }
-        return scrapHero;
-      }
+  //         id : parseInt(response.id),
+  //         name : response.name,//
+  //         gender : response.appearance.gender,
+  //         race : response.race,//
+  //         weight : response.appearance.weight,
+  //         image : response.image.url,
+  //         intelligence :  parseInt(response.powerstats.intelligence),
+  //         strength: parseInt( response.powerstats.strength),
+  //         speed:  parseInt(response.powerstats.speed),
+  //         durability:  parseInt(response.powerstats.durability),
+  //         power:  parseInt(response.powerstats.power),
+  //         combat : parseInt(response.powerstats.combat),
+  //         height  : response.appearance.height,
+  //         base : response.work.base,
+  //         fullName : response.biography[fullName],
+  //         groupAffiliation: response.connections[groupAffiliation],
+  //         alterEgos: response.biography[alterEgo],
+  //         alignment : response.biography.alignment,
+  //         eyeColor: response.appearance[eyeColor],
+  //         hairColor:response.appearance[hairColor],
+  //         occupation: response.work.occupation,
+  //       }
+  //       return scrapHero;
+  //     }
       
-    }),
-    catchError((err)=>{
-    throw new Error(err.message);
-  })
-  )
+  //   }),
+  //   catchError((err)=>{
+  //   throw new Error(err.message);
+  // })
+  // )
 
 
 
-  }
+  // }
 
   public postNewHero(newHero: InterfaceHeroGeneral){
-    const Url = "http://localhost:3000/posts/"
+    const Url = "http://localhost:3000/allHeros/"
     return this.http.post(Url, newHero).pipe(
       
         map((response: any) => {
