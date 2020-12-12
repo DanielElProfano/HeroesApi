@@ -42,12 +42,12 @@ export class FilterComponent implements OnInit {
     
   }
   setForm(form: IfilterForm){ //Output del Form
- 
-  this.recogeArray = JSON.parse(localStorage.getItem('arrayHeroes')) 
-  if(this.recogeArray.length === 0){
-      this.filterForm(form);
-  }
-  console.log(this.recogeArray)
+    this.filterForm(form);
+  this.recogeArray = JSON.parse(localStorage.getItem('arrayHeroes'))  //COMPROBAMOS SI EL LOCALSTORAGE ES VACIO
+  // if(this.recogeArray.length === 0){
+    this.filterForm(form);          //SI VACIO HACEMOS PETICION A LA API
+  // }
+  debugger
   this.arrayResult= this.sortResult(this.recogeArray, form);
   if(this.arrayResult.length != 0){
     this.sendFilterHeroes(this.arrayResult)
@@ -63,29 +63,23 @@ export class FilterComponent implements OnInit {
     
 }
   public filterForm(form){
-             
+    debugger     
      this.heroesService.getfilterForm().subscribe((result) =>{ ///modificado
      this.arrayAllHeroes = result
      localStorage.setItem('arrayHeroes', JSON.stringify(result));
-     debugger
-    //  this.arrayAllHeroes.sort((a: any , b:any) => {
-    //  return (b[form.powerStats] - a[form.powerStats])});
-            
-            
-        });
+      
+   });
    
  }
  private sortArray(array: any, powerStat:string):any[]
  {  //oredena el array por powerStats.
     array.sort((a: any , b:any) => {
-     
-    return (b[powerStat] - a[powerStat])});
-    
-    debugger
-    return array;
+       return (b[powerStat] - a[powerStat])
+    });
+return array;
 
  }
- private quitarNaNenArray(array, powerStat){
+ private quitarNaNenArray(array, powerStat){  //QUITAR LOS NaN Y LOS NULL
 
       array.forEach(element => {
       let number = element[powerStat];
@@ -101,7 +95,7 @@ export class FilterComponent implements OnInit {
 
  }
   private sortResult(result: InterfaceFilteHeroes[], form: IfilterForm): any{
-    debugger
+   
     this.arrayFilter = [];
     this.arrayResult = [];
    const alignment = form.alignment[0];

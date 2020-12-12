@@ -22,11 +22,11 @@ sendForm(newHero: InterfaceJoin){
   constructor(private formbuilder: FormBuilder) { 
 
     this.form = this.formbuilder.group({
-      id :  ['', [Validators.required, Validators.maxLength(20)]],
-      name: ['', [, Validators.maxLength(20)]],
+      id :  ['', [, Validators.maxLength(20)]],
+      name: ['', [Validators.required, Validators.maxLength(20)]],
       gender: ['', [, Validators.maxLength(20)]],
       race: ['', [, Validators.maxLength(20)]],
-      image: ['', [, Validators.maxLength(20)]],
+      image: ['', []],
       weight: ['', [, Validators.maxLength(20)]],
       intelligence: ['', [, Validators.maxLength(20)]],
       strength: ['', [, Validators.maxLength(20)]],

@@ -37,7 +37,7 @@
     }
 
     &__img{ 
-
+        filter: grayscale(90%) contrast(200%);
         object-fit: contain;
         object-position: center center;
         width: 200px;

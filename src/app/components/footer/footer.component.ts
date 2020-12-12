@@ -6,8 +6,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./footer.component.scss']
 })
 export class FooterComponent implements OnInit {
+  localArray : any[] = []
+  constructor(){
+    localStorage.setItem('items', JSON.stringify(this.localArray))
+  }
 
-  constructor() { }
 
   ngOnInit(): void {
   }

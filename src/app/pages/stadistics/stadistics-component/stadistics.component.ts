@@ -54,11 +54,12 @@ private getListFakeApi(){
   }
 
 public setId(card:InterfaceEmmitOutput):void{   //si es Hire ataca al servicio del carrito.
-
     debugger
+    
      if(card.origenHire === false){
    
         this.heroesService.getPowerStats(card.id).subscribe((result) =>{
+          debugger
           this.powerStats = result;
           this.getDetail(card.id);
     
@@ -66,7 +67,7 @@ public setId(card:InterfaceEmmitOutput):void{   //si es Hire ataca al servicio d
         }
 
       else{
-        debugger
+        
        this.chariotService.sendChariot(card)
       }
 }

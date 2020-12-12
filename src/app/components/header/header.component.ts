@@ -33,7 +33,7 @@ export class HeaderComponent implements OnInit {
       console.log(response)
       const data = JSON.parse(localStorage.getItem('items'))
       this.id = data.length
-    debugger
+    
     
     if(this.id!=undefined) { //si el array esta vacio no hace nada. Si tiene heroe lo pushea
       // this.drawChariot(this.id);

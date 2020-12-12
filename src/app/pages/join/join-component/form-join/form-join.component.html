@@ -1,164 +1,195 @@
-<form novalidate (ngSubmit)="onSubmit()" [formGroup]="form">
-    <!-- //************************ NAME  -->
-      <fieldset>
-        <legend>Información Personal</legend>
+<h1>BIENVENIDO </h1>
 
-        <label for="id">Id::</label>
-            <input type="number" id="id" formControlName="id" />
-                <!-- Si el campo name es invalido / ha sido tocado / submitted = true -->
+<H2>EN MUNDO TE NECESITA</H2>
+
+<H3>Rellene este cuestionario y en seguida nos prondemos en contacto con usted</H3>
+
+<div class="main-container">
+  <div class="b-form__img-comtainer">
+    <img class="b-form__img-hero" src="../../../../../assets/svg/kisspng-james-montgomery-flagg-uncle-sam-united-states-pos-we-need-you-5b0c4104dcc598.0397425815275297329043.png">
+  </div>
+    <form class="b-form" novalidate (ngSubmit)="onSubmit()" [formGroup]="form">
+    <!-- //************************ NAME  -->
+
+
+      <fieldset class="b-form__personal">
+       
+
+           <label class="b-form__label" for="id">ID</label>
+            <input class="b-form__input" placeholder="Introduce tu id."type="number" id="id" formControlName="id" />
+              
             <div *ngIf="!form.get('id').valid &&
                 (form.get('id').dirty || submitted)">
-                Has introducido mal tu nombre
+                Has introducido mal tu id
+            </div> 
+          <div class= "b-form__row">
+            <div class="b-form__cols b-form__cols--1" >
+
+              <label class="b-form__label" for="name">Nombre:</label>
+              <input class="b-form__input" placeholder=" Introduce tu nombre de superhéroe.."type="text" id="name" formControlName="name" />
+                
+              <div *ngIf="!form.get('name').valid &&
+                  (form.get('name').dirty || submitted)">
+                  Has introducido mal tu nombre
+              </div>
             </div>
-            <label for="name">Nombre:</label>
-            <input type="text" id="name" formControlName="name" />
-                <!-- Si el campo name es invalido / ha sido tocado / submitted = true -->
-            <div *ngIf="!form.get('name').valid &&
-                (form.get('name').dirty || submitted)">
-                Has introducido mal tu nombre
-            </div>
-    
-    <!-- //************************ RACE  -->
-    
+            <div class="b-form__cols b-form__cols--1">
+              <label class="b-form__label" for="fullName">Real name: </label>
+              <input class="b-form__input"  placeholder=" Introduce tu nombre real.." type="text" id="fullName" formControlName="fullName" />
+                  <!-- Si el campo fullName es invalido / ha sido tocado / submitted = true -->
+              <div *ngIf="!form.get('fullName').valid &&
+                  (form.get('fullName').dirty || submitted)">
+                Has introducido mal tu raza
+              </div>
+           </div> 
         
-        <label for="race">Raza: </label>
-        <input type="text" id="race" formControlName="race" />
-            <!-- Si el campo race es invalido / ha sido tocado / submitted = true -->
-        <div *ngIf="!form.get('race').valid &&
-            (form.get('race').dirty || submitted)">
-          Has introducido mal tu raza
-        </div>
+    
+          <div class="b-form__cols b-form__cols--1">
+              <label class="b-form__label " for="race">Raza: </label>
+              <input class="b-form__input" placeholder="¿De que especie eres?" type="text" id="race" formControlName="race" />
+                  <!-- Si el campo race es invalido / ha sido tocado / submitted = true -->
+              <div *ngIf="!form.get('race').valid &&
+                  (form.get('race').dirty || submitted)">
+                Has introducido mal tu raza
+              </div>
+          </div>
     
 
-      <!-- //************************ RAZA  -->
-      
-        <label for="image">Imagen:</label>
-        <input type="text" id="image" formControlName="image" />
-            <!-- Si el campo image es invalido / ha sido tocado / submitted = true -->
-        <div *ngIf="!form.get('image').valid &&
-            (form.get('image').dirty || submitted)">
-          Has introducido mal tu raza
-        </div>
-      </fieldset>
+          <div class="b-form__cols b-form__cols--1">
+          
+            <label class="b-form__label" for="image">Imagen:</label>
+            <input class="b-form__input" placeholder="Introduce una imagen..." type="text" id="image" formControlName="image" />
+                <!-- Si el campo image es invalido / ha sido tocado / submitted = true -->
+            <div *ngIf="!form.get('image').valid &&
+                (form.get('image').dirty || submitted)">
+              Has introducido mal tu raza
+            </div>
+          </div>
+     
             <!-- //************************ RAZA  -->
-            <fieldset>
-                <label for="fullName">Full name: </label>
-                <input type="text" id="fullName" formControlName="fullName" />
-                    <!-- Si el campo fullName es invalido / ha sido tocado / submitted = true -->
-                <div *ngIf="!form.get('fullName').valid &&
-                    (form.get('fullName').dirty || submitted)">
+        
+            
+           <div class="b-form__cols b-form__cols--2">
+              <label class="b-form__label" for="alterEgos">Alter egos:</label>
+              <input class="b-form__input" placeholder="¿Cual es tu Alter Ego?" type="text" id="alterEgos" formControlName="alterEgos" />
+              <!-- Si el campo alterEgos es invalido / ha sido tocado / submitted = true -->
+              <div *ngIf="!form.get('alterEgos').valid &&
+                  (form.get('alterEgos').dirty || submitted)">
                   Has introducido mal tu raza
-                </div>
-              </fieldset>
-              <fieldset>
-                <label for="id">Full name: </label>
-                <input type="text" id="id" formControlName="id" />
-                    <!-- Si el campo id es invalido / ha sido tocado / submitted = true -->
-                <div *ngIf="!form.get('id').valid &&
-                    (form.get('id').dirty || submitted)">
-                  Has introducido mal tu raza
-                </div>
-              </fieldset>
-
-              <fieldset>
-                <label for="alterEgos">Alter egos:</label>
-                <input type="text" id="alterEgos" formControlName="alterEgos" />
-                    <!-- Si el campo alterEgos es invalido / ha sido tocado / submitted = true -->
-                <div *ngIf="!form.get('alterEgos').valid &&
-                    (form.get('alterEgos').dirty || submitted)">
-                  Has introducido mal tu raza
-                </div>
-              </fieldset>
-
-              <fieldset>
-                <label for="alignment">Alignment: </label>
-                <input type="text" id="alignment" formControlName="alignment" />
+              </div>
+            </div>
+            <div class="b-form__cols b-form__cols--2">
+                <label class="b-form__label" for="alignment">Alignment: </label>
+                <input class="b-form__input" placeholder="Alineamiento" type="text" id="alignment" formControlName="alignment" />
                     <!-- Si el campo alignment es invalido / ha sido tocado / submitted = true -->
                 <div *ngIf="!form.get('alignment').valid &&
                     (form.get('alignment').dirty || submitted)">
                   Has introducido mal tu raza
                 </div>
-              </fieldset>
-
-              <fieldset>
-                <label for="eyeColor">Eye Color: </label>
-                <input type="text" id="eyeColor" formControlName="eyeColor" />
+            </div>
+            <div class="b-form__cols b-form__cols--2">
+              <label class="b-form__label" for="occupation">Occupation:</label>
+              <input class="b-form__input" placeholder="¿Que haces cuando no estás salvando el mundo?" type="text" id="occupation" formControlName="occupation" />
+                  <!-- Si el campo occupation es invalido / ha sido tocado / submitted = true -->
+              <div *ngIf="!form.get('occupation').valid &&
+                  (form.get('occupation').dirty || submitted)">
+                Has introducido mal tu Occupation.
+              </div>
+            </div>
+            <div class="b-form__cols b-form__cols--3">
+                <label class="b-form__label" for="eyeColor">Eye Color: </label>
+                <input class="b-form__input" placeholder="Color de ojos..." type="text" id="eyeColor" formControlName="eyeColor" />
                     <!-- Si el campo eyeColor es invalido / ha sido tocado / submitted = true -->
                 <div *ngIf="!form.get('eyeColor').valid &&
                     (form.get('eyeColor').dirty || submitted)">
-                  Has introducido mal tu raza
+              El color de ojos... por favor.
                 </div>
-              </fieldset>
-
-              <fieldset>
-                <label for="occupation">Hair color:</label>
-                <input type="text" id="hairColor" formControlName="hairColor" />
+           </div>
+           <div class="b-form__cols b-form__cols--3">
+                <label  class="b-form__label" for="occupation">Hair color:</label>
+                <input class="b-form__input" placeholder="Color de pelo..."type="text" id="hairColor" formControlName="hairColor" />
                     <!-- Si el campo hairColor es invalido / ha sido tocado / submitted = true -->
                 <div *ngIf="!form.get('hairColor').valid &&
                     (form.get('hairColor').dirty || submitted)">
                   Has introducido mal tu raza
                 </div>
-              </fieldset>
+             </div> 
 
-              <fieldset>
-                <label for="occupation">Occupation:</label>
-                <input type="text" id="occupation" formControlName="occupation" />
-                    <!-- Si el campo occupation es invalido / ha sido tocado / submitted = true -->
-                <div *ngIf="!form.get('occupation').valid &&
-                    (form.get('occupation').dirty || submitted)">
-                  Has introducido mal tu raza
-                </div>
-              </fieldset>
+            
+          </div>
+              
+     </fieldset>
+     <fieldset class="b-form__powerstats">
+        <div class="b-form__row b-form__row--column">
+          <div class="b-form__row b-form__row--flex"> 
+            <div class="b-form__cols b-form__cols--1" >
 
-              <fieldset>
-                <legend>Powerstats</legend>
-                <label for="intelligence">intelligence:</label>
-                <input type="number" id="intelligence" formControlName="intelligence" />
+                <label class="b-form__label" for="intelligence">intelligence:</label>
+                <input class="b-form__input b-form__input--stat" type="number" id="intelligence" formControlName="intelligence" />
                     <!-- Si el campo intelligence es invalido / ha sido tocado / submitted = true -->
                 <div *ngIf="!form.get('intelligence').valid &&
                     (form.get('intelligence').dirty || submitted)">
                   Has introducido mal tu raza
                 </div>
-                <label for="strength">strength:</label>
-                <input type="number" id="strength" formControlName="strength" />
+            </div>
+        
+            <div class="b-form__cols b-form__cols--1" >
+                <label class="b-form__label" for="strength">strength:</label>
+                <input class="b-form__input b-form__input--stat"type="number" id="strength" formControlName="strength" />
                     <!-- Si el campo strength es invalido / ha sido tocado / submitted = true -->
                 <div *ngIf="!form.get('strength').valid &&
                     (form.get('strength').dirty || submitted)">
                   Has introducido mal tu raza
                 </div>
-                <label for="speed">speed:</label>
-                <input type="number" id="speed" formControlName="speed" />
+            </div>
+        </div>
+        <div class="b-form__row b-form__row--flex"> 
+          <div class="b-form__cols b-form__cols--1" >
+                <label class="b-form__label" for="speed">speed:</label>
+                <input class="b-form__input b-form__input--stat" type="number" id="speed" formControlName="speed" />
                     <!-- Si el campo speed es invalido / ha sido tocado / submitted = true -->
                 <div *ngIf="!form.get('speed').valid &&
                     (form.get('speed').dirty || submitted)">
                   Has introducido mal tu raza
                 </div>
-                <label for="durability">durability:</label>
-                <input type="number" id="durability" formControlName="durability" />
+          </div>
+          <div class="b-form__cols b-form__cols--1" >
+                <label class="b-form__label" for="durability">durability:</label>
+                <input class="b-form__input b-form__input--stat" type="number" id="durability" formControlName="durability" />
                     <!-- Si el campo durability es invalido / ha sido tocado / submitted = true -->
                 <div *ngIf="!form.get('durability').valid &&
                     (form.get('durability').dirty || submitted)">
                   Has introducido mal tu raza
                 </div>
-                <label for="power">power:</label>
-                <input type="number" id="power" formControlName="power" />
+          </div>
+        </div>
+        <div class="b-form__row b-form__row--flex"> 
+          <div class="b-form__cols b-form__cols--1" >              
+                <label class="b-form__label" for="power">power:</label>
+                <input class="b-form__input b-form__input--stat" max="100" min="1" type="number" id="power" formControlName="power" />
                     <!-- Si el campo power es invalido / ha sido tocado / submitted = true -->
                 <div *ngIf="!form.get('power').valid &&
                     (form.get('power').dirty || submitted)">
                   Has introducido mal tu raza
                 </div>
-                <label for="combat">combat:</label>
-                <input type="number" id="combat" formControlName="combat" />
+          </div>
+          <div class="b-form__cols b-form__cols--1" >
+                <label class="b-form__label" for="combat">combat:</label>
+                <input class="b-form__input b-form__input--stat" type="number" id="combat" formControlName="combat" />
                     <!-- Si el campo combat es invalido / ha sido tocado / submitted = true -->
                 <div *ngIf="!form.get('combat').valid &&
                     (form.get('combat').dirty || submitted)">
                   Has introducido mal tu raza
                 </div>
+          </div>
+          </div>  
+        </div>     
 
-             
+        <button class="b-button__submit" type="submit" [disabled]="!form.valid">Submit</button>
 
-              </fieldset>
+     </fieldset>
 
-              <button type="submit" [disabled]="!form.valid">Submit</button>
+            
       
-</form>
+  </form>
+</div>

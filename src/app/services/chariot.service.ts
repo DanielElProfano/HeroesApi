@@ -1,4 +1,4 @@
-import { Label } from 'ng2-charts';
+
 import { Chariot } from './../pages/chariot/models/InterfaceChariot';
 import { InterfaceHeroDetail } from './../models/Interface-hero-general';
 import { HeroesService } from './heroes.service';
@@ -23,7 +23,7 @@ export class ChariotService {
   }
 
   public sendChariot(card: any){
-    debugger
+    
     this.exist = false;
     const data = JSON.parse(localStorage.getItem('items'))
     if(data.length === 0){

@@ -1,8 +1,13 @@
+@import url(http://fonts.googleapis.com/css?family=Laila:400,700);
+
 .b-form{
+    position: fixed;
 
     border: 1px solid lightblue;
     padding: 1rem;
     border-radius: 4px;
+    margin: 0;
+
     &__input{
 
         padding: 0.5rem;
@@ -18,8 +23,7 @@
         border: 1px solid lightgrey
     }
 
-
-
-
-
 }
+
+
+

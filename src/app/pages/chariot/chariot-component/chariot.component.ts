@@ -17,10 +17,10 @@ export class ChariotComponent implements OnInit {
   constructor(private heroesService: HeroesService) { }
 
   ngOnInit(): void {
-    debugger
+    
     this.data = JSON.parse(localStorage.getItem('items'))
     this.data.forEach(element => {
-      debugger
+      
          this.heroesService.getList(element.id).subscribe((result => {
 
      this.chariot.push(result);

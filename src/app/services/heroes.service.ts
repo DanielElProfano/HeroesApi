@@ -76,6 +76,7 @@ export class HeroesService {
     const fullName = 'full-name';
     const alterEgo ='alter-egos';
     const groupAffiliation ='group-affiliation';
+    debugger
     return this.http.get(Url).pipe(
       
         map((response: any) => {
@@ -104,6 +105,27 @@ export class HeroesService {
             groupAffiliation: response.connections[groupAffiliation],
             alterEgos: response.biography[alterEgo],
             alignment: response.biography.alignment,
+            //   id : response.id,
+            // name : response.name,
+            // gender : response.gender,
+            // race : response.race,
+            // weight : response.weight,
+            // image : response.image,
+            // intelligence : response.intelligence,
+            // strength: response.strength,
+            // speed: response.speed,
+            // durability: response.durability,
+            // power: response.power,
+            // combat :response.combat,
+            // height :response.height,
+            // base: response.work.base,
+            // fullName : response.fullName,
+            // groupAffiliation: response.groupAffiliation,
+            // alterEgos: response.alterEgo,
+            // alignment: response.alignment,
+            // eyeColor: response.eyeColor,
+            // hairColor: response.hairColor,
+            // occupation: response.occupation
                  
             }
           
@@ -150,6 +172,7 @@ export class HeroesService {
   }
 
   getPowerStats(id: number): Observable<InterfacePowerStats>{
+    debugger
     const Url = `https://www.superheroapi.com/api.php/10217431065143700/${id}`;
     return this.http.get(Url).pipe(
       
@@ -168,6 +191,14 @@ export class HeroesService {
             durability: response.powerstats.durability,
             power: response.powerstats.power,
             combat :response.powerstats.combat,
+            // id : response.id,
+            // name : response.name,
+            // intelligence : response.intelligence,
+            // strength: response.strength,
+            // speed: response.speed,
+            // durability: response.durability,
+            // power: response.power,
+            // combat :response.combat,
                  
             }
             
@@ -182,11 +213,7 @@ export class HeroesService {
   }
 
   
-  // pushFilter(filtrado: InterfaceFilteHeroes[]):void{
-
-  //   this.arrayFilter = filtrado;
-  // }
-  getfilterForm():Observable<InterfaceFilteHeroes[]>{
+  getfilterForm():Observable<InterfaceFilteHeroes[]>{  
     // const Url = `https://www.superheroapi.com/api.php/10217431065143700/${id}`;
     
     return this.http.get(`http://localhost:3000/allHeroes`).pipe(
@@ -206,7 +233,7 @@ export class HeroesService {
     )
   }
 
-  //  pushArray(array: InterfaceFilteHeroes){
+  //  pushArray(array: InterfaceFilteHeroes){  //SCRAPEA
 
   //   this.arrayFilter.push(array);
 
@@ -272,8 +299,10 @@ export class HeroesService {
 
   // }
 
-  public postNewHero(newHero: InterfaceHeroGeneral){
-    const Url = "http://localhost:3000/allHeros/"
+  public postNewHero(newHero: InterfaceHeroGeneral){ //se usa
+
+    debugger
+    const Url = "http://localhost:3000/allHeroes/"
     return this.http.post(Url, newHero).pipe(
       
         map((response: any) => {
@@ -325,6 +354,9 @@ export class HeroesService {
             groupAffiliation: response.connections[groupAffiliation],
             alterEgos: response.biography[alterEgo],
             alignment: response.biography.alignment,
+            // eyeColor: response.eyeColor,
+            // hairColor: response.hairColor,
+            // occupation: response.occupation
                  
             }
           
@@ -338,46 +370,5 @@ export class HeroesService {
     )
   }
 
-  getPrueba(id: number){
-    const Url = `https://www.superheroapi.com/api.php/10217431065143700/${id}`;
-    const fullName = 'full-name';
-    const alterEgo ='alter-egos';
-    const groupAffiliation ='group-affiliation';
-    
-    this.http.get(Url).subscribe(data => {
-      console.log(data);
-    });
-  }
-    // .pipe(
-      
-    //     map((response: any) => {
-   
-    //     if(!response){
-    //       throw new Error('Value expected!');
-    //     } else {
-        
-    //       const formatResult : InterfaceFilteHeroes = {
-
-    //         id : parseInt(response.id),
-    //         name : response.name,
-    //         image : response.image.url,
-    //         gender : response.appearance.gender,
-    //         intelligence :  parseInt(response.powerstats.intelligence),
-    //         strength: parseInt( response.powerstats.strength),
-    //         speed:  parseInt(response.powerstats.speed),
-    //         durability:  parseInt(response.powerstats.durability),
-    //         power:  parseInt(response.powerstats.power),
-    //         combat : parseInt(response.powerstats.combat),
-    //         alignment: response.biography.alignment,
-                 
-    //         }
-           
-    //         return formatResult;
-    //     }
-    //   }),
-    //     catchError((err)=>{
-    //     throw new Error(err.message);
-    //   })
-    // )
-  }
+   }
 

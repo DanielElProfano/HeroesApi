@@ -43,6 +43,9 @@ export interface InterfaceHeroDetail {
     groupAffiliation: string; 
     alterEgos: string;
     alignment : string;
+    // eyeColor : string;
+    // hairColor: string;
+    // occupation : string;
     
 }
 export interface InterfacePowerStats{

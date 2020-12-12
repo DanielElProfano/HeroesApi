@@ -4,9 +4,11 @@
     margin:0;
     position: relative;
     background-color: rgb(36, 55, 107);
-
+    z-index:10;
+  
+    
     display: column;
-    background-color: rgb(22, 29, 119);
+    background-color: rgba(22, 29, 119, 0.767);
     
     &__container{
         // position : fixed;
@@ -23,7 +25,9 @@
     }
     &__nav{
         display:flex;
-        background-color: rgb(30, 31, 102);
+        background-color: rgba(30, 31, 102, 0.904);
+        background-image: url("../../../assets/svg/kisspng-light-luminous-efficacy-technology-background-shading-5a6eab18e51f21.8344989515172022009385.png");
+        background-position: center;
         justify-content: space-between;
         
     }

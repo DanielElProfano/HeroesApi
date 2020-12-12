@@ -8620,6 +8620,52 @@
       "power": 60,
       "combat": 75,
       "alignment": "bad"
+    },
+    {
+      "id": "Daniel",
+      "name": "Daniel",
+      "gender": null,
+      "race": "Mago",
+      "image": "https://as.com/epik/imagenes/2017/10/22/portada/1508686067_541460_1508686626_noticia_normal.jpg",
+      "weight": null,
+      "intelligence": 100,
+      "strength": 100,
+      "speed": 100,
+      "durability": 100,
+      "power": 100,
+      "combat": 100,
+      "height": null,
+      "base": null,
+      "fullName": "Harry",
+      "groupAffiliation": null,
+      "alterEgos": null,
+      "alignment": "good",
+      "eyeColor": null,
+      "hairColor": null,
+      "occupation": "Daniel"
+    },
+    {
+      "id": "Hermione",
+      "name": "Hermione",
+      "gender": "",
+      "race": "Human",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRfhqlRhXRk-VVWdUIEykFOF5fYoLI4LIWihw&usqp=CAU",
+      "weight": "",
+      "intelligence": 100,
+      "strength": 100,
+      "speed": 100,
+      "durability": 100,
+      "power": 100,
+      "combat": 100,
+      "height": "",
+      "base": "",
+      "fullName": "Hermione",
+      "groupAffiliation": "",
+      "alterEgos": "",
+      "alignment": "good",
+      "eyeColor": "",
+      "hairColor": "",
+      "occupation": "Hermione"
     }
-   ]
+  ]
 }
