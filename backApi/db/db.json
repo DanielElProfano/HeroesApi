@@ -8624,7 +8624,7 @@
     {
       "id": 1000,
       "name": "Daniel",
-      "gender": null,
+      "gender": "male",
       "race": "Mago",
       "image": "https://as.com/epik/imagenes/2017/10/22/portada/1508686067_541460_1508686626_noticia_normal.jpg",
       "weight": null,
@@ -8647,7 +8647,7 @@
     {
       "id": 1001,
       "name": "Hermione",
-      "gender": "",
+      "gender": "female",
       "race": "Human",
       "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRfhqlRhXRk-VVWdUIEykFOF5fYoLI4LIWihw&usqp=CAU",
       "weight": "",
@@ -8670,7 +8670,7 @@
     {
       "id": 1002,
       "name": "añogijñsgi",
-      "gender": "",
+      "gender": "male",
       "race": "sdfñlkjlkj",
       "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQVknjZLF8i_HoqHQNSgNSAaPdovl9-EBeF-w&usqp=CAU",
       "weight": "",
@@ -8693,7 +8693,7 @@
     {
       "id": 1004,
       "name": "aslñdfkjasñlfj",
-      "gender": "",
+      "gender": "male",
       "race": "sñlfjgklñj",
       "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQVknjZLF8i_HoqHQNSgNSAaPdovl9-EBeF-w&usqp=CAU",
       "weight": "",
@@ -8716,7 +8716,7 @@
     {
       "id": 1006,
       "name": "pep",
-      "gender": "",
+      "gender": "male",
       "race": "sgkñljsfhj",
       "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQVknjZLF8i_HoqHQNSgNSAaPdovl9-EBeF-w&usqp=CAU",
       "weight": "",
@@ -8735,6 +8735,52 @@
       "eyeColor": "",
       "hairColor": "",
       "occupation": "pep"
+    },
+    {
+      "id": 1007,
+      "name": "Marcelilno",
+      "gender": "male",
+      "race": "humano",
+      "image": "https://as.com/epik/imagenes/2017/10/22/portada/1508686067_541460_1508686626_noticia_normal.jpg",
+      "weight": "",
+      "intelligence": 101,
+      "strength": 100,
+      "speed": 100,
+      "durability": 100,
+      "power": 100,
+      "combat": 100,
+      "height": "",
+      "base": "",
+      "fullName": "Pan ",
+      "groupAffiliation": "",
+      "alterEgos": "el niño dios",
+      "alignment": "good",
+      "eyeColor": "",
+      "hairColor": "",
+      "occupation": "Marcelilno"
+    },
+    {
+      "id": 1008,
+      "name": "Flash Tomson",
+      "gender": "male",
+      "race": "no se conoce",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR235JJkR01OfZMg2DsmeUoM6Fq5VzmtOkqkQ&usqp=CAU",
+      "weight": "",
+      "intelligence": 101,
+      "strength": 101,
+      "speed": 101,
+      "durability": 101,
+      "power": 101,
+      "combat": 101,
+      "height": "",
+      "base": "",
+      "fullName": "Flashito",
+      "groupAffiliation": "",
+      "alterEgos": "",
+      "alignment": "bad",
+      "eyeColor": "",
+      "hairColor": "",
+      "occupation": "Flash Tomson"
     }
   ]
 }

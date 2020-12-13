@@ -24,7 +24,7 @@ export class GraphComponent implements OnInit {
 
   public barChartData: ChartDataSets[] = [
     { data: [, , , , , , ], label: '' },
-    // { data: [,,,,,,], label: 'S' }
+ 
   ];
 
   public doughnutChartLabels: Label[] =  ['power', 'combat', 'durability', 'speed', 'strenght', 'Intelligence'];
@@ -44,23 +44,19 @@ console.log(this.charData);
    }
 
   ngOnInit(): void {
-    
-    console.log(this.barChartData)
+   
     Object.values(this.charData)
-    console.log(this.charData)
-
+ 
   }
   ngOnChanges(changes: SimpleChanges) {
     // changes.prop contains the old and the new value...
     this.changeGraph(this.charData)
-    
-
-     
-   
-    
+  
       }
-      changeGraph(chardat: any){
-        let data : any = [
+  changeGraph(chardat: any){
+
+    let data : any = [
+
           this.charData.power,
           this.charData.combat,
           this.charData.durability,
@@ -71,14 +67,8 @@ console.log(this.charData);
           this.barChartData[0].data = data;
           this.barChartData[0].label = this.charData.name;
           this.dataArray = data;
-    
-        
-
-
-      }
-
-  
   }
+}
   
 
 

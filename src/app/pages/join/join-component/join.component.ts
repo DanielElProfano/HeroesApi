@@ -22,8 +22,9 @@ export class JoinComponent implements OnInit {
       });
       debugger
       this.heroesService.getFaKeFilterForm().subscribe((result =>
-        localStorage.setItem('arrayHeroes', JSON.stringify(result))))
-    }
+        console.log(result)
+        ));
+      }
 
   }
 

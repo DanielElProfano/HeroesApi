@@ -15,25 +15,26 @@ export class StadisticsComponent implements OnInit {
   arrayHeroes : InterfaceHeroGeneral | any = []; //array que se pinta en el html
   personaje : InterfaceHeroDetail | any = {}; //detail del personaje.
   powerStats : InterfacePowerStats | any = {}; //datos de la gráfica.
-  arr
+  
 
   constructor(private heroesService: HeroesService, private chariotService: ChariotService) {
   
    }
 
   ngOnInit(): void {
-    
+    // this.localStorage();
     this.getListFakeApi();
   }
-  public localStorage(){
+//   public localStorage(){
          
-     this.heroesService.getFaKeFilterForm().subscribe((result) =>{ ///modificado
-    //  this.arrayAllHeroes = result
-     localStorage.setItem('arrayHeroes', JSON.stringify(result));
+//      this.heroesService.getFaKeFilterForm().subscribe((result) =>{ ///modificado
+//     //  this.arrayAllHeroes = result
+//     //  localStorage.setItem('arrayHeroes', JSON.stringify(result));
+//     localStorage.setItem('prueba', JSON.stringify(result));
       
-   });
+//    });
    
- }
+//  }
 
 private getListFakeApi(){
   for(let i= 1; i<=10; i++){
@@ -44,17 +45,17 @@ private getListFakeApi(){
   }
 
 }
-  private getListPowerStats(){
+  // private getListPowerStats(){
       
-    for(let i= 1; i<=10; i++){
+  //   for(let i= 1; i<=10; i++){
      
-      this.heroesService.getList(i).subscribe((result) => {
-      this.arrayHeroes.push(result);
-      });
+  //     this.heroesService.getList(i).subscribe((result) => {
+  //     this.arrayHeroes.push(result);
+  //     });
 
       
-    }
-  }
+  //   }
+  // }
 
 public setId(card:InterfaceEmmitOutput):void{   //si es Hire ataca al servicio del carrito.
     
@@ -70,7 +71,7 @@ public setId(card:InterfaceEmmitOutput):void{   //si es Hire ataca al servicio d
         }
 
       else{
-        
+      
        this.chariotService.sendChariot(card)
       }
 }

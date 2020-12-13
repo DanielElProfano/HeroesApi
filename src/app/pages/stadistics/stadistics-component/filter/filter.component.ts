@@ -4,10 +4,6 @@ import { HeroesService } from 'src/app/services/heroes.service';
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { FormGroup, FormBuilder } from '@angular/forms';
 import { IfilterForm, Alignment, powerStats } from './model/IfilterForm';
-import { stringify } from 'querystring';
-
-
-
 
 @Component({
   selector: 'app-filter',
@@ -30,6 +26,7 @@ export class FilterComponent implements OnInit {
   public heroesArray: any[]
   public arrayAllHeroes: InterfaceFilteHeroes[] = [];
   public recogeArray : InterfaceFilteHeroes[] = []
+
   constructor( private heroesService: HeroesService){ 
 
     this.heroesArray = [];
@@ -42,26 +39,20 @@ export class FilterComponent implements OnInit {
     
   }
   setForm(form: IfilterForm){ //Output del Form
-    this.filterForm(form);
-  this.recogeArray = JSON.parse(localStorage.getItem('arrayHeroes'))  //COMPROBAMOS SI EL LOCALSTORAGE ES VACIO
-  // if(this.recogeArray.length === 0){
-    this.filterForm(form);          //SI VACIO HACEMOS PETICION A LA API
-  // }
+    // this.filterForm(form);
+    this.heroesService.getFaKeFilterForm().subscribe((result) =>{ ///modificado
+      
+    
+       this.recogeArray = result
+        
+     });
   
   this.arrayResult= this.sortResult(this.recogeArray, form);
   if(this.arrayResult.length != 0){
     this.sendFilterHeroes(this.arrayResult)
   }
  }
-  public filterForm(form){
-         
-     this.heroesService.getFaKeFilterForm().subscribe((result) =>{ ///modificado
-    //  this.arrayAllHeroes = result
-     localStorage.setItem('arrayHeroes', JSON.stringify(result));
-      
-   });
-   
- }
+
  private sortArray(array: any, powerStat:string):any[]
  {  //oredena el array por powerStats.
     array.sort((a: any , b:any) => {
@@ -86,7 +77,7 @@ return array;
 
  }
   private sortResult(result: InterfaceFilteHeroes[], form: IfilterForm): any{
-   
+  
     this.arrayFilter = [];
     this.arrayResult = [];
    const alignment = form.alignment[0];

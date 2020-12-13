@@ -6,10 +6,8 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  // localArray : any[] = []
-  constructor(){
-    // localStorage.setItem('items', JSON.stringify(this.localArray))
-  }
+ 
+  constructor(){  }
   public sendToChariot(card){
     debugger
     console.log(card)

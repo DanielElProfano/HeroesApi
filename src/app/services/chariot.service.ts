@@ -13,7 +13,7 @@ import { map, catchError } from 'rxjs/operators';
 })
 export class ChariotService {
 
-  private enviarCardSubject = new Subject<number>();
+  private enviarCardSubject = new Subject<any>();
   enviarCardObservable = this.enviarCardSubject.asObservable();
   chariotCard : InterfaceHeroDetail[]
   localArray: any = []
@@ -23,7 +23,7 @@ export class ChariotService {
   }
 
   public sendChariot(card: any){
-    
+    debugger
     this.exist = false;
     const data = JSON.parse(localStorage.getItem('items'))
     if(data.length === 0){
@@ -56,7 +56,7 @@ export class ChariotService {
     data.push(card);
     let longitud: number =  data.length;
     localStorage.setItem('items', JSON.stringify(data));
-    this.enviarCardSubject.next(longitud)
+    this.enviarCardSubject.next("2")
 
   }
   public postHireHero(newHero: InterfaceHeroDetail){

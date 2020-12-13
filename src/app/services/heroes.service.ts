@@ -12,39 +12,39 @@ export class HeroesService {
 
   arrayFIlter : InterfaceFilteHeroes[];
   // private Url :string = 'https://pokeapi.co/api/v2/pokedex/1';
-  private Url :string = 'https://www.superheroapi.com/api.php/10217431065143700/1'
+  // private Url :string = 'https://www.superheroapi.com/api.php/10217431065143700/1'
   public heroes : InterfaceHeroGeneral | any = {}
   arrayFilter : InterfaceFilteHeroes[] = [];
 
   constructor(private http: HttpClient) {   }
 
-  getList(i: number):Observable<InterfaceHeroGeneral>{
-     const Url = `https://www.superheroapi.com/api.php/10217431065143700/${i}`;
+  // getList(i: number):Observable<InterfaceHeroGeneral>{
+  //    const Url = `https://www.superheroapi.com/api.php/10217431065143700/${i}`;
     
-    return this.http.get(Url).pipe(
+  //   return this.http.get(Url).pipe(
      
-        map((response: any) => {
+  //       map((response: any) => {
    
-        if(!response){
-          throw new Error('Value expected!');
-        } else {
+  //       if(!response){
+  //         throw new Error('Value expected!');
+  //       } else {
 
-        const formatResult : InterfaceHeroGeneral = {
-            name : response.name,
-            gender : response.appearance.gender,
-            alignment : response.biography.alignment,
-            image : response.image.url,
-            id : response.id,
+  //       const formatResult : InterfaceHeroGeneral = {
+  //           name : response.name,
+  //           gender : response.appearance.gender,
+  //           alignment : response.biography.alignment,
+  //           image : response.image.url,
+  //           id : response.id,
           
-            }
-        return formatResult;
-        }
-      }),
-        catchError((err)=>{
-        throw new Error(err.message);
-      })
-    )
-  }
+  //           }
+  //       return formatResult;
+  //       }
+  //     }),
+  //       catchError((err)=>{
+  //       throw new Error(err.message);
+  //     })
+  //   )
+  // }
   getFakeList(i: number):Observable<InterfaceHeroGeneral>{
     const Url = `http://localhost:3000/allHeroes/${i}`;
    return this.http.get(Url).pipe(
@@ -313,8 +313,7 @@ getFakeHeroDetail(id: number):Observable<InterfaceHeroDetail>{
 
   
   public getFaKeFilterForm():Observable<InterfaceFilteHeroes[]>{  
-    // const Url = `https://www.superheroapi.com/api.php/10217431065143700/${id}`;
-    
+       
     return this.http.get(`http://localhost:3000/allHeroes`).pipe(
       
         map((response: InterfaceFilteHeroes[]) => {

@@ -97,11 +97,11 @@
               </div>
             </div>
             <div class="b-form__cols b-form__cols--3">
-                <label class="b-form__label" for="eyeColor">Eye Color: </label>
-                <input class="b-form__input" placeholder="Color de ojos..." type="text" id="eyeColor" formControlName="eyeColor" />
-                    <!-- Si el campo eyeColor es invalido / ha sido tocado / submitted = true -->
-                <div *ngIf="!form.get('eyeColor').valid &&
-                    (form.get('eyeColor').dirty || submitted)">
+                <label class="b-form__label" for="gender">Gender: </label>
+                <input class="b-form__input" placeholder="Género..." type="text" id="gender" formControlName="gender" />
+                    <!-- Si el campo gender es invalido / ha sido tocado / submitted = true -->
+                <div *ngIf="!form.get('gender').valid &&
+                    (form.get('gender').dirty || submitted)">
               El color de ojos... por favor.
                 </div>
            </div>
