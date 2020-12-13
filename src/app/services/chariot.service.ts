@@ -23,9 +23,13 @@ export class ChariotService {
   }
 
   public sendChariot(card: any){
-    debugger
+  
     this.exist = false;
-    const data = JSON.parse(localStorage.getItem('items'))
+    let data = JSON.parse(localStorage.getItem('items'))
+    if(data === null){
+      data = [];
+      localStorage.setItem('items', JSON.stringify(data));
+    }
     if(data.length === 0){
 
       this.sendHeaderObservables(data,card);

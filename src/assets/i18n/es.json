@@ -1,0 +1,56 @@
+{
+
+    "principal.texto" : "Lista de frutas",
+    "principal.texto2" : "Lista2 de frutas",
+    "join" : "Únete",
+    "home": "Home",
+    "hire" : "Contrata",
+    "about" : "Sobre mi",
+    "home.title": "HEROES DE ALQUILER",
+    "home.label2" : "LA NUEVA FORMA DE SOLUCIONAR LOS PROBLEMAS",
+    "home.label3" : "ALQUILA A TU HEROE AHORA",
+
+    "joinus":
+        {
+            "title": "BIENVENIDO",
+            "label2" : "¡EN MUNDO TE NECESITA!",
+            "label3" : "Rellene este cuestionario y en seguida nos prondemos en contacto con usted"
+            } ,
+
+    "form":
+        {
+            "id": "ID",
+            "name":"NOMBRE",
+            "realName": "NOMBRE REAL",
+            "race": "RAZA",
+            "image": "IMAGEN",
+            "alterEgo": "ALTER EGO",
+            "occupation": "OCUPACION",
+            "alignment":"ALINEACION",
+            "gender": "GENERO",
+            "intelligence": "INTELIGENCIA",
+            "strength": "FUERZA",
+            "speed": "VELOCIDAD",
+            "durability": "DUREZA",
+            "power": "PODER",
+            "combat": "COMBATE"
+        },
+    "input":{
+
+        "id": "Introduce tu id.",
+        "name":"El de superhéroe.",
+        "realName": "Nombre real.",
+        "race": "Raza.",
+        "image": "Imagen.",
+        "alterEgo": "Alter ego.",
+        "occupation": "Ocupación.",
+        "alignment":"Alineación.",
+        "gender": "Genero.",
+        "bad": "Mal",
+        "good": "Bien",
+        "male": "Hombre",
+        "female": "Mujer"
+     
+    }    
+    
+}

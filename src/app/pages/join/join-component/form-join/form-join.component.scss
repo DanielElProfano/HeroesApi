@@ -45,11 +45,12 @@ $primary-form-color: black;
        
         display: inline-block;
         position: relative;
-        width: 100%;
+        width: 85%;
+        background: transparent;
         height: 27px;
         line-height: 27px;
         margin-left: 1rem;
-        border: none;
+        border: 1px solid lightslategray;
         outline: none;
         color: $primary-form-color;
         // color: #444;
@@ -72,24 +73,32 @@ $primary-form-color: black;
             margin: 0;
             padding-right: 1rem;
         }
+        &--id{
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+            border-radius: 50% ;
+        }
 
     }
     &__row{
 
-        margin: 0;
+    
         display: flex;
         flex-wrap: wrap;
+        width: 60%;
         &--column{
-            margin-top: 2rem;
-            margin-bottom: 2rem;
+            margin:0px;
             flex-direction: column;
             align-items: center;
+            width: 100%;
+
         
         }
         &--flex{
             display: flex;
             justify-content: center;
-            width: 75%;
+            width: 100%;
         }
     
     }
@@ -98,26 +107,40 @@ $primary-form-color: black;
         align-items: center;
         justify-content: center;
         border:none;
+        width: 30%;
         
     }
     &__cols{
         width: 33%;
-        box-shadow: 1px 1px #e4e4e4;
-        margin: 0;
+        background-color: #066b9a50;
+        box-shadow: 2px 2px 2px #e4e4e4;
+        border-radius: 8px;
+        margin: 6px;
         display: block;
         font-size: 13px;
         font-weight: bold;
         text-transform: uppercase;
         color: #939393;
         cursor: pointer;
+        padding-bottom: 6px;
 
         &--1{
-            width: 25%;
+            width: 23%;
             // border: 1px solid gray;
         }
         &--2{
 
-            width:33.3%
+            width:48%
+        }
+        &--id{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 10%;
+        }
+        &--3{
+            width: 46%;
         }
 
 
@@ -152,12 +175,12 @@ $primary-form-color: black;
 .b-button{
 
     &__submit{
-width: 100px;
-height: 50px;
-margin: 0;
-background-color: rgb(0, 100, 161);
-color: white;
-font-weight: 600;;
+            width: 100px;
+            height: 50px;
+            margin: 0;
+            background-color: rgb(0, 100, 161);
+            color: white;
+            font-weight: 600;;
 
 
 

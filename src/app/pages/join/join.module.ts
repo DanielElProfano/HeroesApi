@@ -5,6 +5,7 @@ import { JoinRoutingModule } from './join-routing.module';
 import { JoinComponent } from './join-component/join.component';
 import { FormJoinComponent } from './join-component/form-join/form-join.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { TranslateModule } from '@ngx-translate/core';
 
 
 @NgModule({
@@ -13,7 +14,9 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     CommonModule,
     JoinRoutingModule,
     ReactiveFormsModule,
-    FormsModule
+    FormsModule,
+    TranslateModule
+   
   ]
 })
 export class JoinModule { }

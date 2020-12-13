@@ -1,0 +1,51 @@
+{
+  "principal.texto" : "Lista de frutas",
+  "principal.texto2" : "Lista2 de frutas",
+  "join" : "Join us",
+  "home": "Home",
+  "hire" : "Hire",
+  "about" : "About",
+  "home.title": "HEROES FOR HIRE",
+  "home.label2" : "NEW WAY TO SOLVE SOMETHING ",
+  "home.label3" : "HIRE YOU HERO NOW",
+  "joinus":
+  {
+    "title": "Welcome",
+    "label2" : "People needs you!",
+    "label3" : "Help the people!"
+  },
+  "form":
+        {
+            "id": "ID",
+            "name":"NAME",
+            "realName": "REAL NAME",
+            "race": "RACE",
+            "image": "IMAGE",
+            "alterEgo": "ALTER EGO",
+            "occupation": "OCCUPATION",
+            "alignment":"ALIGNMENT",
+            "gender": "GENDER",
+            "intelligence": "INTELLIGENCE",
+            "strength": "STRENGTH",
+            "speed": "SPEED",
+            "durability": "DURABILITY",
+            "power": "POWER",
+            "combat": "COMBAT"
+        },
+        "input":{
+
+            "id": "Introduce your id.",
+            "name":"Superhero.",
+            "realName": "Real Name.",
+            "race": "Race.",
+            "image": "Image.",
+            "alterEgo": "Alter ego.",
+            "occupation": "Occupatión.",
+            "alignment":"alignment.",
+            "gender": "gender.",
+            "bad": "Bad",
+            "good": "Good",
+            "male": "Male",
+            "female": "Female"
+          }
+}

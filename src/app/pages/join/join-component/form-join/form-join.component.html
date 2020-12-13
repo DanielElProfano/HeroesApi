@@ -1,32 +1,27 @@
-<h1>BIENVENIDO </h1>
 
-<H2>EN MUNDO TE NECESITA</H2>
-
-<H3>Rellene este cuestionario y en seguida nos prondemos en contacto con usted</H3>
 
 <div class="main-container">
   <div class="b-form__img-comtainer">
     <img class="b-form__img-hero" src="../../../../../assets/svg/kisspng-james-montgomery-flagg-uncle-sam-united-states-pos-we-need-you-5b0c4104dcc598.0397425815275297329043.png">
   </div>
     <form class="b-form" novalidate (ngSubmit)="onSubmit()" [formGroup]="form">
-    <!-- //************************ NAME  -->
-
-
+   
       <fieldset class="b-form__personal">
-       
+        <div class="b-form__cols b-form__cols--id" >
 
-           <label class="b-form__label" for="id">ID</label>
-            <input class="b-form__input" placeholder="Introduce tu id."type="number" id="id" formControlName="id" />
+            <label class="b-form__label" for="id">{{ 'form.id' | translate }}</label>
+            <input class="b-form__input b-form__input--id" placeholder="{{ 'input.id' | translate }}"type="number" id="id" formControlName="id" />
               
             <div *ngIf="!form.get('id').valid &&
                 (form.get('id').dirty || submitted)">
                 Has introducido mal tu id
             </div> 
+        </div>
           <div class= "b-form__row">
             <div class="b-form__cols b-form__cols--1" >
 
-              <label class="b-form__label" for="name">Nombre:</label>
-              <input class="b-form__input" placeholder=" Introduce tu nombre de superhéroe.."type="text" id="name" formControlName="name" />
+              <label class="b-form__label" for="name">{{ 'form.name' | translate }}:</label>
+              <input class="b-form__input" placeholder="{{ 'input.name' | translate }}"type="text" id="name" formControlName="name" />
                 
               <div *ngIf="!form.get('name').valid &&
                   (form.get('name').dirty || submitted)">
@@ -34,8 +29,8 @@
               </div>
             </div>
             <div class="b-form__cols b-form__cols--1">
-              <label class="b-form__label" for="fullName">Real name: </label>
-              <input class="b-form__input"  placeholder=" Introduce tu nombre real.." type="text" id="fullName" formControlName="fullName" />
+              <label class="b-form__label" for="fullName">{{ 'form.realName' | translate }} </label>
+              <input class="b-form__input"  placeholder="{{ 'input.realName' | translate }}" type="text" id="fullName" formControlName="fullName" />
                   <!-- Si el campo fullName es invalido / ha sido tocado / submitted = true -->
               <div *ngIf="!form.get('fullName').valid &&
                   (form.get('fullName').dirty || submitted)">
@@ -45,8 +40,8 @@
         
     
           <div class="b-form__cols b-form__cols--1">
-              <label class="b-form__label " for="race">Raza: </label>
-              <input class="b-form__input" placeholder="¿De que especie eres?" type="text" id="race" formControlName="race" />
+              <label class="b-form__label " for="race">{{ 'form.race' | translate }} </label>
+              <input class="b-form__input" placeholder="{{ 'input.race' | translate }}" type="text" id="race" formControlName="race" />
                   <!-- Si el campo race es invalido / ha sido tocado / submitted = true -->
               <div *ngIf="!form.get('race').valid &&
                   (form.get('race').dirty || submitted)">
@@ -57,8 +52,8 @@
 
           <div class="b-form__cols b-form__cols--1">
           
-            <label class="b-form__label" for="image">Imagen:</label>
-            <input class="b-form__input" placeholder="Introduce una imagen..." type="text" id="image" formControlName="image" />
+            <label class="b-form__label" for="image">{{ 'form.image' | translate }}</label>
+            <input class="b-form__input" placeholder="{{ 'input.image' | translate }}" type="text" id="image" formControlName="image" />
                 <!-- Si el campo image es invalido / ha sido tocado / submitted = true -->
             <div *ngIf="!form.get('image').valid &&
                 (form.get('image').dirty || submitted)">
@@ -70,126 +65,111 @@
         
             
            <div class="b-form__cols b-form__cols--2">
-              <label class="b-form__label" for="alterEgos">Alter egos:</label>
-              <input class="b-form__input" placeholder="¿Cual es tu Alter Ego?" type="text" id="alterEgos" formControlName="alterEgos" />
+              <label class="b-form__label" for="alterEgos">{{ 'form.alterEgo' | translate }}</label>
+              <input class="b-form__input" placeholder="{{ 'input.alterEgo' | translate }}" type="text" id="alterEgos" formControlName="alterEgos" />
               <!-- Si el campo alterEgos es invalido / ha sido tocado / submitted = true -->
               <div *ngIf="!form.get('alterEgos').valid &&
                   (form.get('alterEgos').dirty || submitted)">
                   Has introducido mal tu raza
               </div>
             </div>
+           
             <div class="b-form__cols b-form__cols--2">
-                <label class="b-form__label" for="alignment">Alignment: </label>
-                <input class="b-form__input" placeholder="Alineamiento" type="text" id="alignment" formControlName="alignment" />
-                    <!-- Si el campo alignment es invalido / ha sido tocado / submitted = true -->
-                <div *ngIf="!form.get('alignment').valid &&
-                    (form.get('alignment').dirty || submitted)">
-                  Has introducido mal tu raza
-                </div>
-            </div>
-            <div class="b-form__cols b-form__cols--2">
-              <label class="b-form__label" for="occupation">Occupation:</label>
-              <input class="b-form__input" placeholder="¿Que haces cuando no estás salvando el mundo?" type="text" id="occupation" formControlName="occupation" />
+              <label class="b-form__label" for="occupation">{{ 'form.occupation' | translate }}</label>
+              <input class="b-form__input" placeholder="{{ 'input.occupation' | translate }}" type="text" id="occupation" formControlName="occupation" />
                   <!-- Si el campo occupation es invalido / ha sido tocado / submitted = true -->
               <div *ngIf="!form.get('occupation').valid &&
                   (form.get('occupation').dirty || submitted)">
                 Has introducido mal tu Occupation.
               </div>
             </div>
-            <div class="b-form__cols b-form__cols--3">
-                <label class="b-form__label" for="gender">Gender: </label>
-                <input class="b-form__input" placeholder="Género..." type="text" id="gender" formControlName="gender" />
-                    <!-- Si el campo gender es invalido / ha sido tocado / submitted = true -->
-                <div *ngIf="!form.get('gender').valid &&
-                    (form.get('gender').dirty || submitted)">
-              El color de ojos... por favor.
-                </div>
-           </div>
-           <div class="b-form__cols b-form__cols--3">
-                <label  class="b-form__label" for="occupation">Hair color:</label>
-                <input class="b-form__input" placeholder="Color de pelo..."type="text" id="hairColor" formControlName="hairColor" />
-                    <!-- Si el campo hairColor es invalido / ha sido tocado / submitted = true -->
-                <div *ngIf="!form.get('hairColor').valid &&
-                    (form.get('hairColor').dirty || submitted)">
-                  Has introducido mal tu raza
-                </div>
-             </div> 
-
-            
-          </div>
+            <div class="b-form__cols b-form__cols--2">
+              <input  class="form__radioButton" type="radio" id="good1" name="good" value="good" formControlName="alignment">
+              <label class="form__radio" for="good1">{{ 'input.good' | translate }}</label><br>
+              <input class="form__radioButton" type="radio" id="bad1" name="bad" value="bad" formControlName="alignment">
+              <label  class="form__radio" for="bad1">{{ 'input.bad' | translate }}</label><br>
+             </div>
+          
+            <div class="b-form__cols b-form__cols--2">
+              <input  class="form__radioButton" type="radio" id="male1" name="male" value="male" formControlName="gender">
+              <label class="form__radio" for="male1">{{ 'input.male' | translate }}</label><br>
+              <input class="form__radioButton" type="radio" id="female1" name="female" value="female" formControlName="gender">
+              <label  class="form__radio" for="female1">{{ 'input.female' | translate }}</label><br>
               
-     </fieldset>
-     <fieldset class="b-form__powerstats">
-        <div class="b-form__row b-form__row--column">
-          <div class="b-form__row b-form__row--flex"> 
-            <div class="b-form__cols b-form__cols--1" >
-
-                <label class="b-form__label" for="intelligence">intelligence:</label>
-                <input class="b-form__input b-form__input--stat" type="number" id="intelligence" formControlName="intelligence" />
-                    <!-- Si el campo intelligence es invalido / ha sido tocado / submitted = true -->
-                <div *ngIf="!form.get('intelligence').valid &&
-                    (form.get('intelligence').dirty || submitted)">
-                  Has introducido mal tu raza
-                </div>
             </div>
-        
-            <div class="b-form__cols b-form__cols--1" >
-                <label class="b-form__label" for="strength">strength:</label>
-                <input class="b-form__input b-form__input--stat"type="number" id="strength" formControlName="strength" />
-                    <!-- Si el campo strength es invalido / ha sido tocado / submitted = true -->
-                <div *ngIf="!form.get('strength').valid &&
-                    (form.get('strength').dirty || submitted)">
-                  Has introducido mal tu raza
+          </div> 
+      <fieldset class="b-form__powerstats">
+            <div class="b-form__row b-form__row--column">
+              <div class="b-form__row b-form__row--flex"> 
+                <div class="b-form__cols b-form__cols--3" >
+    
+                    <label class="b-form__label" for="intelligence">{{ 'form.intelligence' | translate }}</label>
+                    <input class="b-form__input b-form__input--stat" type="number" id="intelligence" formControlName="intelligence" />
+                        <!-- Si el campo intelligence es invalido / ha sido tocado / submitted = true -->
+                    <div *ngIf="!form.get('intelligence').valid &&
+                        (form.get('intelligence').dirty || submitted)">
+                      Has introducido mal tu raza
+                    </div>
                 </div>
-            </div>
-        </div>
-        <div class="b-form__row b-form__row--flex"> 
-          <div class="b-form__cols b-form__cols--1" >
-                <label class="b-form__label" for="speed">speed:</label>
-                <input class="b-form__input b-form__input--stat" type="number" id="speed" formControlName="speed" />
-                    <!-- Si el campo speed es invalido / ha sido tocado / submitted = true -->
-                <div *ngIf="!form.get('speed').valid &&
-                    (form.get('speed').dirty || submitted)">
-                  Has introducido mal tu raza
-                </div>
-          </div>
-          <div class="b-form__cols b-form__cols--1" >
-                <label class="b-form__label" for="durability">durability:</label>
-                <input class="b-form__input b-form__input--stat" type="number" id="durability" formControlName="durability" />
-                    <!-- Si el campo durability es invalido / ha sido tocado / submitted = true -->
-                <div *ngIf="!form.get('durability').valid &&
-                    (form.get('durability').dirty || submitted)">
-                  Has introducido mal tu raza
-                </div>
-          </div>
-        </div>
-        <div class="b-form__row b-form__row--flex"> 
-          <div class="b-form__cols b-form__cols--1" >              
-                <label class="b-form__label" for="power">power:</label>
-                <input class="b-form__input b-form__input--stat" max="100" min="1" type="number" id="power" formControlName="power" />
-                    <!-- Si el campo power es invalido / ha sido tocado / submitted = true -->
-                <div *ngIf="!form.get('power').valid &&
-                    (form.get('power').dirty || submitted)">
-                  Has introducido mal tu raza
-                </div>
-          </div>
-          <div class="b-form__cols b-form__cols--1" >
-                <label class="b-form__label" for="combat">combat:</label>
-                <input class="b-form__input b-form__input--stat" type="number" id="combat" formControlName="combat" />
-                    <!-- Si el campo combat es invalido / ha sido tocado / submitted = true -->
-                <div *ngIf="!form.get('combat').valid &&
-                    (form.get('combat').dirty || submitted)">
-                  Has introducido mal tu raza
-                </div>
-          </div>
-          </div>  
-        </div>     
-
-        <button class="b-button__submit" type="submit" [disabled]="!form.valid">Submit</button>
-
-     </fieldset>
-
             
+                <div class="b-form__cols b-form__cols--3" >
+                    <label class="b-form__label" for="strength">{{ 'form.strength' | translate }}</label>
+                    <input class="b-form__input b-form__input--stat"type="number" id="strength" formControlName="strength" />
+                        <!-- Si el campo strength es invalido / ha sido tocado / submitted = true -->
+                    <div *ngIf="!form.get('strength').valid &&
+                        (form.get('strength').dirty || submitted)">
+                      Has introducido mal tu raza
+                    </div>
+                </div>
+            </div>
+            <div class="b-form__row b-form__row--flex"> 
+              <div class="b-form__cols b-form__cols--3" >
+                    <label class="b-form__label" for="speed">{{ 'form.speed' | translate }}</label>
+                    <input class="b-form__input b-form__input--stat" type="number" id="speed" formControlName="speed" />
+                        <!-- Si el campo speed es invalido / ha sido tocado / submitted = true -->
+                    <div *ngIf="!form.get('speed').valid &&
+                        (form.get('speed').dirty || submitted)">
+                      Has introducido mal tu raza
+                    </div>
+              </div>
+              <div class="b-form__cols b-form__cols--3" >
+                    <label class="b-form__label" for="durability">{{ 'form.durability' | translate }}</label>
+                    <input class="b-form__input b-form__input--stat" type="number" id="durability" formControlName="durability" />
+                        <!-- Si el campo durability es invalido / ha sido tocado / submitted = true -->
+                    <div *ngIf="!form.get('durability').valid &&
+                        (form.get('durability').dirty || submitted)">
+                      Has introducido mal tu raza
+                    </div>
+              </div>
+            </div>
+            <div class="b-form__row b-form__row--flex"> 
+              <div class="b-form__cols b-form__cols--3" >              
+                    <label class="b-form__label" for="power">{{ 'form.power' | translate }}</label>
+                    <input class="b-form__input b-form__input--stat" max="100" min="1" type="number" id="power" formControlName="power" />
+                        <!-- Si el campo power es invalido / ha sido tocado / submitted = true -->
+                    <div *ngIf="!form.get('power').valid &&
+                        (form.get('power').dirty || submitted)">
+                      Has introducido mal tu raza
+                    </div>
+              </div>
+              <div class="b-form__cols b-form__cols--3" >
+                    <label class="b-form__label" for="combat">{{ 'form.combat' | translate }}</label>
+                    <input class="b-form__input b-form__input--stat" type="number" id="combat" formControlName="combat" />
+                        <!-- Si el campo combat es invalido / ha sido tocado / submitted = true -->
+                    <div *ngIf="!form.get('combat').valid &&
+                        (form.get('combat').dirty || submitted)">
+                      Has introducido mal tu raza
+                    </div>
+              </div>
+              </div>  
+            </div>     
+      </fieldset>
+           
+      </fieldset>
+    
+
+     <button class="" type="submit" [disabled]="!form.valid">Submit</button>
+
       
   </form>
 </div>
