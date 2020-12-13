@@ -1,5 +1,5 @@
-import { identifierModuleUrl } from '@angular/compiler';
-import { Component, OnInit, SimpleChanges } from '@angular/core';
+import { TranslateService } from '@ngx-translate/core';
+import { Component, OnInit, SimpleChanges, NgZone} from '@angular/core';
 import { HeroesService } from 'src/app/services/heroes.service';
 import { ChariotService} from '../../services/chariot.service'
 
@@ -14,24 +14,19 @@ export class HeaderComponent implements OnInit {
   id : number;
   chariotCard : any[] = [];
   lottie : AnimationItem;
-  constructor(private chariotService: ChariotService, private heroesService: HeroesService) { }
+  constructor(private translateService:TranslateService, private chariotService: ChariotService, private heroesService: HeroesService,private ngZone: NgZone) { }
 
 
   animationCreated(animationItem: AnimationItem): void {
    
-    
     this.lottie = animationItem;
-    
-
-    this.lottie.loop = false;
+    this.lottie.loop = true;
     this.lottie.autoplay = false;
-    this.lottie.name = "hola";
-    // this.lottie.goToAndPlay(100);
-  
-    console.log(animationItem);
-  }
+    this.lottie.name = "carro";
+   }
   options: AnimationOptions = {
-    path: 'https://assets8.lottiefiles.com/packages/lf20_7hjpog67.json'
+    
+    path: "../../../assets/Lottie/lf30_editor_habfsubh.json"
   };
   ngOnInit(): void {
  
@@ -44,35 +39,46 @@ export class HeaderComponent implements OnInit {
       this.id = response;	 
       const data = JSON.parse(localStorage.getItem('items'))
       this.id = data.length
-    })
+      this.play();
+  })
      
       this.animationCreated(this.lottie);
   }
 
- 
     ngOnChanges(changes: SimpleChanges): void
   {
-    const data = JSON.parse(localStorage.getItem('items'))
-      this.id = data.length
+      const data = JSON.parse(localStorage.getItem('items'))
+      this.id = data.length;
+      this.play();
 
   }
   
-
-  loopComplete(event){
+  public loopComplete(event){
   
+    console.log("loop");
+    this.ngZone.runOutsideAngular(() => this.lottie.stop());
    
   }
-  deleteChariotHero(){
-
-    this.chariotService.deleteHireHero(10).subscribe((result =>{
-      console.log(result);
-    }));
-  }
-  findIdInChariot(id : number){
-    this.heroesService.getHeroChariot(id).subscribe((response => {
-     console.log(response);
+  private stop(): void {
+    this.ngZone.runOutsideAngular(() => this.lottie.stop());
     
-    }))
-
   }
+ 
+  private play(): void {
+    this.ngZone.runOutsideAngular(() => this.lottie.play());
+ 
+  }
+  // deleteChariotHero(){
+
+  //   this.chariotService.deleteHireHero(10).subscribe((result =>{
+  //     console.log(result);
+  //   }));
+  // }
+  // findIdInChariot(id : number){
+  //   this.heroesService.getHeroChariot(id).subscribe((response => {
+  //    console.log(response);
+    
+  //   }))
+
+  // }
 }
