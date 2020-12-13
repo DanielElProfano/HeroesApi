@@ -15,7 +15,7 @@ export class StadisticsComponent implements OnInit {
   arrayHeroes : InterfaceHeroGeneral | any = []; //array que se pinta en el html
   personaje : InterfaceHeroDetail | any = {}; //detail del personaje.
   powerStats : InterfacePowerStats | any = {}; //datos de la gráfica.
-
+  arr
 
   constructor(private heroesService: HeroesService, private chariotService: ChariotService) {
   
@@ -23,12 +23,17 @@ export class StadisticsComponent implements OnInit {
 
   ngOnInit(): void {
     
-     this.getListPowerStats();
-    //  this.postea()
-    // this.getListFakeApi();
-  
+    this.getListFakeApi();
   }
-
+  public localStorage(){
+         
+     this.heroesService.getFaKeFilterForm().subscribe((result) =>{ ///modificado
+    //  this.arrayAllHeroes = result
+     localStorage.setItem('arrayHeroes', JSON.stringify(result));
+      
+   });
+   
+ }
 
 private getListFakeApi(){
   for(let i= 1; i<=10; i++){
@@ -36,8 +41,6 @@ private getListFakeApi(){
     this.heroesService.getFakeList(i).subscribe((result) => {
     this.arrayHeroes.push(result);
     });
-
-    
   }
 
 }
@@ -54,12 +57,12 @@ private getListFakeApi(){
   }
 
 public setId(card:InterfaceEmmitOutput):void{   //si es Hire ataca al servicio del carrito.
-    debugger
+    
     
      if(card.origenHire === false){
    
-        this.heroesService.getPowerStats(card.id).subscribe((result) =>{
-          debugger
+        this.heroesService.getFakePowerStats(card.id).subscribe((result) =>{
+          
           this.powerStats = result;
           this.getDetail(card.id);
     
@@ -82,7 +85,8 @@ public setFilterArray(array: InterfaceHeroGeneral[]):void{  ///output del Filter
 
   getDetail(id:number):void{
     
-    this.heroesService.getHeroDetail(id).subscribe((result) =>{
+    this.heroesService.getFakeHeroDetail(id).subscribe((result) =>{
+      debugger
       this.personaje = result;
       this.showDetails = true
       

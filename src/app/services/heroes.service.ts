@@ -18,7 +18,7 @@ export class HeroesService {
 
   constructor(private http: HttpClient) {   }
 
-  getList(i: number){
+  getList(i: number):Observable<InterfaceHeroGeneral>{
      const Url = `https://www.superheroapi.com/api.php/10217431065143700/${i}`;
     
     return this.http.get(Url).pipe(
@@ -45,8 +45,8 @@ export class HeroesService {
       })
     )
   }
-  getFakeList(i: number){
-    const Url = `http://localhost:3000/hero/${i}`;
+  getFakeList(i: number):Observable<InterfaceHeroGeneral>{
+    const Url = `http://localhost:3000/allHeroes/${i}`;
    return this.http.get(Url).pipe(
      
        map((response: any) => {
@@ -71,12 +71,111 @@ export class HeroesService {
      })
    )
  }
+ getFakePowerStats(id: number): Observable<InterfacePowerStats>{
+  
+  const Url = `http://localhost:3000/allHeroes/${id}`;
+  return this.http.get(Url).pipe(
+    
+      map((response: any) => {
+ 
+      if(!response){
+        throw new Error('Value expected!');
+      } else {
+          const formatResult : InterfacePowerStats = {
+
+          // id : response.id,
+          // name : response.name,
+          // intelligence : response.powerstats.intelligence,
+          // strength: response.powerstats.strength,
+          // speed: response.powerstats.speed,
+          // durability: response.powerstats.durability,
+          // power: response.powerstats.power,
+          // combat :response.powerstats.combat,
+          id : response.id,
+          name : response.name,
+          intelligence : response.intelligence,
+          strength: response.strength,
+          speed: response.speed,
+          durability: response.durability,
+          power: response.power,
+          combat :response.combat,
+               
+          }
+          
+      return formatResult;
+       
+      }
+    }),
+      catchError((err)=>{
+      throw new Error(err.message);
+    })
+  )
+}
+getFakeHeroDetail(id: number):Observable<InterfaceHeroDetail>{
+  const Url = `http://localhost:3000/allHeroes/${id}`;
+ 
+    return this.http.get(Url).pipe(
+        map((response: any) => {
+       if(!response){
+        throw new Error('Value expected!');
+      } else {
+      
+          const formatResult : InterfaceHeroDetail = {
+
+          // id : response.id,
+          // name : response.name,
+          // gender : response.appearance.gender,
+          // race : response.appearance.race,
+          // weight : response.appearance.weight,
+          // image : response.image.url,
+          // intelligence : response.powerstats.intelligence,
+          // strength: response.powerstats.strength,
+          // speed: response.powerstats.speed,
+          // durability: response.powerstats.durability,
+          // power: response.powerstats.power,
+          // combat :response.powerstats.combat,
+          // height :response.appearance.height,
+          // base: response.work.base,
+          // fullName : response.biography[fullName],
+          // groupAffiliation: response.connections[groupAffiliation],
+          // alterEgos: response.biography[alterEgo],
+          // alignment: response.biography.alignment,
+          id : response.id,
+          name : response.name,
+          gender : response.gender,
+          race : response.race,
+          weight : response.weight,
+          image : response.image,
+          intelligence : response.intelligence,
+          strength: response.strength,
+          speed: response.speed,
+          durability: response.durability,
+          power: response.power,
+          combat :response.combat,
+          height :response.height,
+          base: response.base,
+          fullName : response.fullName,
+          groupAffiliation: response.groupAffiliation,
+          alterEgos: response.alterEgo,
+          alignment: response.alignment,
+        
+               
+      }
+        
+      return formatResult;
+      }
+    }),
+      catchError((err)=>{
+      throw new Error(err.message);
+    })
+  )
+}
   getHeroDetail(id: number){
     const Url = `https://www.superheroapi.com/api.php/10217431065143700/${id}`;
     const fullName = 'full-name';
     const alterEgo ='alter-egos';
     const groupAffiliation ='group-affiliation';
-    debugger
+    
     return this.http.get(Url).pipe(
       
         map((response: any) => {
@@ -172,7 +271,7 @@ export class HeroesService {
   }
 
   getPowerStats(id: number): Observable<InterfacePowerStats>{
-    debugger
+    
     const Url = `https://www.superheroapi.com/api.php/10217431065143700/${id}`;
     return this.http.get(Url).pipe(
       
@@ -213,7 +312,7 @@ export class HeroesService {
   }
 
   
-  getfilterForm():Observable<InterfaceFilteHeroes[]>{  
+  public getFaKeFilterForm():Observable<InterfaceFilteHeroes[]>{  
     // const Url = `https://www.superheroapi.com/api.php/10217431065143700/${id}`;
     
     return this.http.get(`http://localhost:3000/allHeroes`).pipe(
@@ -301,7 +400,7 @@ export class HeroesService {
 
   public postNewHero(newHero: InterfaceHeroGeneral){ //se usa
 
-    debugger
+    
     const Url = "http://localhost:3000/allHeroes/"
     return this.http.post(Url, newHero).pipe(
       

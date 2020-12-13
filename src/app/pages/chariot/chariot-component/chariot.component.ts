@@ -21,7 +21,7 @@ export class ChariotComponent implements OnInit {
     this.data = JSON.parse(localStorage.getItem('items'))
     this.data.forEach(element => {
       
-         this.heroesService.getList(element.id).subscribe((result => {
+         this.heroesService.getFakeList(element.id).subscribe((result => {
 
      this.chariot.push(result);
     }))

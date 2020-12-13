@@ -47,25 +47,16 @@ export class FilterComponent implements OnInit {
   // if(this.recogeArray.length === 0){
     this.filterForm(form);          //SI VACIO HACEMOS PETICION A LA API
   // }
-  debugger
+  
   this.arrayResult= this.sortResult(this.recogeArray, form);
   if(this.arrayResult.length != 0){
     this.sendFilterHeroes(this.arrayResult)
   }
-    // setTimeout(() => {
-    
-    //   this.arrayFilter = null
-    //   this.arrayResult = null
-    //   this.arrayResult= this.sortResult(this.recogeArray, form); ///filtrado del array
-    //   this.sendFilterHeroes(this.arrayResult)
-    //   console.log(this.recogeArray)
-    // }, 5000);
-    
-}
+ }
   public filterForm(form){
-    debugger     
-     this.heroesService.getfilterForm().subscribe((result) =>{ ///modificado
-     this.arrayAllHeroes = result
+         
+     this.heroesService.getFaKeFilterForm().subscribe((result) =>{ ///modificado
+    //  this.arrayAllHeroes = result
      localStorage.setItem('arrayHeroes', JSON.stringify(result));
       
    });

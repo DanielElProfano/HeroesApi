@@ -20,6 +20,9 @@ export class JoinComponent implements OnInit {
        ( data:InterfaceJoin)=> {
          console.log(data)
       });
+      debugger
+      this.heroesService.getFaKeFilterForm().subscribe((result =>
+        localStorage.setItem('arrayHeroes', JSON.stringify(result))))
     }
 
   }

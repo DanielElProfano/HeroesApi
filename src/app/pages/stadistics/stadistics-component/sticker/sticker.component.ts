@@ -43,7 +43,7 @@ export class StickerComponent implements OnInit {
     if(event.srcElement.innerHTML ==='Hire'){
       this.emmitCard.origenHire = true;
     }
-    debugger
+    
     this.emmitId.emit(this.emmitCard);
   }
 
@@ -62,7 +62,7 @@ export class StickerComponent implements OnInit {
     let id = this.iterator;
     for(let i = id; i<=this.nextPost; i++){
       
-      this.heroesService.getList(i).subscribe((result) => {
+      this.heroesService.getFakeList(i).subscribe((result) => {
       this.arrayHeroe.push(result);
       
     });
