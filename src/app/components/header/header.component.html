@@ -18,7 +18,9 @@
                     <img class="b-chariot__img" src="{{char.image}}" alt="">
                 
                 </div>
-                {{this.id}}
+                </div>
+             <div class="b-chariot">
+               
                 <a href ="" role="button" routerLink="/chariot">
                 <ng-lottie 
                 name = "hola"
@@ -28,6 +30,7 @@
                 (loopComplete)="loopComplete($event)"
                 (animationCreated)="animationCreated($event)"
                 ></ng-lottie></a>
+                <span>{{this.id}}</span>
               
             </div>
          </nav>

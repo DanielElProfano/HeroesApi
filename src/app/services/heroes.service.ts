@@ -313,7 +313,7 @@ getFakeHeroDetail(id: number):Observable<InterfaceHeroDetail>{
 
   
   public getFaKeFilterForm():Observable<InterfaceFilteHeroes[]>{  
-       
+   
     return this.http.get(`http://localhost:3000/allHeroes`).pipe(
       
         map((response: InterfaceFilteHeroes[]) => {

@@ -1,9 +1,10 @@
-import { InterfaceJoin } from './../../../join/models/InterfaceJoin';
+
 import { InterfaceFilteHeroes, InterfaceHeroDetail, InterfaceHeroGeneral} from './../../../../models/Interface-hero-general';
 import { HeroesService } from 'src/app/services/heroes.service';
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { FormGroup, FormBuilder } from '@angular/forms';
 import { IfilterForm, Alignment, powerStats } from './model/IfilterForm';
+
 
 @Component({
   selector: 'app-filter',
@@ -34,24 +35,33 @@ export class FilterComponent implements OnInit {
 
   ngOnInit(): void {}
   sendFilterHeroes(array: InterfaceHeroGeneral[]){
-   
+  
     this.emmitArray.emit(array);
     
   }
   setForm(form: IfilterForm){ //Output del Form
     // this.filterForm(form);
-    this.heroesService.getFaKeFilterForm().subscribe((result) =>{ ///modificado
+
+
+      this.heroesService.getFaKeFilterForm().subscribe((result) =>{ ///modificado
       
-    
+     
        this.recogeArray = result
+      
+        this.arrayResult= this.sortResult(this.recogeArray, form)
+         
+      ;
         
      });
   
-  this.arrayResult= this.sortResult(this.recogeArray, form);
+setTimeout(() => {
   if(this.arrayResult.length != 0){
     this.sendFilterHeroes(this.arrayResult)
   }
- }
+  
+}, 1000);
+  
+}
 
  private sortArray(array: any, powerStat:string):any[]
  {  //oredena el array por powerStats.
@@ -177,6 +187,7 @@ return array;
     console.log(this.arrayFilter)
    
     return this.arrayFilter;
+   
     }
 public pushArray(result: InterfaceFilteHeroes){
       
@@ -184,4 +195,13 @@ public pushArray(result: InterfaceFilteHeroes){
     this.arrayFilter.push(filtrado);
     
   }
+ 
+  
+  
+
+  
+  
+
+  
+  
 }

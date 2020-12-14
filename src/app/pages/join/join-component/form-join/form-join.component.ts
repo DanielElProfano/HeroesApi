@@ -1,4 +1,4 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
 import { InterfaceJoin } from '../../models/InterfaceJoin';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 @Component({
@@ -12,6 +12,7 @@ export class FormJoinComponent implements OnInit {
 
 public form: FormGroup;
 public submitted = false;
+@Input() public showModal: boolean = false;
 
 sendForm(newHero: InterfaceJoin){
 
@@ -49,8 +50,10 @@ sendForm(newHero: InterfaceJoin){
   }
 
   onSubmit():void{
-    debugger
+    
     this.submitted= true;
+    this.showModal = true;
+    debugger
 
     if(this.form.valid){
 

@@ -173,3 +173,13 @@
       
   </form>
 </div>
+{{ showModal }}
+<app-modal [(showModal)]="showModal">
+  <div class="modal-header">
+    <h2>Formulario Heroes</h2>
+  </div>
+  <div class="modal-body">
+    <p class="modal-body-message">Heroe creado con exito</p>
+    <button routerLink="/stadistics">Volver al listado</button>
+  </div>
+</app-modal>

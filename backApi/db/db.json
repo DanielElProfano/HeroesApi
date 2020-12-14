@@ -1,213 +1,6 @@
 {
   "chariot": [
-    {
-      "id": "7",
-      "name": "Adam Monroe",
-      "gender": "Male",
-      "race": "null",
-      "weight": [
-        "- lb",
-        "0 kg"
-      ],
-      "image": "https://www.superherodb.com/pictures2/portraits/10/100/1026.jpg",
-      "intelligence": "63",
-      "strength": "10",
-      "speed": "12",
-      "durability": "100",
-      "power": "100",
-      "combat": "64",
-      "height": [
-        "-",
-        "0 cm"
-      ],
-      "base": "U.S.; formerly Diedenshausen, Germany; Milan, Italy; Paris, France; Japan; England; Atlanta, GA; Montreal, Canada",
-      "fullName": "",
-      "groupAffiliation": "-",
-      "alterEgos": "No alter egos found.",
-      "alignment": "good"
-    },
-    {
-      "id": "6",
-      "name": "Absorbing Man",
-      "gender": "Male",
-      "race": "Human",
-      "weight": [
-        "270 lb",
-        "122 kg"
-      ],
-      "image": "https://www.superherodb.com/pictures2/portraits/10/100/1448.jpg",
-      "intelligence": "38",
-      "strength": "80",
-      "speed": "25",
-      "durability": "100",
-      "power": "98",
-      "combat": "64",
-      "height": [
-        "6'4",
-        "193 cm"
-      ],
-      "base": "-",
-      "fullName": "Carl Creel",
-      "groupAffiliation": "Masters of Evil, Lethal Legion; formerly Worthy, Frightful Four: former agent of Loki and They Who Wield Power",
-      "alterEgos": "No alter egos found.",
-      "alignment": "bad"
-    },
-    {
-      "id": "10",
-      "name": "Agent Bob",
-      "gender": "Male",
-      "race": "Human",
-      "weight": [
-        "181 lb",
-        "81 kg"
-      ],
-      "image": "https://www.superherodb.com/pictures2/portraits/10/100/10255.jpg",
-      "intelligence": "10",
-      "strength": "8",
-      "speed": "13",
-      "durability": "5",
-      "power": "5",
-      "combat": "20",
-      "height": [
-        "5'10",
-        "178 cm"
-      ],
-      "base": "Mobile; formerly Manhattan, Hellcarrier",
-      "fullName": "Bob",
-      "groupAffiliation": "A.I.M., Deadpool; formerly Agency X, Hydra",
-      "alterEgos": "No alter egos found.",
-      "alignment": "good"
-    },
-    {
-      "id": "5",
-      "name": "Abraxas",
-      "gender": "Male",
-      "race": "Cosmic Entity",
-      "weight": [
-        "- lb",
-        "0 kg"
-      ],
-      "image": "https://www.superherodb.com/pictures2/portraits/10/100/181.jpg",
-      "intelligence": "88",
-      "strength": "63",
-      "speed": "83",
-      "durability": "100",
-      "power": "100",
-      "combat": "55",
-      "height": [
-        "-",
-        "0 cm"
-      ],
-      "base": "-",
-      "fullName": "Abraxas",
-      "groupAffiliation": "Cosmic Beings",
-      "alterEgos": "No alter egos found.",
-      "alignment": "bad"
-    },
-    {
-      "id": "4",
-      "name": "Abomination",
-      "gender": "Male",
-      "race": "Human / Radiation",
-      "weight": [
-        "980 lb",
-        "441 kg"
-      ],
-      "image": "https://www.superherodb.com/pictures2/portraits/10/100/1.jpg",
-      "intelligence": "63",
-      "strength": "80",
-      "speed": "53",
-      "durability": "90",
-      "power": "62",
-      "combat": "95",
-      "height": [
-        "6'8",
-        "203 cm"
-      ],
-      "base": "Mobile",
-      "fullName": "Emil Blonsky",
-      "groupAffiliation": "former member of the crew of the Andromeda Starship, ally of the Abominations and Forgotten",
-      "alterEgos": "No alter egos found.",
-      "alignment": "bad"
-    },
-    {
-      "id": "1",
-      "name": "A-Bomb",
-      "gender": "Male",
-      "race": "Human",
-      "weight": [
-        "980 lb",
-        "441 kg"
-      ],
-      "image": "https://www.superherodb.com/pictures2/portraits/10/100/10060.jpg",
-      "intelligence": "38",
-      "strength": "100",
-      "speed": "17",
-      "durability": "80",
-      "power": "24",
-      "combat": "64",
-      "height": [
-        "6'8",
-        "203 cm"
-      ],
-      "base": "-",
-      "fullName": "Richard Milhouse Jones",
-      "groupAffiliation": "Hulk Family; Excelsior (sponsor), Avengers (honorary member); formerly partner of the Hulk, Captain America and Captain Marvel; Teen Brigade; ally of Rom",
-      "alterEgos": "No alter egos found.",
-      "alignment": "good"
-    },
-    {
-      "id": "2",
-      "name": "Abe Sapien",
-      "gender": "Male",
-      "race": "Icthyo Sapien",
-      "weight": [
-        "145 lb",
-        "65 kg"
-      ],
-      "image": "https://www.superherodb.com/pictures2/portraits/10/100/956.jpg",
-      "intelligence": "88",
-      "strength": "28",
-      "speed": "35",
-      "durability": "65",
-      "power": "100",
-      "combat": "85",
-      "height": [
-        "6'3",
-        "191 cm"
-      ],
-      "base": "-",
-      "fullName": "Abraham Sapien",
-      "groupAffiliation": "Bureau for Paranormal Research and Defense",
-      "alterEgos": "No alter egos found.",
-      "alignment": "good"
-    },
-    {
-      "id": "3",
-      "name": "Abin Sur",
-      "gender": "Male",
-      "race": "Ungaran",
-      "weight": [
-        "200 lb",
-        "90 kg"
-      ],
-      "image": "https://www.superherodb.com/pictures2/portraits/10/100/1460.jpg",
-      "intelligence": "50",
-      "strength": "90",
-      "speed": "53",
-      "durability": "64",
-      "power": "99",
-      "combat": "65",
-      "height": [
-        "6'1",
-        "185 cm"
-      ],
-      "base": "Oa",
-      "fullName": "",
-      "groupAffiliation": "Green Lantern Corps, Black Lantern Corps",
-      "alterEgos": "No alter egos found.",
-      "alignment": "good"
-    }
+    {}
   ],
   "allHeroes": [
     {
@@ -8781,6 +8574,29 @@
       "eyeColor": "",
       "hairColor": "",
       "occupation": "Flash Tomson"
+    },
+    {
+      "id": 1009,
+      "name": "",
+      "gender": "",
+      "race": "",
+      "image": "",
+      "weight": "",
+      "intelligence": "",
+      "strength": "",
+      "speed": "",
+      "durability": "",
+      "power": "",
+      "combat": "",
+      "height": "",
+      "base": "",
+      "fullName": "",
+      "groupAffiliation": "",
+      "alterEgos": "",
+      "alignment": "",
+      "eyeColor": "",
+      "hairColor": "",
+      "occupation": ""
     }
   ]
 }
