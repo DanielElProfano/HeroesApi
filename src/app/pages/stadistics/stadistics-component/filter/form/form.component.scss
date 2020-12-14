@@ -2,11 +2,12 @@
 
 .b-form{
     position: fixed;
-
-    border: 1px solid lightblue;
+    width:300px;
+    border: 1px solid lightslategray;
     padding: 1rem;
     border-radius: 4px;
     margin: 0;
+   
 
     &__input{
 
@@ -20,7 +21,19 @@
     &__legend{
 
         padding: 1rem;
-        border: 1px solid lightgrey
+        border: none;
+    }
+    &__field{
+        border:none;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+       &--radio{
+        margin: 1rem 0;
+        display:flex;
+        flex-direction: row;
+       }
     }
 
 }

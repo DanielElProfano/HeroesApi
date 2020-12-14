@@ -40,17 +40,10 @@ export class FilterComponent implements OnInit {
     
   }
   setForm(form: IfilterForm){ //Output del Form
-    // this.filterForm(form);
-
-
+  
       this.heroesService.getFaKeFilterForm().subscribe((result) =>{ ///modificado
-      
-     
-       this.recogeArray = result
-      
-        this.arrayResult= this.sortResult(this.recogeArray, form)
-         
-      ;
+      this.recogeArray = result
+      this.arrayResult= this.sortResult(this.recogeArray, form);
         
      });
   

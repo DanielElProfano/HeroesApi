@@ -127,12 +127,12 @@ $primary-form-color: black;
         padding-bottom: 6px;
 
         &--1{
-            width: 23%;
+           min-width: 23%;
             // border: 1px solid gray;
         }
         &--2{
 
-            width:48%
+            min-width:48%
         }
         &--id{
             display: flex;
@@ -142,7 +142,7 @@ $primary-form-color: black;
             width: 10%;
         }
         &--3{
-            width: 46%;
+            min-width: 46%;
         }
 
 

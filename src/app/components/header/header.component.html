@@ -13,32 +13,24 @@
                     <a href="" role="button" routerLink="/stadistics" class="header__menu-options">{{ 'hire' | translate }}</a>
                     <a href="" role="button" routerLink="/join" class="header__menu-options">{{ 'join' | translate }}</a>
                 </div>
-                <div class="b-chariot">
-                <div *ngFor = "let char of chariotCard">
-                    <img class="b-chariot__img" src="{{char.image}}" alt="">
-                
-                </div>
-                </div>
              <div class="b-chariot">
                
-                <a href ="" role="button" routerLink="/chariot">
-                <ng-lottie 
+                <a class="b-chariot__ref" href ="" role="button" routerLink="/chariot">
+                <ng-lottie  class="b-chariot__lottie"
                 name = "hola"
                 width="100px"
                 height="70px"
                 [options]="options" 
                 (loopComplete)="loopComplete($event)"
                 (animationCreated)="animationCreated($event)"
+             
                 ></ng-lottie></a>
-                <span>{{this.id}}</span>
+                <span class="b-chariot__number">{{this.id}}</span>
+              
               
             </div>
          </nav>
-           
-       
-                
-               
-          
+ 
         </div>
     </div>
 </div>

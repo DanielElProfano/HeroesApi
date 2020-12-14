@@ -3,11 +3,20 @@ import { Component, EventEmitter, Input, OnInit, Output, SimpleChanges } from '@
 import { HeroesService } from 'src/app/services/heroes.service';
 import { InterfaceHeroGeneral, InterfaceFilteHeroes, InterfaceEmmitOutput } from './../../../../models/Interface-hero-general';
 import { NgxSpinnerService } from 'ngx-spinner';
+import { animate, style, transition, trigger } from '@angular/animations';
 
 @Component({
   selector: 'app-sticker',
   templateUrl: './sticker.component.html',
-  styleUrls: ['./sticker.component.scss']
+  styleUrls: ['./sticker.component.scss'],
+  animations: [
+    trigger('myInsertRemoveTrigger', [
+      transition('void => *', [
+        style({ opacity: 0 }),
+        animate('300ms', style({ opacity: 1 })),
+      ]),
+     ]),
+  ],
 })
 export class StickerComponent implements OnInit {
 

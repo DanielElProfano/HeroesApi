@@ -24,7 +24,6 @@
        }
 
        &__container{
-        // position: fixed;
         display: flex;
         justify-content: left;
         flex-direction: column;
@@ -46,7 +45,7 @@
 
        &__description{
         word-wrap: break-word;
-        // position:fixed;
+      
    
         margin:1rem 0
        }

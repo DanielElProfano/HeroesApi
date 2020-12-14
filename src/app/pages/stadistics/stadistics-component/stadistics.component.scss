@@ -18,16 +18,22 @@
     .b-filter{
        
         width:20%;
+        position:relative;
+     
       
     }
     .b-gallery{
         width:50%;
         display: flex;
         flex-direction: column;
+        border-right: 1px solid black;
+        border-left: 1px solid black;
+        background-color: rgba(255, 0, 0, 0.61);
     }
 .b-graphics{
     margin: 0;
     width: 100%;
+ 
 }
     
        

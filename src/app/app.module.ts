@@ -11,7 +11,6 @@ import {TranslateHttpLoader} from '@ngx-translate/http-loader';
 
 import { LottieModule } from 'ngx-lottie';
 import player from 'lottie-web';
-
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { TranslationComponent } from './components/translation/translation.component';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
@@ -20,6 +19,7 @@ import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 export function createTranslateLoader(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
 }
+
 export function playerFactory() {
   return player;
 }
@@ -35,6 +35,7 @@ export function playerFactory() {
     AppRoutingModule,
     HttpClientModule,
     BrowserAnimationsModule,
+  
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,

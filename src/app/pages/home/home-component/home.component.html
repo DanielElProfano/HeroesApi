@@ -8,3 +8,18 @@
 
 
 </div>
+
+
+
+    
+
+<swiper class="b-swiper"[config]="config">
+    <div *ngFor="let slide of slides">
+        <div fxLayout="colum" fxLayoutAlign="center center">
+            <img class="b-swiper__img" src="{{ slide }}">
+
+        </div>
+    
+    </div>
+ </swiper>  
+

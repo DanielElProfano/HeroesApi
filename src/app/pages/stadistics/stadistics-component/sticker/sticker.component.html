@@ -12,7 +12,7 @@
             <div class="b-stats__gallery" *ngFor="let hero of arrayHeroe"  >
                  
                         
-                   <div  id="{{hero.id}}" class="b-stats__stick" [ngClass]="{
+                   <div   @myInsertRemoveTrigger id="{{hero.id}}" class="b-stats__stick" [ngClass]="{
                         'colorBlue': hero.alignment === 'good', 
                         'colorRed': hero.alignment === 'bad'}">
                         <div class="b-stats__img-container">
