@@ -1,10 +1,16 @@
+$text-primary-color: rgb(9, 9, 77);
+$text-secunday-color: rgb(220,0,0);
+$text-normal:rgb(100,100,100);
+
+
 .b-home{
-width: 100vw;
+width: 100%;
 
 background-image: url('../../../../assets/svg/fondo.svg');
 display:flex;
 flex-direction: column;
 align-items: center;
+object-fit: cover;
 
 
     &__title{
@@ -13,9 +19,9 @@ align-items: center;
         color: white;
 
         &--sub{
-
+            font-family:"Oswald", sans-serif;
             font-size: 2rem;
-            color: yellowgreen;
+            color: $text-primary-color;
         }
 
     }
@@ -35,10 +41,27 @@ align-items: center;
         height: 550px;
     }
     &__footer{
+        font-family:"Oswald", sans-serif;
         font-size: 2rem;
-        color: rgb(175, 196, 134);
+        color: $text-primary-color;
 
     }
 
 }
 
+.b-swiper__img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center center;
+}
+
+.b{
+    width: 100%;
+    height: 100%;
+}
+.b-swiper-container{
+    width: 100%;
+    height: 100%;
+
+}

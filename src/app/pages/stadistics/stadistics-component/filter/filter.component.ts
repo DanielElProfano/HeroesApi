@@ -39,9 +39,9 @@ export class FilterComponent implements OnInit {
     this.emmitArray.emit(array);
     
   }
-  setForm(form: IfilterForm){ //Output del Form
+  setForm(form: IfilterForm){ //Output del Formulario
   
-      this.heroesService.getFaKeFilterForm().subscribe((result) =>{ ///modificado
+      this.heroesService.getFaKeFilterForm().subscribe((result) =>{ //llamada al servicio
       this.recogeArray = result
       this.arrayResult= this.sortResult(this.recogeArray, form);
         
@@ -52,8 +52,7 @@ setTimeout(() => {
     this.sendFilterHeroes(this.arrayResult)
   }
   
-}, 1000);
-  
+  }, 1000);
 }
 
  private sortArray(array: any, powerStat:string):any[]
@@ -81,8 +80,19 @@ return array;
  }
   private sortResult(result: InterfaceFilteHeroes[], form: IfilterForm): any{
   
+ 
     this.arrayFilter = [];
     this.arrayResult = [];
+    if(form.powerStats === null){
+        form.powerStats = undefined;
+        form.powerStats= "";
+    }
+    if(form.sex === null){
+        form.sex = undefined
+    }
+    if(form.alignment === null){
+      form.alignment = "";
+    }
    const alignment = form.alignment[0];
    const sex = form.sex;
    const powerStats = form.powerStats[0];

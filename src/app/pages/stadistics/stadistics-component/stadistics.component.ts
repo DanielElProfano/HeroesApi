@@ -59,20 +59,19 @@ private getListFakeApi(){
 
 public setId(card:InterfaceEmmitOutput):void{   //si es Hire ataca al servicio del carrito.
     
+     
+     if(card.origenHire === true || card.fire === true){
     
-     if(card.origenHire === false){
-   
-        this.heroesService.getFakePowerStats(card.id).subscribe((result) =>{
+      this.chariotService.sendChariot(card)
+  
+     }else{
+          this.heroesService.getFakePowerStats(card.id).subscribe((result) =>{
           
           this.powerStats = result;
           this.getDetail(card.id);
     
           });
-        }
-
-      else{
-      
-       this.chariotService.sendChariot(card)
+       
       }
 }
 public setFilterArray(array: InterfaceHeroGeneral[]):void{  ///output del Filter.
@@ -87,9 +86,8 @@ public setFilterArray(array: InterfaceHeroGeneral[]):void{  ///output del Filter
   getDetail(id:number):void{
     
     this.heroesService.getFakeHeroDetail(id).subscribe((result) =>{
-      debugger
-      this.personaje = result;
-      this.showDetails = true
+    this.personaje = result;
+    this.showDetails = true
       
     })
   }

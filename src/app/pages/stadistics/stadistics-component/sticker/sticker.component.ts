@@ -34,16 +34,26 @@ export class StickerComponent implements OnInit {
   constructor(private spinner : NgxSpinnerService, private heroesService:HeroesService) {} 
 
   ngOnInit(): void {}
+  public fireHero(event: any):void{
+    this.emmitCard.fire = true
+
+  }
      
-  getId(event: any):void{
+  public getId(event: any):void{
    
-    this.emmitCard.origenHire = false;
+    
+   
     this.emmitCard.id = parseInt(event.target.id,10);
-    if(event.srcElement.innerHTML ==='Hire'){
+    
+    if (event.srcElement.innerHTML ==='Fire' || event.srcElement.innerHTML ==='Despide'){
+        this.emmitCard.fire = true;
+    }
+    if(event.srcElement.innerHTML ==='Hire' ||event.srcElement.innerHTML ==='Contrata' ){
       this.emmitCard.origenHire = true;
     }
     this.emmitId.emit(this.emmitCard);
-    
+    this.emmitCard.fire = false;
+    this.emmitCard.origenHire = false;
   }
   public hireFunction(event){
   

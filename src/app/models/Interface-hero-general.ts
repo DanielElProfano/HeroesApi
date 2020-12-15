@@ -63,5 +63,6 @@ export interface InterfacePowerStats{
 export interface InterfaceEmmitOutput{
     id: number;
     origenHire: boolean;
+    fire: boolean;
 
 }

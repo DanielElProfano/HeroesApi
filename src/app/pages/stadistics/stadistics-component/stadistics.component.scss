@@ -3,7 +3,7 @@
     width: 100%;
     display:flex;
     justify-content: space-between;
-    margin-top: 10rem;
+    margin-top: 4rem;
     
     
         &__container{
@@ -17,7 +17,7 @@
     }
     .b-filter{
        
-        width:20%;
+        width:0%;
         position:relative;
      
       
@@ -28,12 +28,18 @@
         flex-direction: column;
         border-right: 1px solid black;
         border-left: 1px solid black;
-        background-color: rgba(255, 0, 0, 0.61);
+        margin: 0px;
+        margin-left: 360px;
+        // background-color: rgba(255, 0, 0, 0.61);
     }
 .b-graphics{
     margin: 0;
-    width: 100%;
+    width: 90%;
  
+}
+.b-detail{
+    margin:0;
+    width:90%
 }
     
        

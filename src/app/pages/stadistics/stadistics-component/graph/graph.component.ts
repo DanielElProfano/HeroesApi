@@ -45,7 +45,8 @@ console.log(this.charData);
 
   ngOnInit(): void {
    
-    Object.values(this.charData)
+    // Object.values(this.charData)
+    this.barChartData[0].label = "Haz click sobre un superhéroe"
  
   }
   ngOnChanges(changes: SimpleChanges) {

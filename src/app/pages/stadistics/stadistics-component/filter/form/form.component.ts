@@ -50,6 +50,7 @@ export class FormComponent implements OnInit {
     if(this.form.valid){
       
       const filter: IfilterForm = {
+     
       sex: this.form.get('sex').value,
       powerStats: this.form.get('powerStats').value,
       alignment: this.form.get('alignment').value

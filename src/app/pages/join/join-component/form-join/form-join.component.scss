@@ -25,7 +25,7 @@ $primary-form-color: black;
 
     .b-form{
     border-radius: 12px;
-    background: (255,255,255,0.3);
+    background-color: rgba(255, 255, 255, 0.432);
     display: block;
     border: 2px solid $primary-form-color;
     margin: 4rem;
@@ -77,8 +77,8 @@ $primary-form-color: black;
            
             font-size: 2rem;
             text-align: center;
-            margin: 0;
-            padding-right: 1rem;
+            width: 70px;
+            margin:0;
         }
         &--id{
             display: flex;
@@ -93,7 +93,9 @@ $primary-form-color: black;
     
         display: flex;
         flex-wrap: wrap;
+        justify-content: center;
         width: 60%;
+        margin:0;
         &--column{
             margin:0px;
             flex-direction: column;
@@ -106,6 +108,7 @@ $primary-form-color: black;
             display: flex;
             justify-content: center;
             width: 100%;
+            margin:0;
         }
     
     }
@@ -114,7 +117,9 @@ $primary-form-color: black;
         align-items: center;
         justify-content: center;
         border:none;
-        width: 30%;
+        min-width: 30%;
+        
+        margin:0;
         
     }
     &__cols{
@@ -132,12 +137,14 @@ $primary-form-color: black;
         padding-bottom: 6px;
 
         &--1{
-           min-width: 23%;
+           width: 90%;
+           display:flex;
+           flex-direction: column;
             // border: 1px solid gray;
         }
         &--2{
 
-            min-width:48%
+            width:90%
         }
         &--id{
             display: flex;
@@ -147,7 +154,11 @@ $primary-form-color: black;
             width: 10%;
         }
         &--3{
-            min-width: 46%;
+            width: 90%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
         }
 
 
@@ -156,8 +167,11 @@ $primary-form-color: black;
 
         border: none;
         display: flex;
+        flex-wrap: wrap;
+        justify-content: left;
     }
     &__label{
+        margin: 0;
         display: inline-block;
         position: relative;
         height: 27px;

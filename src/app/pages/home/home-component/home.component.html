@@ -3,9 +3,10 @@
     <div class="b-home__title">{{'home.title'| translate}}</div>
     <div class="b-home__title b-home__title--sub">{{'home.label2'| translate}}</div>
     <div class="b-home__img-container">
-        <swiper class="b-swiper"[config]="config">
+        <swiper [config]="config">
             <div *ngFor="let slide of slides">
-                <div fxLayout="colum" fxLayoutAlign="center center">
+                <div class="b-swiper-container" fxLayout="colum" fxLayoutAlign="center center" fxFlexFill>
+                    
                     <img class="b-swiper__img" src="{{ slide }}">
         
                 </div>

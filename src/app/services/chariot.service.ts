@@ -25,29 +25,36 @@ export class ChariotService {
   public sendChariot(card: any){
   
     this.exist = false;
+    
     let data = JSON.parse(localStorage.getItem('items'))
     if(data === null){
       data = [];
       localStorage.setItem('items', JSON.stringify(data));
     }
-    if(data.length === 0){
+    if(data.length === 0 && card.origenHire === true){
 
       this.sendHeaderObservables(data,card);
 
     }else{
-
-        data.forEach(element => {
+        
+        data.forEach((element, index ) => {
           
         if(card.id === element.id){ //comprobamos si existe en el carrito.
-          
-            this.exist = true;
-            console.log("existe")
-            alert("existe ya en el carrito")
-            
+            if(card.fire === true){
+              data.splice(index, 1) //elilmino posición
+              this.exist = true;
+              localStorage.setItem('items', JSON.stringify(data));
+              this.enviarCardSubject.next(data)
+              
+            }else{
+              this.exist = true;
+              console.log("existe")
+              alert("existe ya en el carrito")
+            }
           }
         });
 
-        if(!this.exist){
+        if(!this.exist && card.origenHire === true){
 
           this.sendHeaderObservables(data,card);
 
@@ -60,7 +67,7 @@ export class ChariotService {
     data.push(card);
     let longitud: number =  data.length;
     localStorage.setItem('items', JSON.stringify(data));
-    this.enviarCardSubject.next("2")
+    this.enviarCardSubject.next(data)
 
   }
   public postHireHero(newHero: InterfaceHeroDetail){
@@ -74,14 +81,12 @@ export class ChariotService {
         } else {
           return response;
         }
-        
-      }),
+    }),
       catchError((err)=>{
         console.log("error: "+err)
         debugger
         if(err.status = 500){
-          alert("No puede agregarlo, ya esta en el carrito");
-          
+          alert("No puede agregarlo, ya esta en el carrito");       
         }
       throw new Error(err.message);
     })
