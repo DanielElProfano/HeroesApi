@@ -3,7 +3,15 @@
     <div class="b-home__title">{{'home.title'| translate}}</div>
     <div class="b-home__title b-home__title--sub">{{'home.label2'| translate}}</div>
     <div class="b-home__img-container">
-        <img class="b-home__img" src="../../../../assets/Fi-M-The-Justice-League-Of-America-480i60.jpg">   </div>
+        <swiper class="b-swiper"[config]="config">
+            <div *ngFor="let slide of slides">
+                <div fxLayout="colum" fxLayoutAlign="center center">
+                    <img class="b-swiper__img" src="{{ slide }}">
+        
+                </div>
+            
+            </div>
+         </swiper>  
     <div class="b-home__footer">{{'home.label3'| translate}}</div>
 
 
@@ -13,13 +21,5 @@
 
     
 
-<swiper class="b-swiper"[config]="config">
-    <div *ngFor="let slide of slides">
-        <div fxLayout="colum" fxLayoutAlign="center center">
-            <img class="b-swiper__img" src="{{ slide }}">
 
-        </div>
-    
-    </div>
- </swiper>  
 
