@@ -22,9 +22,9 @@ export class JoinComponent implements OnInit {
          console.log(data)
       });
       debugger
-      this.heroesService.getFaKeFilterForm().subscribe((result =>
-        console.log(result)
-        ));
+      // this.heroesService.getFaKeFilterForm().subscribe((result =>
+      //   console.log(result)
+      //   ));
       }
 
   }

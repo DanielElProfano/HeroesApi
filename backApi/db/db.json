@@ -8643,6 +8643,29 @@
       "eyeColor": "",
       "hairColor": "",
       "occupation": "Modificado"
+    },
+    {
+      "id": 1012,
+      "name": "",
+      "gender": "",
+      "race": "",
+      "image": "",
+      "weight": "",
+      "intelligence": "",
+      "strength": "",
+      "speed": "",
+      "durability": "",
+      "power": "",
+      "combat": "",
+      "height": "",
+      "base": "",
+      "fullName": "",
+      "groupAffiliation": "",
+      "alterEgos": "",
+      "alignment": "",
+      "eyeColor": "",
+      "hairColor": "",
+      "occupation": ""
     }
   ]
 }

@@ -31,6 +31,14 @@ export class ChariotComponent implements OnInit {
   
   }
 
+  public modifyHero(event: any){
+      let id = Number((event.target.id).substr(6));
+
+
+      console.log (id)
+
+  }
+
 
 
 }

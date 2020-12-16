@@ -17,7 +17,7 @@ $primary-form-color: black;
     justify-content: space-between;
     width: 90%;
     align-items: center;
-    background-image: url("../../../../../assets/svg/kisspng-vector-graphics-computer-icons-royalty-free-stock-web-ct-on-emaze-5bea17ddc24854.0910227315420681897958.png");
+  
     background-size: cover;
     background-position: right;
   
@@ -94,7 +94,7 @@ $primary-form-color: black;
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
-        width: 60%;
+        width: 55%;
         margin:0;
         &--column{
             margin:0px;
@@ -137,14 +137,14 @@ $primary-form-color: black;
         padding-bottom: 6px;
 
         &--1{
-           width: 90%;
+           width: 100%;
            display:flex;
            flex-direction: column;
             // border: 1px solid gray;
         }
         &--2{
 
-            width:90%
+            width:100%
         }
         &--id{
             display: flex;
@@ -168,7 +168,8 @@ $primary-form-color: black;
         border: none;
         display: flex;
         flex-wrap: wrap;
-        justify-content: left;
+        justify-content: center;
+        width: 100%;
     }
     &__label{
         margin: 0;
@@ -206,4 +207,38 @@ $primary-form-color: black;
 
 
     }
-}}
+}
+}
+@media screen and (max-width: 1200px) {
+    .b-form__row{
+        width: 90% !important;
+    }
+    .b-form__powerstats{
+        width: 90%;
+    }
+    .main-container{
+        align-items: normal ;
+    }
+    .b-form__img-hero{
+        height: 420px !important;
+    }
+  }
+
+  @media (max-width: 992px) {
+    .b-form__img-comtainer{
+        display:none;
+    }
+
+    }
+    @media (min-width: 768px) {
+       
+     }
+     @media (max-width: 576px) {
+      .main-container{
+          width: 100% !important;
+
+      }
+      .b-form{
+        margin:1rem
+    }
+     }

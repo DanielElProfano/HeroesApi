@@ -44,7 +44,7 @@ export class FilterComponent implements OnInit {
       this.heroesService.getFaKeFilterForm().subscribe((result) =>{ //llamada al servicio
       this.recogeArray = result
       this.arrayResult= this.sortResult(this.recogeArray, form);
-        
+      
      });
   
 setTimeout(() => {
@@ -79,7 +79,7 @@ return array;
 
  }
   private sortResult(result: InterfaceFilteHeroes[], form: IfilterForm): any{
-  
+  debugger
  
     this.arrayFilter = [];
     this.arrayResult = [];
@@ -184,9 +184,13 @@ return array;
               }
           }
     }
+
+    
   });
-
-
+    if(alignment === undefined && sex === undefined){
+      return array;
+    }
+    console.log(array);
     console.log(this.arrayFilter)
    
     return this.arrayFilter;

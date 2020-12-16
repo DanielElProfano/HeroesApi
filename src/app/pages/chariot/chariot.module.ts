@@ -3,10 +3,11 @@ import { CommonModule } from '@angular/common';
 
 import { ChariotRoutingModule } from './chariot-routing.module';
 import { ChariotComponent } from './chariot-component/chariot.component';
+import { ModifyFormComponent } from './chariot-component/modify-form/modify-form.component';
 
 
 @NgModule({
-  declarations: [ChariotComponent],
+  declarations: [ChariotComponent, ModifyFormComponent],
   imports: [
     CommonModule,
     ChariotRoutingModule

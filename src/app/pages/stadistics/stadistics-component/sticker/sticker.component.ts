@@ -38,10 +38,18 @@ export class StickerComponent implements OnInit {
     this.emmitCard.fire = true
 
   }
+
+  
+    public modifyHero(event: any){
+      let id = Number((event.target.id).substr(5));
+
+
+      console.log (id)
+
+  
+  }
      
   public getId(event: any):void{
-   
-    
    
     this.emmitCard.id = parseInt(event.target.id,10);
     

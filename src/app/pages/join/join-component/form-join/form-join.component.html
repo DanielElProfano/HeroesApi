@@ -7,7 +7,7 @@
     <form class="b-form" novalidate (ngSubmit)="onSubmit()" [formGroup]="form">
    
       <fieldset class="b-form__personal">
-        <div class="b-form__cols b-form__cols--id" >
+        <!-- <div class="b-form__cols b-form__cols--id" >
 
             <label class="b-form__label" for="id">{{ 'form.id' | translate }}</label>
             <input class="b-form__input b-form__input--id" placeholder="{{ 'input.id' | translate }}"type="number" id="id" formControlName="id" />
@@ -16,11 +16,11 @@
                 (form.get('id').dirty || submitted)">
                 Has introducido mal tu id
             </div> 
-        </div>
+        </div> -->
           <div class= "b-form__row">
             <div class="b-form__cols b-form__cols--1" >
 
-              <label class="b-form__label" for="name">{{ 'form.name' | translate }}:</label>
+              <label class="b-form__label" for="name">{{ 'form.name' | translate }}*</label>
               <input class="b-form__input" placeholder="{{ 'input.name' | translate }}"type="text" id="name" formControlName="name" />
                 
               <div *ngIf="!form.get('name').valid &&
@@ -29,7 +29,7 @@
               </div>
             </div>
             <div class="b-form__cols b-form__cols--1">
-              <label class="b-form__label" for="fullName">{{ 'form.realName' | translate }} </label>
+              <label class="b-form__label" for="fullName">{{ 'form.realName' | translate }}* </label>
               <input class="b-form__input"  placeholder="{{ 'input.realName' | translate }}" type="text" id="fullName" formControlName="fullName" />
                   <!-- Si el campo fullName es invalido / ha sido tocado / submitted = true -->
               <div *ngIf="!form.get('fullName').valid &&
@@ -40,7 +40,7 @@
         
     
           <div class="b-form__cols b-form__cols--1">
-              <label class="b-form__label " for="race">{{ 'form.race' | translate }} </label>
+              <label class="b-form__label " for="race">{{ 'form.race' | translate }}* </label>
               <input class="b-form__input" placeholder="{{ 'input.race' | translate }}" type="text" id="race" formControlName="race" />
                   <!-- Si el campo race es invalido / ha sido tocado / submitted = true -->
               <div *ngIf="!form.get('race').valid &&
@@ -83,18 +83,23 @@
                 Has introducido mal tu Occupation.
               </div>
             </div>
-            <div class="b-form__cols b-form__cols--2">
-              <input  class="form__radioButton" type="radio" id="good1" name="good" value="good" formControlName="alignment">
-              <label class="form__radio" for="good1">{{ 'input.good' | translate }}</label><br>
-              <input class="form__radioButton" type="radio" id="bad1" name="bad" value="bad" formControlName="alignment">
-              <label  class="form__radio" for="bad1">{{ 'input.bad' | translate }}</label><br>
+            <div class="b-form__cols b-form__cols--2">alignment *
+              <label class="form__radio" for="good">
+                <input  class="form__radioButton" type="radio" id="good"  value="good" formControlName="alignment">{{ 'input.good' | translate }}
+            </label>
+              <label  class="form__radio" for="bad1">
+                <input class="form__radioButton" type="radio" id="bad1"  value="bad" formControlName="alignment">{{ 'input.bad' | translate }}
+            </label>
              </div>
           
-            <div class="b-form__cols b-form__cols--2">
-              <input  class="form__radioButton" type="radio" id="male1" name="male" value="male" formControlName="gender">
-              <label class="form__radio" for="male1">{{ 'input.male' | translate }}</label><br>
-              <input class="form__radioButton" type="radio" id="female1" name="female" value="female" formControlName="gender">
-              <label  class="form__radio" for="female1">{{ 'input.female' | translate }}</label><br>
+            <div class="b-form__cols b-form__cols--2">gender *
+              <label class="form__radio" for="male1">
+                <input  class="form__radioButton" type="radio" id="male1"  value="male" formControlName="gender">{{ 'input.male' | translate }}"
+            </label>
+              <label  class="form__radio" for="female">
+               <input class="form__radioButton" type="radio" id="female"  value="female" formControlName="gender">{{ 'input.female' | translate }}
+            </label>
+
               
             </div>
           </div> 
@@ -103,7 +108,7 @@
               <div class="b-form__row b-form__row--flex"> 
                 <div class="b-form__cols b-form__cols--3" >
     
-                    <label class="b-form__label" for="intelligence">{{ 'form.intelligence' | translate }}</label>
+                    <label class="b-form__label" for="intelligence">{{ 'form.intelligence' | translate }}*</label>
                     <input class="b-form__input b-form__input--stat" type="number" id="intelligence" formControlName="intelligence" />
                         <!-- Si el campo intelligence es invalido / ha sido tocado / submitted = true -->
                     <div *ngIf="!form.get('intelligence').valid &&
@@ -113,7 +118,7 @@
                 </div>
             
                 <div class="b-form__cols b-form__cols--3" >
-                    <label class="b-form__label" for="strength">{{ 'form.strength' | translate }}</label>
+                    <label class="b-form__label" for="strength">{{ 'form.strength' | translate }}*</label>
                     <input class="b-form__input b-form__input--stat"type="number" id="strength" formControlName="strength" />
                         <!-- Si el campo strength es invalido / ha sido tocado / submitted = true -->
                     <div *ngIf="!form.get('strength').valid &&
@@ -124,7 +129,7 @@
             </div>
             <div class="b-form__row b-form__row--flex"> 
               <div class="b-form__cols b-form__cols--3" >
-                    <label class="b-form__label" for="speed">{{ 'form.speed' | translate }}</label>
+                    <label class="b-form__label" for="speed">{{ 'form.speed' | translate }}*</label>
                     <input class="b-form__input b-form__input--stat" type="number" id="speed" formControlName="speed" />
                         <!-- Si el campo speed es invalido / ha sido tocado / submitted = true -->
                     <div *ngIf="!form.get('speed').valid &&
@@ -133,7 +138,7 @@
                     </div>
               </div>
               <div class="b-form__cols b-form__cols--3" >
-                    <label class="b-form__label" for="durability">{{ 'form.durability' | translate }}</label>
+                    <label class="b-form__label" for="durability">{{ 'form.durability' | translate }}*</label>
                     <input class="b-form__input b-form__input--stat" type="number" id="durability" formControlName="durability" />
                         <!-- Si el campo durability es invalido / ha sido tocado / submitted = true -->
                     <div *ngIf="!form.get('durability').valid &&
@@ -144,7 +149,7 @@
             </div>
             <div class="b-form__row b-form__row--flex"> 
               <div class="b-form__cols b-form__cols--3" >              
-                    <label class="b-form__label" for="power">{{ 'form.power' | translate }}</label>
+                    <label class="b-form__label" for="power">{{ 'form.power' | translate }}*</label>
                     <input class="b-form__input b-form__input--stat" max="100" min="1" type="number" id="power" formControlName="power" />
                         <!-- Si el campo power es invalido / ha sido tocado / submitted = true -->
                     <div *ngIf="!form.get('power').valid &&
@@ -153,7 +158,7 @@
                     </div>
               </div>
               <div class="b-form__cols b-form__cols--3" >
-                    <label class="b-form__label" for="combat">{{ 'form.combat' | translate }}</label>
+                    <label class="b-form__label" for="combat">{{ 'form.combat' | translate }}*</label>
                     <input class="b-form__input b-form__input--stat" type="number" id="combat" formControlName="combat" />
                         <!-- Si el campo combat es invalido / ha sido tocado / submitted = true -->
                     <div *ngIf="!form.get('combat').valid &&
@@ -173,7 +178,7 @@
       
   </form>
 </div>
-{{ showModal }}
+
 <app-modal [(showModal)]="showModal">
   <div class="modal-header">
     <h2>Formulario Heroes</h2>

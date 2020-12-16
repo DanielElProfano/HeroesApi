@@ -98,4 +98,20 @@
             
         }
     }
+.b-chariot{
+
+
+    &__button{
+        padding:1rem;
+        color:blue;
+        background-color: blanchedalmond;
+        cursor: pointer;
+        &:hover{
+
+            color:red;
+        }
+
+
+    }
+}
         

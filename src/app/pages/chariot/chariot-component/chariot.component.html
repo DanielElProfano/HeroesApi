@@ -16,7 +16,7 @@
                     <p class="b-text__slide">raza: {{hero.race}}</p>
                     <p class="b-text__slide">Peso {{hero.weight}}</p>
                     <p class="b-text__slide">Género {{hero.gender}}</p>
-
+                    <span id="hero__{{ hero.id }}" class="b-chariot__button" (click)="modifyHero($event)">Modify</span>
                 </div>
 
             </div>

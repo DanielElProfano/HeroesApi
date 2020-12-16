@@ -43,7 +43,7 @@ export class FormComponent implements OnInit {
 
 
   }
-  ngOnInit(): void {}
+  ngOnInit(): void { this.form.reset()}
 
   public onSubmit():void{
    
