@@ -40,11 +40,13 @@ export class StickerComponent implements OnInit {
   }
 
   
-    public modifyHero(event: any){
-      let id = Number((event.target.id).substr(5));
-
-
-      console.log (id)
+    public deleteHero(event: any){
+      this.emmitCard.id = Number((event.target.id).substr(5));
+      this.emmitCard.delete = true;
+      this.emmitId.emit(this.emmitCard);
+      console.log (this.emmitCard)
+      this.emmitCard.delete = false;
+    
 
   
   }

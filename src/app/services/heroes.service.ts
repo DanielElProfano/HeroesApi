@@ -236,80 +236,100 @@ getFakeHeroDetail(id: number):Observable<InterfaceHeroDetail>{
       })
     )
   }
-
-  getHeroes(i:number, alignment:string){
-    const Url = `https://www.superheroapi.com/api.php/10217431065143700/${i}`;
-    return this.http.get(Url).pipe(
+  public deleteFakeHero(id : number):Observable<InterfaceHeroDetail>{
+    const Url = `http://localhost:3000/allHeroes/${id}`
+    return this.http.delete(Url).pipe(
       
-        map((response: any) => {
+        map((response: InterfaceHeroDetail) => {
    
         if(!response){
           throw new Error('Value expected!');
         } else {
-
-          if(response.biography.alignment === alignment){
+          
+          return response;
+        }
+        
+      }),
+      catchError((err)=>{
      
-            const formatResult : InterfaceHeroGeneral = {
-            name : response.name,
-            gender : response.appearance.gender,
-            alignment: response.biography.alignment,
-            image : response.image.url,
-            id : response.id,
-         
-            }
-            return formatResult;
-          } else {
-
-            return null;
-          }
-        }
-      }),
-        catchError((err)=>{
-        throw new Error(err.message);
-      })
+      throw new Error(err.message);
+    })
     )
-  }
 
-  getPowerStats(id: number): Observable<InterfacePowerStats>{
-    
-    const Url = `https://www.superheroapi.com/api.php/10217431065143700/${id}`;
-    return this.http.get(Url).pipe(
+  }
+  // getHeroes(i:number, alignment:string){
+  //   const Url = `https://www.superheroapi.com/api.php/10217431065143700/${i}`;
+  //   return this.http.get(Url).pipe(
       
-        map((response: any) => {
+  //       map((response: any) => {
    
-        if(!response){
-          throw new Error('Value expected!');
-        } else {
-            const formatResult : InterfacePowerStats = {
+  //       if(!response){
+  //         throw new Error('Value expected!');
+  //       } else {
 
-            id : response.id,
-            name : response.name,
-            intelligence : response.powerstats.intelligence,
-            strength: response.powerstats.strength,
-            speed: response.powerstats.speed,
-            durability: response.powerstats.durability,
-            power: response.powerstats.power,
-            combat :response.powerstats.combat,
-            // id : response.id,
-            // name : response.name,
-            // intelligence : response.intelligence,
-            // strength: response.strength,
-            // speed: response.speed,
-            // durability: response.durability,
-            // power: response.power,
-            // combat :response.combat,
-                 
-            }
-            
-        return formatResult;
+  //         if(response.biography.alignment === alignment){
+     
+  //           const formatResult : InterfaceHeroGeneral = {
+  //           name : response.name,
+  //           gender : response.appearance.gender,
+  //           alignment: response.biography.alignment,
+  //           image : response.image.url,
+  //           id : response.id,
          
-        }
-      }),
-        catchError((err)=>{
-        throw new Error(err.message);
-      })
-    )
-  }
+  //           }
+  //           return formatResult;
+  //         } else {
+
+  //           return null;
+  //         }
+  //       }
+  //     }),
+  //       catchError((err)=>{
+  //       throw new Error(err.message);
+  //     })
+  //   )
+  // }
+
+  // getPowerStats(id: number): Observable<InterfacePowerStats>{
+    
+  //   const Url = `https://www.superheroapi.com/api.php/10217431065143700/${id}`;
+  //   return this.http.get(Url).pipe(
+      
+  //       map((response: any) => {
+   
+  //       if(!response){
+  //         throw new Error('Value expected!');
+  //       } else {
+  //           const formatResult : InterfacePowerStats = {
+
+  //           id : response.id,
+  //           name : response.name,
+  //           intelligence : response.powerstats.intelligence,
+  //           strength: response.powerstats.strength,
+  //           speed: response.powerstats.speed,
+  //           durability: response.powerstats.durability,
+  //           power: response.powerstats.power,
+  //           combat :response.powerstats.combat,
+  //           // id : response.id,
+  //           // name : response.name,
+  //           // intelligence : response.intelligence,
+  //           // strength: response.strength,
+  //           // speed: response.speed,
+  //           // durability: response.durability,
+  //           // power: response.power,
+  //           // combat :response.combat,
+                 
+  //           }
+            
+  //       return formatResult;
+         
+  //       }
+  //     }),
+  //       catchError((err)=>{
+  //       throw new Error(err.message);
+  //     })
+  //   )
+  // }
 
   
   public getFaKeFilterForm():Observable<InterfaceFilteHeroes[]>{  

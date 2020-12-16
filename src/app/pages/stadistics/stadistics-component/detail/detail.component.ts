@@ -15,10 +15,11 @@ import { animate, state, style, transition, trigger } from '@angular/animations'
      ]),
   ],
 })
+
 export class DetailComponent implements OnInit {
 
   @Input() heroDetail : InterfaceHeroDetail | any = {};
-  
+  @Input() charData : any = {};
   public state : string = 'inactive';
   constructor() { }
 

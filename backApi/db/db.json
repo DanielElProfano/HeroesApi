@@ -641,19 +641,6 @@
       "alignment": "good"
     },
     {
-      "id": 283,
-      "name": "Giant-Man II",
-      "image": "https://www.superherodb.com/pictures2/portraits/10/100/343.jpg",
-      "gender": "Male",
-      "intelligence": null,
-      "strength": null,
-      "speed": null,
-      "durability": null,
-      "power": null,
-      "combat": null,
-      "alignment": "good"
-    },
-    {
       "id": 227,
       "name": "Domino",
       "image": "https://www.superherodb.com/pictures2/portraits/10/100/902.jpg",
@@ -704,19 +691,6 @@
       "power": 7,
       "combat": 40,
       "alignment": "bad"
-    },
-    {
-      "id": 54,
-      "name": "Atom III",
-      "image": "https://www.superherodb.com/pictures2/portraits/10/100/939.jpg",
-      "gender": "Male",
-      "intelligence": null,
-      "strength": null,
-      "speed": null,
-      "durability": null,
-      "power": null,
-      "combat": null,
-      "alignment": "good"
     },
     {
       "id": 196,
@@ -1083,19 +1057,6 @@
       "alignment": "good"
     },
     {
-      "id": 143,
-      "name": "Bumbleboy",
-      "image": "https://www.superherodb.com/pictures2/portraits/10/100/1346.jpg",
-      "gender": "Male",
-      "intelligence": null,
-      "strength": null,
-      "speed": null,
-      "durability": null,
-      "power": null,
-      "combat": null,
-      "alignment": "good"
-    },
-    {
       "id": 326,
       "name": "Hiro Nakamura",
       "image": "https://www.superherodb.com/pictures2/portraits/10/100/947.jpg",
@@ -1146,19 +1107,6 @@
       "power": 48,
       "combat": 50,
       "alignment": "bad"
-    },
-    {
-      "id": 124,
-      "name": "Blue Beetle",
-      "image": "https://www.superherodb.com/pictures2/portraits/10/100/1010.jpg",
-      "gender": "Male",
-      "intelligence": null,
-      "strength": null,
-      "speed": null,
-      "durability": null,
-      "power": null,
-      "combat": null,
-      "alignment": "good"
     },
     {
       "id": 147,
@@ -1616,19 +1564,6 @@
       "alignment": "bad"
     },
     {
-      "id": 682,
-      "name": "Vagabond",
-      "image": "https://www.superherodb.com/pictures2/portraits/10/100/145.jpg",
-      "gender": "Female",
-      "intelligence": null,
-      "strength": null,
-      "speed": null,
-      "durability": null,
-      "power": null,
-      "combat": null,
-      "alignment": "good"
-    },
-    {
       "id": 678,
       "name": "Two-Face",
       "image": "https://www.superherodb.com/pictures2/portraits/10/100/802.jpg",
@@ -1756,19 +1691,6 @@
       "durability": 10,
       "power": 21,
       "combat": 15,
-      "alignment": "good"
-    },
-    {
-      "id": 362,
-      "name": "Jessica Sanders",
-      "image": "https://www.superherodb.com/pictures2/portraits/10/100/1029.jpg",
-      "gender": "Female",
-      "intelligence": null,
-      "strength": null,
-      "speed": null,
-      "durability": null,
-      "power": null,
-      "combat": null,
       "alignment": "good"
     },
     {
@@ -1993,19 +1915,6 @@
       "alignment": "good"
     },
     {
-      "id": 164,
-      "name": "Cat II",
-      "image": "https://www.superherodb.com/pictures2/portraits/10/100/903.jpg",
-      "gender": "Female",
-      "intelligence": null,
-      "strength": null,
-      "speed": null,
-      "durability": null,
-      "power": null,
-      "combat": null,
-      "alignment": "good"
-    },
-    {
       "id": 252,
       "name": "Fallen One II",
       "image": "https://www.superherodb.com/pictures2/portraits/10/100/1051.jpg",
@@ -2120,19 +2029,6 @@
       "durability": 40,
       "power": 56,
       "combat": 50,
-      "alignment": "good"
-    },
-    {
-      "id": 113,
-      "name": "Blaquesmith",
-      "image": "https://www.superherodb.com/pictures2/portraits/10/100/34.jpg",
-      "gender": "-",
-      "intelligence": null,
-      "strength": null,
-      "speed": null,
-      "durability": null,
-      "power": null,
-      "combat": null,
       "alignment": "good"
     },
     {
@@ -2383,19 +2279,6 @@
       "alignment": "bad"
     },
     {
-      "id": 133,
-      "name": "Box",
-      "image": "https://www.superherodb.com/pictures2/portraits/10/100/864.jpg",
-      "gender": "Male",
-      "intelligence": null,
-      "strength": null,
-      "speed": null,
-      "durability": null,
-      "power": null,
-      "combat": null,
-      "alignment": "good"
-    },
-    {
       "id": 625,
       "name": "Spider-Woman III",
       "image": "https://www.superherodb.com/pictures2/portraits/10/100/482.jpg",
@@ -2406,19 +2289,6 @@
       "durability": 42,
       "power": 60,
       "combat": 28,
-      "alignment": "good"
-    },
-    {
-      "id": 629,
-      "name": "Stacy X",
-      "image": "https://www.superherodb.com/pictures2/portraits/10/100/485.jpg",
-      "gender": "Female",
-      "intelligence": null,
-      "strength": null,
-      "speed": null,
-      "durability": null,
-      "power": null,
-      "combat": null,
       "alignment": "good"
     },
     {
@@ -3007,19 +2877,6 @@
       "alignment": "good"
     },
     {
-      "id": 292,
-      "name": "Goliath",
-      "image": "https://www.superherodb.com/pictures2/portraits/10/100/846.jpg",
-      "gender": "Male",
-      "intelligence": null,
-      "strength": null,
-      "speed": null,
-      "durability": null,
-      "power": null,
-      "combat": null,
-      "alignment": "good"
-    },
-    {
       "id": 390,
       "name": "King Shark",
       "image": "https://www.superherodb.com/pictures2/portraits/10/100/10512.jpg",
@@ -3137,19 +2994,6 @@
       "alignment": "neutral"
     },
     {
-      "id": 205,
-      "name": "Darkside",
-      "image": "https://www.superherodb.com/pictures2/portraits/10/100/840.jpg",
-      "gender": "-",
-      "intelligence": null,
-      "strength": null,
-      "speed": null,
-      "durability": null,
-      "power": null,
-      "combat": null,
-      "alignment": "bad"
-    },
-    {
       "id": 579,
       "name": "Scarlet Witch",
       "image": "https://www.superherodb.com/pictures2/portraits/10/100/444.jpg",
@@ -3228,19 +3072,6 @@
       "alignment": "good"
     },
     {
-      "id": 101,
-      "name": "Black Goliath",
-      "image": "https://www.superherodb.com/pictures2/portraits/10/100/245.jpg",
-      "gender": "Male",
-      "intelligence": null,
-      "strength": null,
-      "speed": null,
-      "durability": null,
-      "power": null,
-      "combat": null,
-      "alignment": "good"
-    },
-    {
       "id": 401,
       "name": "Leader",
       "image": "https://www.superherodb.com/pictures2/portraits/10/100/885.jpg",
@@ -3277,19 +3108,6 @@
       "durability": 95,
       "power": 100,
       "combat": 70,
-      "alignment": "good"
-    },
-    {
-      "id": 694,
-      "name": "Vindicator",
-      "image": "https://www.superherodb.com/pictures2/portraits/10/100/530.jpg",
-      "gender": "Male",
-      "intelligence": null,
-      "strength": null,
-      "speed": null,
-      "durability": null,
-      "power": null,
-      "combat": null,
       "alignment": "good"
     },
     {
@@ -3436,19 +3254,6 @@
       "alignment": "good"
     },
     {
-      "id": 520,
-      "name": "Plastic Man",
-      "image": "https://www.superherodb.com/pictures2/portraits/10/100/756.jpg",
-      "gender": "Male",
-      "intelligence": 50,
-      "strength": 63,
-      "speed": 23,
-      "durability": 100,
-      "power": 100,
-      "combat": 56,
-      "alignment": "good"
-    },
-    {
       "id": 533,
       "name": "Q",
       "image": "https://www.superherodb.com/pictures2/portraits/10/100/10578.jpg",
@@ -3501,19 +3306,6 @@
       "alignment": "bad"
     },
     {
-      "id": 552,
-      "name": "Redeemer II",
-      "image": "https://www.superherodb.com/pictures2/portraits/10/100/1081.jpg",
-      "gender": "Male",
-      "intelligence": null,
-      "strength": null,
-      "speed": null,
-      "durability": null,
-      "power": null,
-      "combat": null,
-      "alignment": "bad"
-    },
-    {
       "id": 404,
       "name": "Leonardo",
       "image": "https://www.superherodb.com/pictures2/portraits/10/100/10327.jpg",
@@ -3546,19 +3338,6 @@
       "gender": "Male",
       "intelligence": null,
       "strength": 44,
-      "speed": null,
-      "durability": null,
-      "power": null,
-      "combat": null,
-      "alignment": "good"
-    },
-    {
-      "id": 511,
-      "name": "Penance",
-      "image": "https://www.superherodb.com/pictures2/portraits/10/100/929.jpg",
-      "gender": "-",
-      "intelligence": null,
-      "strength": null,
       "speed": null,
       "durability": null,
       "power": null,
@@ -3787,19 +3566,6 @@
       "alignment": "bad"
     },
     {
-      "id": 512,
-      "name": "Penance I",
-      "image": "https://www.superherodb.com/pictures2/portraits/10/100/930.jpg",
-      "gender": "Female",
-      "intelligence": null,
-      "strength": null,
-      "speed": null,
-      "durability": null,
-      "power": null,
-      "combat": null,
-      "alignment": "good"
-    },
-    {
       "id": 546,
       "name": "Red Hood",
       "image": "https://www.superherodb.com/pictures2/portraits/10/100/932.jpg",
@@ -3811,19 +3577,6 @@
       "power": 35,
       "combat": 95,
       "alignment": "neutral"
-    },
-    {
-      "id": 550,
-      "name": "Red Skull",
-      "image": "https://www.superherodb.com/pictures2/portraits/10/100/1392.jpg",
-      "gender": "Male",
-      "intelligence": 75,
-      "strength": 10,
-      "speed": 12,
-      "durability": 14,
-      "power": 19,
-      "combat": 80,
-      "alignment": "bad"
     },
     {
       "id": 545,
@@ -3954,19 +3707,6 @@
       "power": 100,
       "combat": 100,
       "alignment": "bad"
-    },
-    {
-      "id": 593,
-      "name": "Shrinking Violet",
-      "image": "https://www.superherodb.com/pictures2/portraits/10/100/1188.jpg",
-      "gender": "Female",
-      "intelligence": null,
-      "strength": null,
-      "speed": null,
-      "durability": null,
-      "power": null,
-      "combat": null,
-      "alignment": "good"
     },
     {
       "id": 317,
@@ -4188,19 +3928,6 @@
       "power": 28,
       "combat": 28,
       "alignment": "bad"
-    },
-    {
-      "id": 134,
-      "name": "Box III",
-      "image": "https://www.superherodb.com/pictures2/portraits/10/100/37.jpg",
-      "gender": "-",
-      "intelligence": null,
-      "strength": null,
-      "speed": null,
-      "durability": null,
-      "power": null,
-      "combat": null,
-      "alignment": "good"
     },
     {
       "id": 329,
@@ -4578,19 +4305,6 @@
       "power": 100,
       "combat": 28,
       "alignment": "good"
-    },
-    {
-      "id": 603,
-      "name": "Siren II",
-      "image": "https://www.superherodb.com/pictures2/portraits/10/100/1386.jpg",
-      "gender": "Female",
-      "intelligence": null,
-      "strength": null,
-      "speed": null,
-      "durability": null,
-      "power": null,
-      "combat": null,
-      "alignment": "bad"
     },
     {
       "id": 442,
@@ -5139,19 +4853,6 @@
       "alignment": "good"
     },
     {
-      "id": 447,
-      "name": "Meteorite",
-      "image": "https://www.superherodb.com/pictures2/portraits/10/100/1333.jpg",
-      "gender": "Female",
-      "intelligence": null,
-      "strength": null,
-      "speed": null,
-      "durability": null,
-      "power": null,
-      "combat": null,
-      "alignment": "good"
-    },
-    {
       "id": 561,
       "name": "Robin",
       "image": "https://www.superherodb.com/pictures2/portraits/10/100/850.jpg",
@@ -5477,19 +5178,6 @@
       "alignment": "neutral"
     },
     {
-      "id": 380,
-      "name": "Kathryn Janeway",
-      "image": "https://www.superherodb.com/pictures2/portraits/10/100/10581.jpg",
-      "gender": "Female",
-      "intelligence": 75,
-      "strength": 8,
-      "speed": 21,
-      "durability": 25,
-      "power": 21,
-      "combat": 50,
-      "alignment": "good"
-    },
-    {
       "id": 88,
       "name": "Bird-Brain",
       "image": "https://www.superherodb.com/pictures2/portraits/10/100/240.jpg",
@@ -5748,19 +5436,6 @@
       "power": 52,
       "combat": 80,
       "alignment": "good"
-    },
-    {
-      "id": 100,
-      "name": "Black Flash",
-      "image": "https://www.superherodb.com/pictures2/portraits/10/100/10831.jpg",
-      "gender": "Male",
-      "intelligence": 44,
-      "strength": 10,
-      "speed": 100,
-      "durability": 80,
-      "power": 100,
-      "combat": 30,
-      "alignment": "neutral"
     },
     {
       "id": 98,
@@ -6218,19 +5893,6 @@
       "alignment": "bad"
     },
     {
-      "id": 291,
-      "name": "Goliath",
-      "image": "https://www.superherodb.com/pictures2/portraits/10/100/847.jpg",
-      "gender": "Male",
-      "intelligence": null,
-      "strength": null,
-      "speed": null,
-      "durability": null,
-      "power": null,
-      "combat": null,
-      "alignment": "good"
-    },
-    {
       "id": 303,
       "name": "Groot",
       "image": "https://www.superherodb.com/pictures2/portraits/10/100/10017.jpg",
@@ -6621,19 +6283,6 @@
       "alignment": "good"
     },
     {
-      "id": 698,
-      "name": "Vision II",
-      "image": "https://www.superherodb.com/pictures2/portraits/10/100/151.jpg",
-      "gender": "-",
-      "intelligence": null,
-      "strength": null,
-      "speed": null,
-      "durability": null,
-      "power": null,
-      "combat": null,
-      "alignment": "good"
-    },
-    {
       "id": 328,
       "name": "Hobgoblin",
       "image": "https://www.superherodb.com/pictures2/portraits/10/100/896.jpg",
@@ -6736,19 +6385,6 @@
       "power": null,
       "combat": null,
       "alignment": "good"
-    },
-    {
-      "id": 580,
-      "name": "Scorpia",
-      "image": "https://www.superherodb.com/pictures2/portraits/10/100/1123.jpg",
-      "gender": "Female",
-      "intelligence": 38,
-      "strength": 28,
-      "speed": 42,
-      "durability": 28,
-      "power": 34,
-      "combat": 28,
-      "alignment": "bad"
     },
     {
       "id": 483,
@@ -6970,19 +6606,6 @@
       "power": 43,
       "combat": 70,
       "alignment": "bad"
-    },
-    {
-      "id": 244,
-      "name": "ERG-1",
-      "image": "https://www.superherodb.com/pictures2/portraits/10/100/1187.jpg",
-      "gender": "Male",
-      "intelligence": null,
-      "strength": null,
-      "speed": null,
-      "durability": null,
-      "power": null,
-      "combat": null,
-      "alignment": "good"
     },
     {
       "id": 262,
@@ -7440,19 +7063,6 @@
       "alignment": "good"
     },
     {
-      "id": 540,
-      "name": "Rambo",
-      "image": "https://www.superherodb.com/pictures2/portraits/10/100/10475.jpg",
-      "gender": "Male",
-      "intelligence": 63,
-      "strength": 14,
-      "speed": 25,
-      "durability": 30,
-      "power": 30,
-      "combat": 100,
-      "alignment": "good"
-    },
-    {
       "id": 452,
       "name": "Mimic",
       "image": "https://www.superherodb.com/pictures2/portraits/10/100/97.jpg",
@@ -7541,19 +7151,6 @@
       "durability": 32,
       "power": 22,
       "combat": 64,
-      "alignment": "good"
-    },
-    {
-      "id": 290,
-      "name": "Goliath",
-      "image": "https://www.superherodb.com/pictures2/portraits/10/100/845.jpg",
-      "gender": "Male",
-      "intelligence": null,
-      "strength": null,
-      "speed": null,
-      "durability": null,
-      "power": null,
-      "combat": null,
       "alignment": "good"
     },
     {
@@ -7661,19 +7258,6 @@
       "alignment": "good"
     },
     {
-      "id": 560,
-      "name": "Ripcord",
-      "image": "https://www.superherodb.com/pictures2/portraits/10/100/1291.jpg",
-      "gender": "Female",
-      "intelligence": null,
-      "strength": null,
-      "speed": null,
-      "durability": null,
-      "power": null,
-      "combat": null,
-      "alignment": "good"
-    },
-    {
       "id": 254,
       "name": "Feral",
       "image": "https://www.superherodb.com/pictures2/portraits/10/100/57.jpg",
@@ -7711,19 +7295,6 @@
       "power": 100,
       "combat": 35,
       "alignment": "good"
-    },
-    {
-      "id": 500,
-      "name": "Omega Red",
-      "image": "https://www.superherodb.com/pictures2/portraits/10/100/208.jpg",
-      "gender": "Male",
-      "intelligence": null,
-      "strength": 61,
-      "speed": null,
-      "durability": null,
-      "power": null,
-      "combat": null,
-      "alignment": "bad"
     },
     {
       "id": 581,
@@ -7827,19 +7398,6 @@
       "durability": 80,
       "power": 57,
       "combat": 64,
-      "alignment": "good"
-    },
-    {
-      "id": 662,
-      "name": "Thunderbird II",
-      "image": "https://www.superherodb.com/pictures2/portraits/10/100/927.jpg",
-      "gender": "Male",
-      "intelligence": null,
-      "strength": null,
-      "speed": null,
-      "durability": null,
-      "power": null,
-      "combat": null,
       "alignment": "good"
     },
     {
@@ -8363,19 +7921,6 @@
       "alignment": "good"
     },
     {
-      "id": 553,
-      "name": "Redeemer III",
-      "image": "https://www.superherodb.com/pictures2/portraits/10/100/1092.jpg",
-      "gender": "Male",
-      "intelligence": null,
-      "strength": null,
-      "speed": null,
-      "durability": null,
-      "power": null,
-      "combat": null,
-      "alignment": "bad"
-    },
-    {
       "id": 451,
       "name": "Micro Lad",
       "image": "https://www.superherodb.com/pictures2/portraits/10/100/1181.jpg",
@@ -8438,29 +7983,6 @@
       "occupation": "Daniel"
     },
     {
-      "id": 1001,
-      "name": "Hermione",
-      "gender": "female",
-      "race": "Human",
-      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRfhqlRhXRk-VVWdUIEykFOF5fYoLI4LIWihw&usqp=CAU",
-      "weight": "",
-      "intelligence": 100,
-      "strength": 100,
-      "speed": 100,
-      "durability": 100,
-      "power": 100,
-      "combat": 100,
-      "height": "",
-      "base": "",
-      "fullName": "Hermione",
-      "groupAffiliation": "",
-      "alterEgos": "",
-      "alignment": "good",
-      "eyeColor": "",
-      "hairColor": "",
-      "occupation": "Hermione"
-    },
-    {
       "id": 1002,
       "name": "añogijñsgi",
       "gender": "male",
@@ -8482,29 +8004,6 @@
       "eyeColor": "",
       "hairColor": "",
       "occupation": "añogijñsgi"
-    },
-    {
-      "id": 1004,
-      "name": "aslñdfkjasñlfj",
-      "gender": "male",
-      "race": "sñlfjgklñj",
-      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQVknjZLF8i_HoqHQNSgNSAaPdovl9-EBeF-w&usqp=CAU",
-      "weight": "",
-      "intelligence": 101,
-      "strength": 101,
-      "speed": 101,
-      "durability": 101,
-      "power": 101,
-      "combat": 101,
-      "height": "",
-      "base": "",
-      "fullName": "´jafj",
-      "groupAffiliation": "",
-      "alterEgos": "",
-      "alignment": "good",
-      "eyeColor": "",
-      "hairColor": "",
-      "occupation": "aslñdfkjasñlfj"
     },
     {
       "id": 1006,
@@ -8530,52 +8029,6 @@
       "occupation": "pep"
     },
     {
-      "id": 1007,
-      "name": "Marcelilno",
-      "gender": "male",
-      "race": "humano",
-      "image": "https://as.com/epik/imagenes/2017/10/22/portada/1508686067_541460_1508686626_noticia_normal.jpg",
-      "weight": "",
-      "intelligence": 101,
-      "strength": 100,
-      "speed": 100,
-      "durability": 100,
-      "power": 100,
-      "combat": 100,
-      "height": "",
-      "base": "",
-      "fullName": "Pan ",
-      "groupAffiliation": "",
-      "alterEgos": "el niño dios",
-      "alignment": "good",
-      "eyeColor": "",
-      "hairColor": "",
-      "occupation": "Marcelilno"
-    },
-    {
-      "id": 1008,
-      "name": "Flash Tomson",
-      "gender": "male",
-      "race": "no se conoce",
-      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR235JJkR01OfZMg2DsmeUoM6Fq5VzmtOkqkQ&usqp=CAU",
-      "weight": "",
-      "intelligence": 101,
-      "strength": 101,
-      "speed": 101,
-      "durability": 101,
-      "power": 101,
-      "combat": 101,
-      "height": "",
-      "base": "",
-      "fullName": "Flashito",
-      "groupAffiliation": "",
-      "alterEgos": "",
-      "alignment": "bad",
-      "eyeColor": "",
-      "hairColor": "",
-      "occupation": "Flash Tomson"
-    },
-    {
       "id": 1009,
       "name": "",
       "gender": "",
@@ -8597,52 +8050,6 @@
       "eyeColor": "",
       "hairColor": "",
       "occupation": ""
-    },
-    {
-      "id": 1010,
-      "name": "Daniel González",
-      "gender": "female",
-      "race": "Humano",
-      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRfhqlRhXRk-VVWdUIEykFOF5fYoLI4LIWihw&usqp=CAU",
-      "weight": "",
-      "intelligence": 101,
-      "strength": 10,
-      "speed": 101,
-      "durability": 101,
-      "power": 101,
-      "combat": 101,
-      "height": "",
-      "base": "",
-      "fullName": "afasg",
-      "groupAffiliation": "",
-      "alterEgos": "wtrwtr",
-      "alignment": "good",
-      "eyeColor": "",
-      "hairColor": "",
-      "occupation": "Daniel González"
-    },
-    {
-      "id": 1011,
-      "name": "Modificado",
-      "gender": "female",
-      "race": "asfgsdgh",
-      "image": "sfagsdfh",
-      "weight": "",
-      "intelligence": 101,
-      "strength": 101,
-      "speed": 101,
-      "durability": 10,
-      "power": 101,
-      "combat": 101,
-      "height": "",
-      "base": "",
-      "fullName": "ngsfgh",
-      "groupAffiliation": "",
-      "alterEgos": "dsfagsd",
-      "alignment": "good",
-      "eyeColor": "",
-      "hairColor": "",
-      "occupation": "Modificado"
     },
     {
       "id": 1012,

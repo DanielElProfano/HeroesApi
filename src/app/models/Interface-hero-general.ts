@@ -64,5 +64,6 @@ export interface InterfaceEmmitOutput{
     id: number;
     origenHire: boolean;
     fire: boolean;
+    delete: boolean;
 
 }

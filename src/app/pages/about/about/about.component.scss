@@ -1,0 +1,111 @@
+.b-about{
+
+    &__section{
+        margin:1rem 0;
+        height: 580px;
+        width: 100%;
+        background-color: #f01327;
+        display: flex;
+        justify-content: space-around;
+
+        &--2{
+            background-color: white;
+            margin-top: 8rem;
+            margin-bottom: 28rem;
+        }
+        }
+    
+    &__title{
+        margin:0;
+        margin-top: 2rem;
+        color: white;
+        margin-left: 10rem;
+        
+        &--2{
+            color:black;
+            margin-right: 18rem;
+            margin-bottom: 10rem;
+
+        }
+    }
+
+    &__h1{
+        font-size: 5rem;
+        margin-bottom: 2rem;
+        &--red{
+            display: inline;
+            color:#f01327
+        }
+
+    }
+    &__h3{
+        font-size: 2rem;
+        margin-bottom: 1.2rem;
+    }
+    &__image{
+       
+        margin:0;
+    }
+    
+    &__img{
+        border: 20px solid white;
+        border-radius: 50%;
+        margin-top: 5rem;
+        background-image: url("../../../../assets/homelander-the_boys.jpg_481262547.jpg");
+        width: 540px;
+        height: 540px;
+        background-size: cover;
+        
+        z-index: 2;
+        &--2{
+            margin-left: 14rem;
+            width:600px;
+            height: 600px;
+            border-radius: 50%;
+            border: none;
+            background-image: url("../../../../assets/i-train.jpg");
+            background-position: 50% 54.32%;
+        }
+        &--3{
+            width: 405px;
+            height: 405px;
+            background-image: url("../../../../assets/starlight.jpg");
+            background-position: 50% 54.32%;
+            margin: 370px auto 0 122px;
+            border: 10px solid white;
+        }
+        &--3{
+            width: 350px;
+            height: 350px;
+            background-image: url("../../../../assets/starlight.jpg");
+            background-position: 50% 54.32%;
+            margin: 370px auto 0 122px;
+            border: 10px solid white;
+        }
+        &--4{
+            width: 200px;
+            height: 200px;
+            background-image: url("../../../../assets/ironman.jpg");
+            background-position: 50% 54.32%;
+            margin: -183px auto 0 478px;
+            border: 20px solid #f01327;
+        }
+    }
+    &__circle{
+        width: 114px;
+        height: 114px;
+        margin: 460px auto 0 97px;
+        background-color: #f01327;
+        border-radius: 50%;
+        z-index:10;
+
+        &--2{
+            width: 114px;
+            height: 114px;
+            // background-image: url(images/ccc-min.jpg);
+            background-position: 50% 54.32%;
+            margin: -666px auto 0 160px;
+        }
+    }
+
+}

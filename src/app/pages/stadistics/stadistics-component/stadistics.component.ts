@@ -22,19 +22,9 @@ export class StadisticsComponent implements OnInit {
    }
 
   ngOnInit(): void {
-    // this.localStorage();
+  
     this.getListFakeApi();
   }
-//   public localStorage(){
-         
-//      this.heroesService.getFaKeFilterForm().subscribe((result) =>{ ///modificado
-//     //  this.arrayAllHeroes = result
-//     //  localStorage.setItem('arrayHeroes', JSON.stringify(result));
-//     localStorage.setItem('prueba', JSON.stringify(result));
-      
-//    });
-   
-//  }
 
 private getListFakeApi(){
   for(let i= 1; i<=10; i++){
@@ -45,34 +35,38 @@ private getListFakeApi(){
   }
 
 }
-  // private getListPowerStats(){
-      
-  //   for(let i= 1; i<=10; i++){
-     
-  //     this.heroesService.getList(i).subscribe((result) => {
-  //     this.arrayHeroes.push(result);
-  //     });
-
-      
-  //   }
-  // }
 
 public setId(card:InterfaceEmmitOutput):void{   //si es Hire ataca al servicio del carrito.
     
-     
-     if(card.origenHire === true || card.fire === true){
-    
-      this.chariotService.sendChariot(card)
-  
+     if(card.delete === true){
+        debugger
+        this.deleteHero(card.id)
+
      }else{
-          this.heroesService.getFakePowerStats(card.id).subscribe((result) =>{
+
+        if(card.origenHire === true || card.fire === true){
+        
+          this.chariotService.sendChariot(card)
+      
+        }else{
+              this.heroesService.getFakePowerStats(card.id).subscribe((result) =>{
+              
+              this.powerStats = result;
+              this.getDetail(card.id);
+        
+              });
           
-          this.powerStats = result;
-          this.getDetail(card.id);
-    
-          });
-       
-      }
+          }
+     }
+}
+private deleteHero(id){
+
+    this.heroesService.deleteFakeHero(id).subscribe((result)=>{
+      console.log(result);
+    })
+    let index = this.arrayHeroes.findIndex(hero => hero.id === id);
+    debugger
+    this.arrayHeroes.splice(index,1);
 }
 public setFilterArray(array: InterfaceHeroGeneral[]):void{  ///output del Filter.
    
