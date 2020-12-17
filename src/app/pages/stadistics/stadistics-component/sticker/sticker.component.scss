@@ -37,7 +37,7 @@
     }
 
     &__img{ 
-        filter: grayscale(90%) contrast(200%);
+        filter: grayscale(60%) contrast(150%);
         object-fit: contain;
         object-position: center center;
         width: 200px;
@@ -71,7 +71,7 @@
         text-align: center;
         background-color: rgb(24, 36, 58);
         color: rgb(255, 255, 255);
-        font-weight: 600;
+      
         padding:0.5rem;
     }
 
@@ -100,7 +100,7 @@
     padding: 0.3rem;
     background-color: rgba(53, 53, 53, 0.445);
     color: white;
-    font-weight: 600;
+   
     border-radius: 4px;
     text-decoration: none;
     cursor: pointer;

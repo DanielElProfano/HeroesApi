@@ -1,7 +1,7 @@
 // @import url(http://fonts.googleapis.com/css?family=Laila:400,700);
 
 $text-primary-color: rgb(9, 9, 77);
-$text-secunday-color: rgb(220,0,0);
+$text-secunday-color: #f01327;;
 $text-normal:rgb(100,100,100);
 
 h1{
@@ -12,20 +12,21 @@ $primary-form-color: black;
     margin-bottom: 2rem;
 }
 .main-container{
-    
+    margin-top: 1rem;
     display: flex;
     justify-content: space-between;
-    width: 90%;
+    width: 100%;
     align-items: center;
-  
+    background-color: $text-secunday-color;
     background-size: cover;
     background-position: right;
+    
   
     z-index: 1;
 
     .b-form{
     border-radius: 12px;
-    background-color: rgba(255, 255, 255, 0.432);
+    background-color: rgba(255, 255, 255);
     display: block;
     border: 2px solid $primary-form-color;
     margin: 4rem;
@@ -124,7 +125,7 @@ $primary-form-color: black;
     }
     &__cols{
         width: 33%;
-        background-color: #066b9a50;
+        background-color: #9a060650;
         box-shadow: 2px 2px 2px #e4e4e4;
         border-radius: 8px;
         margin: 6px;
@@ -208,6 +209,36 @@ $primary-form-color: black;
 
     }
 }
+}
+
+.circle{
+    height: 400px;
+    width: 400px;
+    border: 10px solid white;
+    border-radius: 50%;
+    &__img{
+        background-image: url("../../../../../assets/svg/Hero.svg");
+        
+        background-position: 30% 11.32%;;
+        margin:-115px auto 0 68px;
+        background-color: white;
+    }
+    &__red{
+
+        height: 100px;
+        width: 100px;
+        margin:-115px auto 0 68px;
+        border: 20px solid white;
+        background-color: red;
+        
+    }
+}
+.text-pie{
+    color:white;
+    text-align: center;
+    margin-top: 4rem;
+    font-size: 3rem;
+
 }
 @media screen and (max-width: 1200px) {
     .b-form__row{
