@@ -1,7 +1,7 @@
 
 <form class="b-form" *ngIf="form" novalidate (ngSubmit)="onSubmit()" [formGroup]="form">
     <!-- Fieldset del primer campo - name -->
-    <div class ="b-form__title"> FILTER BY 
+    <div class ="b-form__title"> {{ 'filter.filter' | translate}}
     <!-- <fieldset class ="b-form__field">
         <legend class="b-form__legend">By name:</legend>
 
@@ -10,28 +10,28 @@
     <fieldset class ="b-form__field b-form__field--radio">
       <div>
         <input  class="form__radioButton" type="radio" id="male" name="sex" value="male" formControlName="sex">
-        <label class="form__radio" for="male">Male</label><br>
+        <label class="form__radio" for="male">{{ 'filter.male' | translate}}</label><br>
       </div>
       <div>
       <input class="form__radioButton" type="radio" id="female" name="sex" value="female" formControlName="sex">
-      <label  class="form__radio" for="female">Female</label><br>
+      <label  class="form__radio" for="female">{{ 'filter.female' | translate}}</label><br>
       </div>
     
     </fieldset>
      
      <fieldset class ="b-form__field">
-        <legend class="b-form__legend">By powerstats:</legend>
+        <legend class="b-form__legend">{{ 'filter.by' | translate}}powerstats:</legend>
         <select class="b-form__select" formControlName="powerStats">
-            <option [ngValue]="null" selected="true" disable="disabled">"Elige powerStats:"</option>
+            <option [ngValue]="null" selected="true" disable="disabled">{{ 'filter.powerStats' | translate}} powerStats</option>
             <option *ngFor="let stat of powerStats" [ngValue]="stat">
              {{ stat }}
             </option>
           </select> 
         
-        <legend class="b-form__legend">By alignment:</legend>
+        <legend class="b-form__legend">{{ 'filter.byAlign' | translate}}</legend>
       
           <select class="form__select" formControlName="alignment">
-              <option [ngValue]="null" selected="true" disable="disabled">"Elige alineación:"</option>
+              <option [ngValue]="null" selected="true" disable="disabled">Elige alineación</option>
               <option *ngFor="let align of arrayAlignment" [ngValue]="align">
                {{ align}}         
               </option>
@@ -40,7 +40,7 @@
       </fieldset>
     
   
-    <button type="submit" [disabled]="!form.valid">Submit</button>
+    <button type="submit" [disabled]="!form.valid">{{ 'filter.submit' | translate}}</button>
     <button type="reset" >reset</button>
     </div>
 </form>

@@ -1,3 +1,4 @@
+import { TranslateService } from '@ngx-translate/core';
 import { Component, EventEmitter, Input, OnInit, Output, SimpleChanges } from '@angular/core';
 
 import { HeroesService } from 'src/app/services/heroes.service';
@@ -31,7 +32,7 @@ export class StickerComponent implements OnInit {
   form = true;
   emmitCard: InterfaceEmmitOutput | any = {};
   
-  constructor(private spinner : NgxSpinnerService, private heroesService:HeroesService) {} 
+  constructor(private translateService: TranslateService, private spinner : NgxSpinnerService, private heroesService:HeroesService) {} 
 
   ngOnInit(): void {}
   public fireHero(event: any):void{
@@ -46,9 +47,8 @@ export class StickerComponent implements OnInit {
       this.emmitId.emit(this.emmitCard);
       console.log (this.emmitCard)
       this.emmitCard.delete = false;
-    
 
-  
+
   }
      
   public getId(event: any):void{

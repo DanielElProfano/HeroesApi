@@ -51,6 +51,33 @@
         "male": "Hombre",
         "female": "Mujer"
      
-    }    
+    },
+    "detail":{
+        "name" : "Nombre: ",
+        "realName": "Nombre Real: ",
+        "gender": "Género: : ",
+        "alignment": "alineación: ",
+        "occupation": "Ocupación: ",
+        "base": "Base: ",
+        "alterEgo": "Alter ego: ",
+        "affiliations": "Afiliaciones: "
+
+    },
+    "filter":{
+        "filter": "Filrar por: ",
+        "male": "Hombre",
+        "female": "Mujer",
+        "submit": "Aceptar",
+        "alignment": "Elige alineación",
+        "byAlign": "Por alineación",
+        "powerStats": "Elige",
+        "by": "Por "
+    },
+    "sticker":{
+        "hire": "Contrata",
+        "fire": "Despide",
+        "delete": "Borrar"
+    }
+
     
 }

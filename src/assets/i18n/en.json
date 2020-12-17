@@ -47,5 +47,32 @@
             "good": "Good",
             "male": "Male",
             "female": "Female"
-          }
+          },
+  "detail":{
+        "name": "Name: ",
+        "realName": "Real name: ",
+        "gender": "Gender: ",
+        "alignment": "alignment: ",
+        "occupation": "Occupation: ",
+        "base": "Base: ",
+        "alterEgo": "Alter ego: ",
+        "affiliations": "Affiliations: "
+
+        },
+  "filter":{
+          "filter": "Filter by: ",
+          "male": "Male",
+          "female": "Female",
+          "submit": "Submit",
+          "alignment": "Choose alignment",
+          "byAlign": "By alignment",
+          "powerStats": "Choose",
+          "by": "By "
+      },
+    "sticker":{
+          "hire": "Hire",
+          "fire": "Fire",
+          "delete": "Delete"
+      }
+  
 }

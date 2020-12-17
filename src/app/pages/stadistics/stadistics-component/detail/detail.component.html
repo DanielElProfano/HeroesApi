@@ -5,22 +5,20 @@
             <img class="b-detail__img" src="{{heroDetail.image}}" alt="imagen de {{heroDetail.name}}">
             
             <div class="b-detail__name">
-                <p class="b-text__slide">Name: {{heroDetail.name}}</p>
-                <p>Real name: {{heroDetail.fullName}}</p>
-                <p>Gender: {{heroDetail.gender}}</p>
-                <p>alignment: {{heroDetail.alignment}}</p>
+                <p class="b-text__slide">{{ 'detail.name' | translate }} {{heroDetail.name}}</p>
+                <p>{{ 'detail.realName' | translate }} {{heroDetail.fullName}}</p>
+                <p>{{ 'detail.gender' | translate }} {{heroDetail.gender}}</p>
+                <p>{{ 'detail.alignment' | translate }} {{heroDetail.alignment}}</p>
               
             </div>
            
         </div>
         <div class="b-detail__description">
          
-                <p>Occupation: {{heroDetail.occupation}}</p>
-                 <!-- <p>Weight: {{heroDetail.weight[0]}}</p> -->
-                <!-- <p>Height: {{heroDetail.height[0]}}</p> -->
-                <p>Base: {{heroDetail.base}}</p>
-                <p>Alter Ego: {{heroDetail.alterEgos}}</p>
-                <p>Affiliations: {{heroDetail.groupAffiliation}}</p>
+                <p>{{ 'detail.occupation' | translate }} {{heroDetail.occupation}}</p>
+                <p>{{ 'detail.base' | translate }} {{heroDetail.base}}</p>
+                <p>{{ 'detail.alterEgo' | translate }} {{heroDetail.alterEgos}}</p>
+                <p>{{ 'detail.affiliations' | translate }} {{heroDetail.groupAffiliation}}</p>
                 
                 
         </div>

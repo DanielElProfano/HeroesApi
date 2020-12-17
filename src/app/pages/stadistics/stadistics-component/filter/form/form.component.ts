@@ -1,3 +1,4 @@
+import { TranslateService } from '@ngx-translate/core';
 import { HeroesService } from './../../../../../services/heroes.service';
 import { InterfaceFilteHeroes, InterfaceHeroDetail } from './../../../../../models/Interface-hero-general';
 import { IfilterForm, powerStats } from './../model/IfilterForm';
@@ -22,7 +23,7 @@ export class FormComponent implements OnInit {
   public arrayResult : InterfaceFilteHeroes[] = [];
   
 
-  constructor(private formBuilder: FormBuilder, private heroesService:HeroesService) { 
+  constructor(private translateService:TranslateService, private formBuilder: FormBuilder, private heroesService:HeroesService) { 
     this.arrayAlignment=[
       [ 'bad'],['good']
     ];
