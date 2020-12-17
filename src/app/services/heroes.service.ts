@@ -156,9 +156,9 @@ getFakeHeroDetail(id: number):Observable<InterfaceHeroDetail>{
           base: response.base,
           fullName : response.fullName,
           groupAffiliation: response.groupAffiliation,
-          alterEgos: response.alterEgo,
+          alterEgos: response.alterEgos,
           alignment: response.alignment,
-        
+          occupation: response.occupation
                
       }
         
@@ -204,6 +204,7 @@ getFakeHeroDetail(id: number):Observable<InterfaceHeroDetail>{
             groupAffiliation: response.connections[groupAffiliation],
             alterEgos: response.biography[alterEgo],
             alignment: response.biography.alignment,
+            occupation: response.occupation
             //   id : response.id,
             // name : response.name,
             // gender : response.gender,
@@ -365,57 +366,81 @@ getFakeHeroDetail(id: number):Observable<InterfaceHeroDetail>{
 
   //   return this.arrayFilter;
   // }
-  // public scrapHero(id: number): Observable<any>{
-  //   const Url = `https://www.superheroapi.com/api.php/10217431065143700/${id}`;
-  //   const fullName = 'full-name';
-  //   const alterEgo ='alter-egos';
-  //   const groupAffiliation ='group-affiliation';
-  //   const eyeColor = 'eye-color';
-  //   const hairColor = 'hair-color';
-  //   return this.http.get(Url).pipe(
+  public scrapHero(id: number): Observable<any>{
+    const Url = `https://www.superheroapi.com/api.php/10217431065143700/${id}`;
+    const fullName = 'full-name';
+    const alterEgo ='alter-egos';
+    const groupAffiliation ='group-affiliation';
+    const eyeColor = 'eye-color';
+    const hairColor = 'hair-color';
+    return this.http.get(Url).pipe(
       
-  //     map((response: any) => {
+      map((response: any) => {
  
-  //     if(!response){
-  //       throw new Error('Value expected!');
-  //     } else {
+      if(!response){
+        throw new Error('Value expected!');
+      } else {
 
-  //       const scrapHero={
+        const scrapHero={
          
-  //         id : parseInt(response.id),
-  //         name : response.name,//
-  //         gender : response.appearance.gender,
-  //         race : response.race,//
-  //         weight : response.appearance.weight,
-  //         image : response.image.url,
-  //         intelligence :  parseInt(response.powerstats.intelligence),
-  //         strength: parseInt( response.powerstats.strength),
-  //         speed:  parseInt(response.powerstats.speed),
-  //         durability:  parseInt(response.powerstats.durability),
-  //         power:  parseInt(response.powerstats.power),
-  //         combat : parseInt(response.powerstats.combat),
-  //         height  : response.appearance.height,
-  //         base : response.work.base,
-  //         fullName : response.biography[fullName],
-  //         groupAffiliation: response.connections[groupAffiliation],
-  //         alterEgos: response.biography[alterEgo],
-  //         alignment : response.biography.alignment,
-  //         eyeColor: response.appearance[eyeColor],
-  //         hairColor:response.appearance[hairColor],
-  //         occupation: response.work.occupation,
-  //       }
-  //       return scrapHero;
-  //     }
+          id : parseInt(response.id),
+          name : response.name,//
+          gender : response.appearance.gender,
+          race : response.race,//
+          weight : response.appearance.weight,
+          image : response.image.url,
+          intelligence :  parseInt(response.powerstats.intelligence),
+          strength: parseInt( response.powerstats.strength),
+          speed:  parseInt(response.powerstats.speed),
+          durability:  parseInt(response.powerstats.durability),
+          power:  parseInt(response.powerstats.power),
+          combat : parseInt(response.powerstats.combat),
+          height  : response.appearance.height,
+          base : response.work.base,
+          fullName : response.biography[fullName],
+          groupAffiliation: response.connections[groupAffiliation],
+          alterEgos: response.biography[alterEgo],
+          alignment : response.biography.alignment,
+          eyeColor: response.appearance[eyeColor],
+          hairColor:response.appearance[hairColor],
+          occupation: response.work.occupation,
+          relatives: response.connections.relatives,
+        }
+        return scrapHero;
+      }
       
-  //   }),
-  //   catchError((err)=>{
-  //   throw new Error(err.message);
-  // })
-  // )
+    }),
+    catchError((err)=>{
+    throw new Error(err.message);
+  })
+  )
 
 
 
-  // }
+  }
+  public postScrapHero(newHero: any){ //se usa
+
+    
+    const Url = "http://localhost:3000/allHeroes/"
+    return this.http.post(Url, newHero).pipe(
+      
+        map((response: any) => {
+   
+        if(!response){
+          throw new Error('Value expected!');
+        } else {
+          return response;
+        }
+        
+      }),
+      catchError((err)=>{
+      throw new Error(err.message);
+    })
+    )
+
+  }
+
+  
 
   public postNewHero(newHero: InterfaceHeroGeneral){ //se usa
 
@@ -472,6 +497,7 @@ getFakeHeroDetail(id: number):Observable<InterfaceHeroDetail>{
             groupAffiliation: response.connections[groupAffiliation],
             alterEgos: response.biography[alterEgo],
             alignment: response.biography.alignment,
+            occupation: response.occupation
             // eyeColor: response.eyeColor,
             // hairColor: response.hairColor,
             // occupation: response.occupation

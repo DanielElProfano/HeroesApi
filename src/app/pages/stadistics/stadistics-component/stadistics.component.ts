@@ -24,8 +24,21 @@ export class StadisticsComponent implements OnInit {
   ngOnInit(): void {
   
     this.getListFakeApi();
+    // this.scrap();
   }
 
+  // private scrap(){
+  //   for(let i= 701; i<=750; i++){
+     
+  //     this.heroesService.scrapHero(i).subscribe((result) => {
+  //       this.heroesService.postScrapHero(result).subscribe((result =>{
+
+  //         console.log(result);
+  //       }))
+  //     });
+  //   }
+
+  // }
 private getListFakeApi(){
   for(let i= 1; i<=10; i++){
      
@@ -81,7 +94,8 @@ public setFilterArray(array: InterfaceHeroGeneral[]):void{  ///output del Filter
     
     this.heroesService.getFakeHeroDetail(id).subscribe((result) =>{
     this.personaje = result;
-    this.showDetails = true
+    this.showDetails = true;
+    console.log(result)
       
     })
   }

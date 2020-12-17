@@ -43,6 +43,7 @@ export interface InterfaceHeroDetail {
     groupAffiliation: string; 
     alterEgos: string;
     alignment : string;
+    occupation: string;
     // eyeColor : string;
     // hairColor: string;
     // occupation : string;
