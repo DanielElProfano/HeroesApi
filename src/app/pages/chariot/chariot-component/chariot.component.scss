@@ -3,11 +3,17 @@
     display: flex;
     justify-content: space-around;
 }
-
+.example-container{
+    display:flex;
+    height: 200px;
+    width: 25%;
+    border: 1px solid red;
+}
 .list{
-    width:100px;
-    height: 100px;
+    width:200px;
+    height: 200px;
     background-color: red;
+    border: 1px solid red;
 }
 .uno{
         position: relative; 

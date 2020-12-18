@@ -1,12 +1,64 @@
+<div class="example-container">
+    <h2>To do</h2>
+  
+    <div
+      cdkDropList
+      #todoList="cdkDropList"
+      [cdkDropListData]="chariot"
+      [cdkDropListConnectedTo]="[doneList]"
+      class="example-list"
+      (cdkDropListDropped)="drop($event)">
+      <div id="chariot__{{hero.id}}" class ="b-hero" *ngFor="let hero of chariot" cdkDrag>
+        Nombre: {{hero.name}}
+        <img class="b-hero__img" src="{{hero.image}}">
+        
+        <!-- <div class="uno"> 
+            <div class="b-hero__stick"> -->
+                
+        
+                <!-- <div  class="b-hero__description b-hero__description--notSkew"> -->
+                    <!-- <img class="b-hero__img" src="{{hero.image}}"> -->
+                    <!-- <p class="b-text__slide b-text__slide--name">Nombre: {{hero.name}} </p> -->
+                  
+                    <!-- <div class="b-hero__info">
+                        <p class="b-text__slide b-text__slide--name">Nombre: {{hero.name}} </p>
+                        <p class="b-text__slide">raza: {{hero.race}}</p>
+                        <p class="b-text__slide">Peso {{hero.weight}}</p>
+                        <p class="b-text__slide">Género {{hero.gender}}</p>
+                        <span id="hero__{{ hero.id }}" class="b-chariot__button" (click)="modifyHero($event)">Modify</span>
+                    </div> -->
 
-<div  class="b-chariot" >
-    <div class="list" cdkDragList>
+                <!-- </div>
+        
+            </div> -->
+        
+    
+        </div>
+     
+    </div>
+ 
+  
+  <div class="example-container">
+    <h2>Done</h2>
+  
+    <div
+      cdkDropList
+      #doneList="cdkDropList"
+      [cdkDropListData]="done"
+      [cdkDropListConnectedTo]="[todoList]"
+      class="example-list"
+      (cdkDropListDropped)="drop($event)">
+      <div class="example-box" *ngFor="let item of done" cdkDrag>{{item}}
+          <img class="b-hero__img" src="{{item.image}}"></div>
+    </div>
+  </div>
+</div>
+
+<!-- <div  class="b-chariot" >
+    <div cdkDragList class="list"  (cdkDropListDropped)="drop($event)">
     
     <div class ="b-hero" *ngFor="let hero of chariot" cdkDrag>
-        <div class="dos"> 
-
-
-        </div>
+     
         <div class="uno"> 
             <div class="b-hero__stick">
                 
@@ -29,16 +81,51 @@
         
     
         </div>
-    </div>
-
-    <div class="done-container column-container">esto va aqui papelera>
+    </div>-->
+<!-- </div>
+    <div  cdkDropList
+    [cdkDropListData]="delete"
+    (cdkDropListDropped)="drop($event)"
+    [cdkDropListConnectedTo]="listHireHeroes"
+    class="list"  *ngFor="let del of delete">esto va aqui papelera>
+    <img class="b-hero__img" src="{{hero.image}}">
+     
         <div class="list">
           
-        <h2>Tech learned</h2>
+       
         
         </div>
     </div>
-</div>-->
-<div cdkDropList class="example-list" (cdkDropListDropped)="drop($event)">
-    <div class="example-box" *ngFor="let movie of movies" cdkDrag>{{movie}}</div>
-  </div>
+
+<div cdkDropList
+    [cdkDropListData]="chariot"
+    cdkDropListDropped)="drop($event)"
+    [cdkDropListConnectedTo]="delete"
+    
+    #listHireHeroes
+    class="example-list" >
+    <div id= "drag_{{ hero.id }}" class ="b-hero" *ngFor="let hero of chariot" cdkDrag>
+     
+        <div class="uno"> 
+            <div class="b-hero__stick">
+                
+        
+                <div  class="b-hero__description b-hero__description--notSkew">
+                    <img class="b-hero__img" src="{{hero.image}}">
+                        <div class="b-hero__info">
+                        <p class="b-text__slide b-text__slide--name">Nombre: {{hero.name}} </p>
+                        <p class="b-text__slide">raza: {{hero.race}}</p>
+                        <p class="b-text__slide">Peso {{hero.weight}}</p>
+                        <p class="b-text__slide">Género {{hero.gender}}</p>
+                        <span id="hero__{{ hero.id }}" class="b-chariot__button" (click)="modifyHero($event)">Modify</span>
+                    </div>
+
+                </div>
+        
+        </div>
+        
+    
+        </div>
+    </div> -->
+    <!-- <div class="example-box" *ngFor="let movie of movies" cdkDrag>{{movie}}</div> -->
+  <!-- </div> --> -->

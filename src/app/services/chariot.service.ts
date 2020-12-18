@@ -1,3 +1,4 @@
+import { element } from 'protractor';
 
 import { Chariot } from './../pages/chariot/models/InterfaceChariot';
 import { InterfaceHeroDetail } from './../models/Interface-hero-general';
@@ -13,16 +14,29 @@ import { map, catchError } from 'rxjs/operators';
 })
 export class ChariotService {
 
-  private enviarCardSubject = new Subject<any>();
-  enviarCardObservable = this.enviarCardSubject.asObservable();
+  private enviarCardSubject = new Subject<any>();   //creación del observable para que dispare eventos desde el header.
+  enviarCardObservable = this.enviarCardSubject.asObservable(); 
   chariotCard : InterfaceHeroDetail[]
   localArray: any = []
   exist: boolean = false;
   constructor(private heroesService: HeroesService, private http: HttpClient) { 
-    // localStorage.setItem('items', JSON.stringify(this.localArray))
+
   }
 
-  public sendChariot(card: any){
+  public deleteChariot(id){  //método para eliminar directamente desde el carrito.  Utiliza método del observable
+    debugger
+    let data = JSON.parse(localStorage.getItem('items'))
+    data.forEach((element, index) => {
+      if (element.id === id){
+        data.splice(index,1);
+        localStorage.setItem('items', JSON.stringify(data));
+        this.enviarCardSubject.next(data)
+   }
+    });
+     
+  }
+
+  public sendChariot(card: any){  //servicio para envíar información al componente del carro. Utiliza método del observable
   
     this.exist = false;
     
