@@ -16,6 +16,7 @@ import { TranslationComponent } from './components/translation/translation.compo
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 
 
+
 export function createTranslateLoader(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
 }
@@ -35,6 +36,7 @@ export function playerFactory() {
     AppRoutingModule,
     HttpClientModule,
     BrowserAnimationsModule,
+ 
   
     TranslateModule.forRoot({
       loader: {
@@ -50,3 +52,4 @@ export function playerFactory() {
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+

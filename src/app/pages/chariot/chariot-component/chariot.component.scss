@@ -1,7 +1,14 @@
 .b-chariot{
     min-height: 57vh;
+    display: flex;
+    justify-content: space-around;
 }
 
+.list{
+    width:100px;
+    height: 100px;
+    background-color: red;
+}
 .uno{
         position: relative; 
         margin: 0px;

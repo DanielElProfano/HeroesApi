@@ -1,6 +1,8 @@
 
-<div class="b-chariot">
-    <div class ="b-hero" *ngFor="let hero of chariot">
+<div  class="b-chariot" >
+    <div class="list" cdkDragList>
+    
+    <div class ="b-hero" *ngFor="let hero of chariot" cdkDrag>
         <div class="dos"> 
 
 
@@ -8,8 +10,8 @@
         <div class="uno"> 
             <div class="b-hero__stick">
                 
-            
-                <div class="b-hero__description b-hero__description--notSkew">
+        
+                <div  class="b-hero__description b-hero__description--notSkew">
                     <img class="b-hero__img" src="{{hero.image}}">
                 
                     
@@ -28,4 +30,15 @@
     
         </div>
     </div>
-</div>
+
+    <div class="done-container column-container">esto va aqui papelera>
+        <div class="list">
+          
+        <h2>Tech learned</h2>
+        
+        </div>
+    </div>
+</div>-->
+<div cdkDropList class="example-list" (cdkDropListDropped)="drop($event)">
+    <div class="example-box" *ngFor="let movie of movies" cdkDrag>{{movie}}</div>
+  </div>
