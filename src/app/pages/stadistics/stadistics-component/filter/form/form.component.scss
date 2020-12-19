@@ -5,8 +5,11 @@
     width:300px;
     border: 1px solid lightslategray;
     padding: 1rem;
-    border-radius: 4px;
-    margin: 0;
+    border-radius: 10px;
+    top: 250px;
+    left:20px;
+    
+    box-shadow: 1px 1px 10px 0 rgb(112, 112, 112);
    
 
     &__input{
@@ -38,5 +41,18 @@
 
 }
 
+.b-button{
 
-
+    &__submit{
+            width: 100px;
+            height: 50px;
+            margin: 0;
+            background-color: rgb(24, 36, 58);
+            color: white;
+            font-size: 1 rem;
+            cursor: pointer;
+            margin-top:1rem;
+            margin-right:4px;
+        }
+    
+    }

@@ -4,10 +4,7 @@ export interface IfilterForm{
         alignment : string;
         sex: string,
         powerStats: string;
-        
-        
-        
-    
+   
     }
 
 export interface Alignment{

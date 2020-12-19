@@ -7,12 +7,9 @@ $text-normal:rgb(100,100,100);
     width: 100%;
     margin:0;
     position: relative;
-    // background-color: rgb(36, 55, 107);
     z-index:10;
-  
-    
     display: column;
-    // background-color: rgba(22, 29, 119, 0.767);
+  
     
     &__container{
     
@@ -24,8 +21,9 @@ $text-normal:rgb(100,100,100);
     
     }
     &__title{
-
-        color: $text-secunday-color
+        margin:1rem 0 1rem 3rem;
+        color: $text-secunday-color;
+        font-size: 3.5rem;
     }
     &__nav{
         display:flex;
@@ -97,7 +95,7 @@ $text-normal:rgb(100,100,100);
         height: 20px;
         width: 20px;
         text-align: center;
-        background-color: blue;
+        background-color: $text-primary-color;
         border-radius: 50%;
         color: white;
 

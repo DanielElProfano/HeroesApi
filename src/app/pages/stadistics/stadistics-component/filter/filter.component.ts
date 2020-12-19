@@ -40,7 +40,7 @@ export class FilterComponent implements OnInit {
     
   }
   setForm(form: IfilterForm){ //Output del Formulario
-  
+  debugger
       this.heroesService.getFaKeFilterForm().subscribe((result) =>{ //llamada al servicio
       this.recogeArray = result
       this.arrayResult= this.sortResult(this.recogeArray, form);

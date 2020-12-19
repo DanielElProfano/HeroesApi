@@ -25,8 +25,8 @@
                         </div>
                         <div class ="b-stats__button">
                               <span class="b-button" id="{{hero.id}}" (click)="getId($event)">{{ 'sticker.hire'| translate }}</span> 
-                              <span id="{{hero.id}}" class="b-button" (click)="getId($event)">{{ 'sticker.fire'| translate }}</span>
-                              <span id="mod__{{hero.id}}" class="b-button" (click)="deleteHero($event)">{{ 'sticker.delete'| translate }}</span>
+                              <span class="b-button" id="{{hero.id}}" class="b-button" (click)="getId($event)">{{ 'sticker.fire'| translate }}</span>
+                              <span class="b-button b-button__del" id="mod__{{hero.id}}" class="b-button" (click)="deleteHero($event)">{{ 'sticker.delete'| translate }}</span>
                         
                         </div>
 

@@ -11,40 +11,12 @@ import { map, catchError } from 'rxjs/operators';
 export class HeroesService {
 
   arrayFIlter : InterfaceFilteHeroes[];
-  // private Url :string = 'https://pokeapi.co/api/v2/pokedex/1';
-  // private Url :string = 'https://www.superheroapi.com/api.php/10217431065143700/1'
   public heroes : InterfaceHeroGeneral | any = {}
   arrayFilter : InterfaceFilteHeroes[] = [];
 
   constructor(private http: HttpClient) {   }
 
-  // getList(i: number):Observable<InterfaceHeroGeneral>{
-  //    const Url = `https://www.superheroapi.com/api.php/10217431065143700/${i}`;
-    
-  //   return this.http.get(Url).pipe(
-     
-  //       map((response: any) => {
-   
-  //       if(!response){
-  //         throw new Error('Value expected!');
-  //       } else {
 
-  //       const formatResult : InterfaceHeroGeneral = {
-  //           name : response.name,
-  //           gender : response.appearance.gender,
-  //           alignment : response.biography.alignment,
-  //           image : response.image.url,
-  //           id : response.id,
-          
-  //           }
-  //       return formatResult;
-  //       }
-  //     }),
-  //       catchError((err)=>{
-  //       throw new Error(err.message);
-  //     })
-  //   )
-  // }
   getFakeList(i: number):Observable<InterfaceHeroGeneral>{
     const Url = `http://localhost:3000/allHeroes/${i}`;
    return this.http.get(Url).pipe(
@@ -83,14 +55,6 @@ export class HeroesService {
       } else {
           const formatResult : InterfacePowerStats = {
 
-          // id : response.id,
-          // name : response.name,
-          // intelligence : response.powerstats.intelligence,
-          // strength: response.powerstats.strength,
-          // speed: response.powerstats.speed,
-          // durability: response.powerstats.durability,
-          // power: response.powerstats.power,
-          // combat :response.powerstats.combat,
           id : response.id,
           name : response.name,
           intelligence : response.intelligence,
@@ -122,24 +86,6 @@ getFakeHeroDetail(id: number):Observable<InterfaceHeroDetail>{
       
           const formatResult : InterfaceHeroDetail = {
 
-          // id : response.id,
-          // name : response.name,
-          // gender : response.appearance.gender,
-          // race : response.appearance.race,
-          // weight : response.appearance.weight,
-          // image : response.image.url,
-          // intelligence : response.powerstats.intelligence,
-          // strength: response.powerstats.strength,
-          // speed: response.powerstats.speed,
-          // durability: response.powerstats.durability,
-          // power: response.powerstats.power,
-          // combat :response.powerstats.combat,
-          // height :response.appearance.height,
-          // base: response.work.base,
-          // fullName : response.biography[fullName],
-          // groupAffiliation: response.connections[groupAffiliation],
-          // alterEgos: response.biography[alterEgo],
-          // alignment: response.biography.alignment,
           id : response.id,
           name : response.name,
           gender : response.gender,

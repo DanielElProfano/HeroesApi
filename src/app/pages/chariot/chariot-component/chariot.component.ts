@@ -28,14 +28,14 @@ export class ChariotComponent implements OnInit {
   //   'Fall asleep'
   // ];
 
-  done: InterfaceHeroGeneral| any = [
-    1
+  done: InterfaceHeroGeneral| any = [""];
+    
     // 'Get up',
     // 'Brush teeth',
     // 'Take a shower',
     // 'Check e-mail',
     // 'Walk dog'
-  ];
+  
   constructor(private heroesService: HeroesService, private chariotService: ChariotService) { 
     
   this.delete = [
