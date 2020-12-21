@@ -1,9 +1,9 @@
 
-import { InterfaceFilteHeroes, InterfaceHeroDetail, InterfaceHeroGeneral} from './../../../../models/Interface-hero-general';
+import { InterfaceFilteHeroes, InterfaceHeroGeneral} from './../../../../models/Interface-hero-general';
 import { HeroesService } from 'src/app/services/heroes.service';
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
-import { FormGroup, FormBuilder } from '@angular/forms';
-import { IfilterForm, Alignment, powerStats } from './model/IfilterForm';
+import { FormGroup } from '@angular/forms';
+import { IfilterForm } from './model/IfilterForm';
 
 
 @Component({
@@ -18,52 +18,45 @@ export class FilterComponent implements OnInit {
   public form: FormGroup|any;
   public filter: IfilterForm|any ={}
   public submitted = false;
-  public powerStats: powerStats[]|any = [];
   public arrayFilter: InterfaceHeroGeneral[]=[];
   public arrayResult: InterfaceFilteHeroes[]=[];
   public filtrado: InterfaceFilteHeroes | any = {}
-  arrayAlignment: string[][];
-  public formPetition : any = {}
-  public heroesArray: any[]
-  public arrayAllHeroes: InterfaceFilteHeroes[] = [];
   public recogeArray : InterfaceFilteHeroes[] = []
 
-  constructor( private heroesService: HeroesService){ 
-
-    this.heroesArray = [];
-  }
+  constructor( private heroesService: HeroesService){}
 
   ngOnInit(): void {}
+
   sendFilterHeroes(array: InterfaceHeroGeneral[]){
   
     this.emmitArray.emit(array);
     
   }
   setForm(form: IfilterForm){ //Output del Formulario
-  debugger
+  
       this.heroesService.getFaKeFilterForm().subscribe((result) =>{ //llamada al servicio
       this.recogeArray = result
       this.arrayResult= this.sortResult(this.recogeArray, form);
       
      });
   
-setTimeout(() => {
-  if(this.arrayResult.length != 0){
-    this.sendFilterHeroes(this.arrayResult)
+    setTimeout(() => {
+      if(this.arrayResult.length != 0){
+        this.sendFilterHeroes(this.arrayResult)
+      }
+      
+      }, 500);
   }
-  
-  }, 1000);
-}
 
  private sortArray(array: any, powerStat:string):any[]
  {  //oredena el array por powerStats.
     array.sort((a: any , b:any) => {
        return (b[powerStat] - a[powerStat])
     });
-return array;
+  return array;
 
  }
- private quitarNaNenArray(array, powerStat){  //QUITAR LOS NaN Y LOS NULL
+ private quitarNaNenArray(array, powerStat){  //QUITAR LOS NaN Y LOS NULL 
 
       array.forEach(element => {
       let number = element[powerStat];
@@ -76,11 +69,9 @@ return array;
     });
     return this.sortArray(this.arrayResult, powerStat);
 
-
  }
   private sortResult(result: InterfaceFilteHeroes[], form: IfilterForm): any{
-  debugger
- 
+  
     this.arrayFilter = [];
     this.arrayResult = [];
     if(form.powerStats === null){
@@ -190,14 +181,12 @@ return array;
     if(alignment === undefined && sex === undefined){
       return array;
     }
-    console.log(array);
-    console.log(this.arrayFilter)
-   
+
     return this.arrayFilter;
    
     }
-public pushArray(result: InterfaceFilteHeroes){
-      
+private pushArray(result: InterfaceFilteHeroes){
+  
     const {speed, intelligence ,strength,durability,power, combat, ...filtrado } = result
     this.arrayFilter.push(filtrado);
     

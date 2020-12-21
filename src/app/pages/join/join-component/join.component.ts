@@ -1,7 +1,9 @@
-import { HeroesService } from 'src/app/services/heroes.service';
-import { InterfaceJoin } from './../models/InterfaceJoin';
 import { Component, OnInit } from '@angular/core';
+
 import { TranslateService } from '@ngx-translate/core';
+import { HeroesService } from 'src/app/services/heroes.service';
+
+import { InterfaceJoin } from './../models/InterfaceJoin';
 
 @Component({
   selector: 'app-join',
@@ -21,11 +23,7 @@ export class JoinComponent implements OnInit {
        ( data:InterfaceJoin)=> {
          console.log(data)
       });
-      debugger
-      // this.heroesService.getFaKeFilterForm().subscribe((result =>
-      //   console.log(result)
-      //   ));
-      }
+     }
 
-  }
+}
 

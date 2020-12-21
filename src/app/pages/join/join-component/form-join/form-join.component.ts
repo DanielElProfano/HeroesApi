@@ -1,6 +1,9 @@
 import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
-import { InterfaceJoin } from '../../models/InterfaceJoin';
+
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+
+import { InterfaceJoin } from '../../models/InterfaceJoin';
+
 @Component({
   selector: 'app-form-join',
   templateUrl: './form-join.component.html',
@@ -24,7 +27,7 @@ sendForm(newHero: InterfaceJoin){
 
     this.form = this.formbuilder.group({
       id :  ['', [, Validators.maxLength(20)]],
-      name: ['', [Validators.required, Validators.maxLength(20)]],
+      name: ['', [Validators.required, Validators.maxLength(30)]],
       gender: ['', [Validators.required, Validators.maxLength(20)]],
       race: ['', [Validators.required, Validators.maxLength(20)]],
       image: ['', []],
@@ -53,7 +56,7 @@ sendForm(newHero: InterfaceJoin){
     
     this.submitted= true;
     this.showModal = true;
-    debugger
+   
 
     if(this.form.valid){
 

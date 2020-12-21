@@ -1,5 +1,5 @@
 import { TranslateService } from '@ngx-translate/core';
-import { Component, EventEmitter, Input, OnInit, Output, SimpleChanges } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 import { HeroesService } from 'src/app/services/heroes.service';
 import { InterfaceHeroGeneral, InterfaceFilteHeroes, InterfaceEmmitOutput } from './../../../../models/Interface-hero-general';
@@ -26,7 +26,7 @@ export class StickerComponent implements OnInit {
   @Output() emmitId  = new EventEmitter<number>();
   
   nextPost: number = 20; 
-  iterator: number = 11;
+  iterator: number = 11;  //encargados del infinite scroll 
   notEmptyPost = true;
   notscrolly = true;
   form = true;
@@ -45,7 +45,6 @@ export class StickerComponent implements OnInit {
       this.emmitCard.id = Number((event.target.id).substr(5));
       this.emmitCard.delete = true;
       this.emmitId.emit(this.emmitCard);
-      console.log (this.emmitCard)
       this.emmitCard.delete = false;
 
 
@@ -108,12 +107,4 @@ export class StickerComponent implements OnInit {
     
   }
 
-  public pushFilter(){
-    
-    if(this.arrayFiltrado.lenght>0) //SI DETECTA CAMBIO EN ARRAYFILTRADDO ???
-    {
-      this.notscrolly = true;
-      
-    }
-  }
 }

@@ -13,18 +13,18 @@
            <app-sticker [arrayHeroe]="arrayHeroes"
                        (emmitId)="setId($event)"></app-sticker>
        </div>
-   <div class="b-detalles">
-       <div class="b-graphics">
-           <app-graph [charData]="powerStats"></app-graph>
+    <div class="b-detalles">
+        <div class="b-graphics">
+            <app-graph [charData]="powerStats"></app-graph>
 
-       </div>
-       <div class="b-detail" *ngIf="showDetails">
-           <app-detail [heroDetail]="personaje"></app-detail>
+        </div>
+        <div class="b-detail" *ngIf="showDetails">
+            <app-detail [heroDetail]="personaje"></app-detail>
+
+        </div>
 
     </div>
-
-   </div>
    
 
-</div>
+    </div>
 </div>

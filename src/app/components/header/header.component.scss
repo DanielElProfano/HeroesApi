@@ -17,9 +17,7 @@ $text-normal:rgb(100,100,100);
         top:0;
         left: 0;
     }
-    &__logo{
-    
-    }
+
     &__title{
         margin:1rem 0 1rem 3rem;
         color: $text-secunday-color;
@@ -83,10 +81,7 @@ $text-normal:rgb(100,100,100);
 
         margin:0;
     }
-    &__lottie{
-        
-        
-    }
+
     &__number{
 
         position:absolute;
@@ -101,4 +96,4 @@ $text-normal:rgb(100,100,100);
 
     }
 
-    }
+}

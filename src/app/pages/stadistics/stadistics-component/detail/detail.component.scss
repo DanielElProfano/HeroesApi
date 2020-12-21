@@ -28,11 +28,8 @@
         display: flex;
         justify-content: left;
         flex-direction: column;
-       
+        }
 
-           
-        
-       }
        &__sup{
            display: flex;
            align-items: center;
@@ -50,8 +47,5 @@
    
         margin:1rem 0
        }
-
-   
-
 
 }

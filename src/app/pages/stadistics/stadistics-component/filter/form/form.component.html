@@ -1,12 +1,8 @@
 
 <form class="b-form" *ngIf="form" novalidate (ngSubmit)="onSubmit()" [formGroup]="form">
-    <!-- Fieldset del primer campo - name -->
-    <div class ="b-form__title"> {{ 'filter.filter' | translate}}
-    <!-- <fieldset class ="b-form__field">
-        <legend class="b-form__legend">By name:</legend>
 
-      <input type="text" class ="form__input" id="inputName" name="inputName" vaue="inputName" formControlName="inputName">
-    </fieldset> -->
+    <div class ="b-form__title"> {{ 'filter.filter' | translate}}
+
     <fieldset class ="b-form__field b-form__field--radio">
       <div>
         <input  class="form__radioButton" type="radio" id="male" name="sex" value="male" formControlName="sex">

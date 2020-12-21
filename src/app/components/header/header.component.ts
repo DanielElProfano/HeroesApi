@@ -1,10 +1,11 @@
-import { TranslateService } from '@ngx-translate/core';
 import { Component, OnInit, SimpleChanges, NgZone} from '@angular/core';
-import { HeroesService } from 'src/app/services/heroes.service';
-import { ChariotService} from '../../services/chariot.service'
 
-import {AnimationOptions} from "ngx-lottie";
-import {AnimationItem} from "lottie-web";
+import { TranslateService } from '@ngx-translate/core';
+import { HeroesService } from 'src/app/services/heroes.service';
+import { ChariotService } from '../../services/chariot.service'
+import { AnimationOptions } from "ngx-lottie";
+import { AnimationItem } from "lottie-web";
+
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
@@ -35,10 +36,10 @@ export class HeaderComponent implements OnInit {
      { //si el array esta vacio no hace nada. 
       this.id = data.length 
     }
-    this.chariotService.enviarCardObservable.subscribe(response => {
+    this.chariotService.enviarCardObservable.subscribe(response => {  
       this.id = response;	 
       const data = JSON.parse(localStorage.getItem('items'))
-      this.id = data.length
+      this.id = data.length  //pinta el tamaño del array del localStorage.
       this.play();
   })
      
@@ -54,31 +55,13 @@ export class HeaderComponent implements OnInit {
   }
   
   public loopComplete(event){
-  
-    console.log("loop");
-    this.ngZone.runOutsideAngular(() => this.lottie.stop());
+
+    this.ngZone.runOutsideAngular(() => this.lottie.stop()); //cuando termina de hacer el loop le mando pararse.
    
   }
-  private stop(): void {
-    this.ngZone.runOutsideAngular(() => this.lottie.stop());
-    
-  }
- 
+
   private play(): void {
     this.ngZone.runOutsideAngular(() => this.lottie.play());
  
   }
-  // deleteChariotHero(){
-
-  //   this.chariotService.deleteHireHero(10).subscribe((result =>{
-  //     console.log(result);
-  //   }));
-  // }
-  // findIdInChariot(id : number){
-  //   this.heroesService.getHeroChariot(id).subscribe((response => {
-  //    console.log(response);
-    
-  //   }))
-
-  // }
 }

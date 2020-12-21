@@ -1,20 +1,16 @@
-import { element } from 'protractor';
-
-import { Chariot } from './../pages/chariot/models/InterfaceChariot';
-import { InterfaceHeroDetail } from './../models/Interface-hero-general';
 import { HeroesService } from './heroes.service';
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
 import { Injectable } from '@angular/core';
 import { Subject } from 'rxjs';
-import { map, catchError } from 'rxjs/operators';
+
+import { InterfaceHeroDetail } from './../models/Interface-hero-general';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ChariotService {
 
-  private enviarCardSubject = new Subject<any>();   //creación del observable para que dispare eventos desde el header.
+  private enviarCardSubject = new Subject<any>();   //creación del observable para que dispare eventos en el header.
   enviarCardObservable = this.enviarCardSubject.asObservable(); 
   chariotCard : InterfaceHeroDetail[]
   localArray: any = []
@@ -23,8 +19,8 @@ export class ChariotService {
 
   }
 
-  public deleteChariot(id){  //método para eliminar directamente desde el carrito.  Utiliza método del observable
-    debugger
+  public deleteChariot(id: number){  //método para eliminar directamente desde el carrito.  Utiliza método del observable
+  
     let data = JSON.parse(localStorage.getItem('items'))
     data.forEach((element, index) => {
       if (element.id === id){
@@ -84,89 +80,5 @@ export class ChariotService {
     this.enviarCardSubject.next(data)
 
   }
-  public postHireHero(newHero: InterfaceHeroDetail){
-    const Url = "http://localhost:3000/chariot/"
-    return this.http.post(Url, newHero).pipe(
-      
-        map((response: InterfaceHeroDetail) => {
-      
-        if(!response){
-          throw new Error('Value expected!');
-        } else {
-          return response;
-        }
-    }),
-      catchError((err)=>{
-        console.log("error: "+err)
-        debugger
-        if(err.status = 500){
-          alert("No puede agregarlo, ya esta en el carrito");       
-        }
-      throw new Error(err.message);
-    })
-    )
 
-  }
-  public deleteHireHero(id : number):Observable<InterfaceHeroDetail>{
-    const Url = `http://localhost:3000/chariot/${id}`
-    return this.http.delete(Url).pipe(
-      
-        map((response: InterfaceHeroDetail) => {
-   
-        if(!response){
-          throw new Error('Value expected!');
-        } else {
-          return response;
-        }
-        
-      }),
-      catchError((err)=>{
-     
-      throw new Error(err.message);
-    })
-    )
-
-  }
-  public findHero(newHero: InterfaceHeroDetail){
-    const Url = "http://localhost:3000/chariot/"
-    return this.http.post(Url, newHero).pipe(
-      
-        map((response: InterfaceHeroDetail) => {
-   
-        if(!response){
-          throw new Error('Value expected!');
-        } else {
-          return response;
-        }
-        
-      }),
-      catchError((err)=>{
-      throw new Error(err.message);
-    })
-    )
-
-  }
-public getChariot(): Observable<Chariot>{
-
-  const Url = `http://localhost:3000/chariot/`
-    return this.http.get(Url,).pipe(
-      
-        map((response: Chariot) => {
-   
-        if(!response){
-          throw new Error('Value expected!');
-        } else {
-          return response;
-        }
-        
-      }),
-      catchError((err)=>{
-     
-      throw new Error(err.message);
-    })
-    )
-
-
-
-}
 }

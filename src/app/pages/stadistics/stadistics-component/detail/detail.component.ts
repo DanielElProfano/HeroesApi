@@ -1,7 +1,9 @@
-import { InterfaceHeroDetail } from './../../../../models/Interface-hero-general';
 import { Component, Input, OnInit } from '@angular/core';
-import { animate, state, style, transition, trigger } from '@angular/animations';
+
+import { animate, style, transition, trigger } from '@angular/animations';
 import { TranslateService } from '@ngx-translate/core';
+
+import { InterfaceHeroDetail } from './../../../../models/Interface-hero-general';
 @Component({
   selector: 'app-detail',
   templateUrl: './detail.component.html',

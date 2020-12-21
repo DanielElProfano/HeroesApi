@@ -91,35 +91,6 @@
       "relatives": "-"
     },
     {
-      "id": 4,
-      "name": "Abomination",
-      "gender": "Male",
-      "weight": [
-        "980 lb",
-        "441 kg"
-      ],
-      "image": "https://www.superherodb.com/pictures2/portraits/10/100/1.jpg",
-      "intelligence": 63,
-      "strength": 80,
-      "speed": 53,
-      "durability": 90,
-      "power": 62,
-      "combat": 95,
-      "height": [
-        "6'8",
-        "203 cm"
-      ],
-      "base": "Mobile",
-      "fullName": "Emil Blonsky",
-      "groupAffiliation": "former member of the crew of the Andromeda Starship, ally of the Abominations and Forgotten",
-      "alterEgos": "No alter egos found.",
-      "alignment": "bad",
-      "eyeColor": "Green",
-      "hairColor": "No Hair",
-      "occupation": "Ex-Spy",
-      "relatives": "Nadia Dornova Blonsky (wife, separated)"
-    },
-    {
       "id": 5,
       "name": "Abraxas",
       "gender": "Male",
@@ -2525,35 +2496,6 @@
       "hairColor": "Blond",
       "occupation": "Cat burglar; Private investigator, founder of Cat's Eye Investigations.",
       "relatives": "Walter Hardy (father, deceased), Lydia Hardy (mother)"
-    },
-    {
-      "id": 1,
-      "name": "A-Bomb",
-      "gender": "Male",
-      "weight": [
-        "980 lb",
-        "441 kg"
-      ],
-      "image": "https://www.superherodb.com/pictures2/portraits/10/100/10060.jpg",
-      "intelligence": 38,
-      "strength": 100,
-      "speed": 17,
-      "durability": 80,
-      "power": 24,
-      "combat": 64,
-      "height": [
-        "6'8",
-        "203 cm"
-      ],
-      "base": "-",
-      "fullName": "Richard Milhouse Jones",
-      "groupAffiliation": "Hulk Family; Excelsior (sponsor), Avengers (honorary member); formerly partner of the Hulk, Captain America and Captain Marvel; Teen Brigade; ally of Rom",
-      "alterEgos": "No alter egos found.",
-      "alignment": "good",
-      "eyeColor": "Yellow",
-      "hairColor": "No Hair",
-      "occupation": "Musician, adventurer, author; formerly talk show host",
-      "relatives": "Marlo Chandler-Jones (wife); Polly (aunt); Mrs. Chandler (mother-in-law); Keith Chandler, Ray Chandler, three unidentified others (brothers-in-law); unidentified father (deceased); Jackie Shorr (alleged mother; unconfirmed)"
     },
     {
       "id": 2,
@@ -21229,6 +21171,29 @@
       "hairColor": "Black",
       "occupation": "Adventurer, Student, former; Assassin, Prostitute",
       "relatives": "Sarah Kinney (surrogate mother, deceased), James Howlett (Wolverine, genetic progenitor)"
+    },
+    {
+      "id": 733,
+      "name": "Daniel González Guijarro",
+      "gender": "male",
+      "race": "wetyety",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQVknjZLF8i_HoqHQNSgNSAaPdovl9-EBeF-w&usqp=CAU",
+      "weight": "",
+      "intelligence": 101,
+      "strength": 101,
+      "speed": 101,
+      "durability": 10,
+      "power": 10,
+      "combat": 10,
+      "height": "",
+      "base": "",
+      "fullName": "thter",
+      "groupAffiliation": "",
+      "alterEgos": "wert",
+      "alignment": "good",
+      "eyeColor": "",
+      "hairColor": "",
+      "occupation": "Daniel González Guijarro"
     }
   ]
 }

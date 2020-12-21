@@ -9,10 +9,10 @@ import { TranslateService } from '@ngx-translate/core';
 export class AppComponent {
   public activeLang = 'en';
   
-  public sendToChariot(card){
-    debugger
-    console.log(card)
-  }
+  // public sendToChariot(card){
+  //   debugger
+  //   console.log(card)
+  // }
 
     constructor( private translate: TranslateService) { 
       this.translate.setDefaultLang(this.activeLang);

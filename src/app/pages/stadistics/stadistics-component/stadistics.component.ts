@@ -27,18 +27,7 @@ export class StadisticsComponent implements OnInit {
     // this.scrap();
   }
 
-  // private scrap(){
-  //   for(let i= 701; i<=750; i++){
-     
-  //     this.heroesService.scrapHero(i).subscribe((result) => {
-  //       this.heroesService.postScrapHero(result).subscribe((result =>{
 
-  //         console.log(result);
-  //       }))
-  //     });
-  //   }
-
-  // }
 private getListFakeApi(){
   for(let i= 1; i<=10; i++){
      
@@ -52,7 +41,7 @@ private getListFakeApi(){
 public setId(card:InterfaceEmmitOutput):void{   //si es Hire ataca al servicio del carrito.
     
      if(card.delete === true){
-        debugger
+   
         this.deleteHero(card.id)
 
      }else{
@@ -78,7 +67,7 @@ private deleteHero(id){
       console.log(result);
     })
     let index = this.arrayHeroes.findIndex(hero => hero.id === id);
-    debugger
+  
     this.arrayHeroes.splice(index,1);
 }
 public setFilterArray(array: InterfaceHeroGeneral[]):void{  ///output del Filter.
