@@ -10,10 +10,21 @@ Para instalarlo npm install.
 
 para ejecutarlo: ng serve.
 
-para ejecutar la back Api: 
+para ejecutar servidor de Node: 
 
-    cd backapi.
-    npm run server.
+    cd nodeServer.
+    npm install
+    npm run dev.
+
+## Mongo
+
+ejecutar servicio de mongo 
+    c:\archivos de programa\mongodb\server\4.4\bin\mongod
+
+ejecutar semilla:
+    cd nodeServer
+    cd seeds
+    node heroSeed.js Scraping de la superheroApi.
 
 ## Componentes
 

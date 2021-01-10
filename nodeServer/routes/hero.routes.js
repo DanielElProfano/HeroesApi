@@ -20,11 +20,9 @@ router.get('/id/:id', async (req,res, next) =>{
     try{
         const hero = await Hero.findOne({id: id});
         return res.status(200).json(hero);
-
     }catch(error){
         next(error);
     }
-
 })
 
 router.get('/name/:name', async(req, res, next) =>{
