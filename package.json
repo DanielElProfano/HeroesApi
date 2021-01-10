@@ -24,6 +24,7 @@
     "@ngmodule/material-carousel": "^0.6.0",
     "@ngx-translate/core": "^13.0.0",
     "@ngx-translate/http-loader": "^6.0.0",
+    "angular-fetch": "0.0.0",
     "chart.js": "^2.9.4",
     "lottie-web": "^5.7.5",
     "ng-drag-drop": "^5.0.0",

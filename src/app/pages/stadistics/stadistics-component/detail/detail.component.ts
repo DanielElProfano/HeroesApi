@@ -25,7 +25,9 @@ export class DetailComponent implements OnInit {
   public state : string = 'inactive';
   constructor(private translateService:TranslateService ) { }
 
-  ngOnInit(): void {}   
+  ngOnInit(): void {}
+
+  
     
 }
 

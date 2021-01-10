@@ -8,7 +8,6 @@ import { InterfaceFilteHeroes,
     InterfaceHeroDetail,
     InterfaceHeroGeneral,
     InterfacePowerStats } from './../models/Interface-hero-general';
-import { UrlResolver } from '@angular/compiler';
 
 @Injectable()
 
@@ -18,31 +17,34 @@ export class HeroesService {
   public heroes : InterfaceHeroGeneral | any = {}
   arrayFilter : InterfaceFilteHeroes[] = [];
   fakeUrl: string;
+  nodeUrl:string;
 
   constructor(private http: HttpClient) {
 
     this.fakeUrl = 'http://localhost:3000/allHeroes/';
+    this.nodeUrl = 'http://localhost:5000/hero/id/'
   }
 
   getFakeList(id: number):Observable<InterfaceHeroGeneral>{
+    
+   return this.http.get(this.nodeUrl+`${id}`).pipe(
 
-   return this.http.get(this.fakeUrl+`${id}`).pipe(
-     
        map((response: any) => {
-  
+        
        if(!response){
          throw new Error('Value expected!');
        } else {
+       
 
        const formatResult : InterfaceHeroGeneral = {
            name : response.name,
-           gender : response.gender,
-           alignment : response.alignment,
-           image : response.image,
+           gender : response.appearance.gender,
+           alignment : response.biography.alignment,
+           image : response.image.url,
            id : response.id,
          
            }
-       return formatResult;
+        return formatResult;
        }
      }),
        catchError((err)=>{
@@ -52,7 +54,7 @@ export class HeroesService {
  }
  getFakePowerStats(id: number): Observable<InterfacePowerStats>{
   
-  return this.http.get(this.fakeUrl+`${id}`).pipe(
+  return this.http.get(this.nodeUrl+`${id}`).pipe(
     
       map((response: any) => {
  
@@ -63,12 +65,12 @@ export class HeroesService {
 
           id : response.id,
           name : response.name,
-          intelligence : response.intelligence,
-          strength: response.strength,
-          speed: response.speed,
-          durability: response.durability,
-          power: response.power,
-          combat :response.combat,
+          intelligence : response.powerStats.intelligence,
+          strength: response.powerStats.strength,
+          speed: response.powerStats.speed,
+          durability: response.powerStats.durability,
+          power: response.powerStats.power,
+          combat :response.powerStats.combat,
                
           }
           
@@ -82,8 +84,9 @@ export class HeroesService {
   )
 }
 getFakeHeroDetail(id: number):Observable<InterfaceHeroDetail>{
- 
-    return this.http.get(this.fakeUrl+`${id}`).pipe(
+    const alterEgo ='alter-egos';
+    
+    return this.http.get(this.nodeUrl+`${id}`).pipe(
         map((response: any) => {
        if(!response){
         throw new Error('Value expected!');
@@ -93,23 +96,23 @@ getFakeHeroDetail(id: number):Observable<InterfaceHeroDetail>{
 
           id : response.id,
           name : response.name,
-          gender : response.gender,
-          race : response.race,
+          gender : response.appearance.gender,
+          race : response.appearance.race,
           weight : response.weight,
-          image : response.image,
-          intelligence : response.intelligence,
-          strength: response.strength,
-          speed: response.speed,
-          durability: response.durability,
-          power: response.power,
-          combat :response.combat,
+          image : response.image.url,
+          intelligence : response.powerStats.intelligence,
+          strength: response.powerStats.strength,
+          speed: response.powerStats.speed,
+          durability: response.powerStats.durability,
+          power: response.powerStats.power,
+          combat :response.powerStats.combat,
           height :response.height,
-          base: response.base,
+          base: response.work.base,
           fullName : response.fullName,
           groupAffiliation: response.groupAffiliation,
-          alterEgos: response.alterEgos,
-          alignment: response.alignment,
-          occupation: response.occupation
+          alterEgos: response.biography.alterEgos,
+          alignment: response.biography.alignment,
+          occupation: response.work.occupation
                
       }
         
@@ -144,24 +147,9 @@ getFakeHeroDetail(id: number):Observable<InterfaceHeroDetail>{
 
   }
   
-  
-  public getFaKeFilterForm():Observable<InterfaceFilteHeroes[]>{  
+    public getFaKeFilterForm():Observable<any>{  
    
-    return this.http.get(`http://localhost:3000/allHeroes`).pipe(
-      
-        map((response: InterfaceFilteHeroes[]) => {
-   
-        if(!response){
-          throw new Error('Value expected!');
-        } else {
-        
-          return response;
-        }
-      }),
-        catchError((err)=>{
-        throw new Error(err.message);
-      })
-    )
+        return this.http.get(`http://localhost:3000/allHeroes`)
   }
 
  
@@ -239,9 +227,7 @@ getFakeHeroDetail(id: number):Observable<InterfaceHeroDetail>{
 
   public postNewHero(newHero: InterfaceHeroGeneral){ //se usa
 
-    debugger
-  
-    return this.http.post(this.fakeUrl, newHero).pipe(
+       return this.http.post(this.fakeUrl, newHero).pipe(
       
         map((response: any) => {
    

@@ -1,5 +1,5 @@
 import { TranslateService } from '@ngx-translate/core';
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChanges } from '@angular/core';
 
 import { HeroesService } from 'src/app/services/heroes.service';
 import { InterfaceHeroGeneral, InterfaceFilteHeroes, InterfaceEmmitOutput } from './../../../../models/Interface-hero-general';
@@ -33,12 +33,14 @@ export class StickerComponent implements OnInit {
   emmitCard: InterfaceEmmitOutput | any = {};
   
   constructor(private translateService: TranslateService, private spinner : NgxSpinnerService, private heroesService:HeroesService) {} 
+ 
 
   ngOnInit(): void {}
   public fireHero(event: any):void{
     this.emmitCard.fire = true
 
   }
+  
 
   
     public deleteHero(event: any){
@@ -46,8 +48,6 @@ export class StickerComponent implements OnInit {
       this.emmitCard.delete = true;
       this.emmitId.emit(this.emmitCard);
       this.emmitCard.delete = false;
-
-
   }
      
   public getId(event: any):void{
@@ -89,13 +89,13 @@ export class StickerComponent implements OnInit {
   loadNextPost():void {
     let id = this.iterator;
     for(let i = id; i<=this.nextPost; i++){
-      
+      console.log('id: ' + i);
       this.heroesService.getFakeList(i).subscribe((result) => {
       this.arrayHeroe.push(result);
       
     });
     
-      this.iterator = i;
+      this.iterator = i + 1;
     
     }
     

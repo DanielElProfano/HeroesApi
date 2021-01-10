@@ -6,7 +6,7 @@
       (scrolled)="onScroll()"
 > 
     <div class =" b-stats" >
-            <div class="b-stats__gallery" *ngFor="let hero of arrayHeroe"  >
+            <div class="b-stats__gallery" *ngFor="let hero of arrayHeroe">
                  <div   @myInsertRemoveTrigger id="{{hero.id}}" class="b-stats__stick" [ngClass]="{
                         'colorBlue': hero.alignment === 'good', 
                         'colorRed': hero.alignment === 'bad'}">
@@ -40,7 +40,3 @@
       [fullScreen] = "false"
       >
       </ngx-spinner>
-
-</div>
-
-

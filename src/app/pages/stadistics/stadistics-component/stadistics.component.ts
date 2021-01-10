@@ -1,8 +1,9 @@
 import { ChariotService } from './../../../services/chariot.service';
-import { InterfaceHeroGeneral, InterfaceFilteHeroes, InterfaceEmmitOutput } from './../../../models/Interface-hero-general';
-import { Component, OnInit,EventEmitter, Output } from '@angular/core';
+import { InterfaceHeroGeneral,  InterfaceEmmitOutput } from './../../../models/Interface-hero-general';
+import { Component, OnInit } from '@angular/core';
 import { InterfaceHeroDetail, InterfacePowerStats } from 'src/app/models/Interface-hero-general';
 import { HeroesService } from 'src/app/services/heroes.service';
+
 
 @Component({
   selector: 'app-stadistics',
@@ -15,7 +16,8 @@ export class StadisticsComponent implements OnInit {
   arrayHeroes : InterfaceHeroGeneral | any = []; //array que se pinta en el html
   personaje : InterfaceHeroDetail | any = {}; //detail del personaje.
   powerStats : InterfacePowerStats | any = {}; //datos de la gráfica.
-  
+  arrayTmp: InterfaceHeroGeneral | any = []
+  hero: any ;
 
   constructor(private heroesService: HeroesService, private chariotService: ChariotService) {
   
@@ -28,7 +30,8 @@ export class StadisticsComponent implements OnInit {
   }
 
 
-private getListFakeApi(){
+private  getListFakeApi(){
+
   for(let i= 1; i<=10; i++){
      
     this.heroesService.getFakeList(i).subscribe((result) => {
@@ -84,7 +87,7 @@ public setFilterArray(array: InterfaceHeroGeneral[]):void{  ///output del Filter
     this.heroesService.getFakeHeroDetail(id).subscribe((result) =>{
     this.personaje = result;
     this.showDetails = true;
-    console.log(result)
+
       
     })
   }

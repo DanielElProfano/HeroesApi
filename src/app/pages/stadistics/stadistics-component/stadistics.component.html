@@ -1,14 +1,15 @@
 
+
 <div class =" b-stats">
    
     <div class="b-stats__container">
-
+    
        <div class="b-filter">    
            
            <app-filter (emmitArray)="setFilterArray($event)"></app-filter>  
        
        </div>
-
+     
        <div class="b-gallery">
            <app-sticker [arrayHeroe]="arrayHeroes"
                        (emmitId)="setId($event)"></app-sticker>

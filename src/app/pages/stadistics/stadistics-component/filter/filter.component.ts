@@ -1,4 +1,3 @@
-
 import { InterfaceFilteHeroes, InterfaceHeroGeneral} from './../../../../models/Interface-hero-general';
 import { HeroesService } from 'src/app/services/heroes.service';
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
@@ -22,56 +21,51 @@ export class FilterComponent implements OnInit {
   public arrayResult: InterfaceFilteHeroes[]=[];
   public filtrado: InterfaceFilteHeroes | any = {}
   public recogeArray : InterfaceFilteHeroes[] = []
+  array: any;
 
   constructor( private heroesService: HeroesService){}
 
   ngOnInit(): void {}
 
   sendFilterHeroes(array: InterfaceHeroGeneral[]){
-  
     this.emmitArray.emit(array);
-    
-  }
-  setForm(form: IfilterForm){ //Output del Formulario
+    }
   
-      this.heroesService.getFaKeFilterForm().subscribe((result) =>{ //llamada al servicio
-      this.recogeArray = result
-      this.arrayResult= this.sortResult(this.recogeArray, form);
-      
-     });
+  async setForm (form: IfilterForm){ //Output del Formulario
   
-    setTimeout(() => {
-      if(this.arrayResult.length != 0){
-        this.sendFilterHeroes(this.arrayResult)
-      }
-      
-      }, 500);
-  }
+    const data = await fetch(`http://localhost:5000/hero/allHeroes`)
+    this.array = await data.json();
+    this.arrayResult= this.sortResult(this.array, form);
+    this.sendFilterHeroes(this.arrayResult)
+  }  
 
  private sortArray(array: any, powerStat:string):any[]
+
  {  //oredena el array por powerStats.
-    array.sort((a: any , b:any) => {
-       return (b[powerStat] - a[powerStat])
+ 
+  array.sort((a: any , b:any) => {
+       return (b.powerStats[powerStat] - a.powerStats[powerStat])
     });
   return array;
 
  }
  private quitarNaNenArray(array, powerStat){  //QUITAR LOS NaN Y LOS NULL 
 
-      array.forEach(element => {
-      let number = element[powerStat];
-      if (number != null){
-        let n = number.toString();
-        if( n != "NaN"){ 
-          this.arrayResult.push(element)
-        }
-      }
-    });
-    return this.sortArray(this.arrayResult, powerStat);
+      // array.forEach(element => {
+      // let number = element.powerStats[powerStat];
+      // if (number != null){
+      //   let n = number.toString();
+      //   if( n != "NaN"){ 
+      //     this.arrayResult.push(element)  //COMO YA NO USO LA SUPERHEROAPI NO ES NECESARIO
+      //   }
+      // }
+    // });
+    // return this.sortArray(this.arrayResult, powerStat);
+    return this.sortArray(array, powerStat);
 
  }
   private sortResult(result: InterfaceFilteHeroes[], form: IfilterForm): any{
-  
+    
     this.arrayFilter = [];
     this.arrayResult = [];
     if(form.powerStats === null){
@@ -126,7 +120,7 @@ export class FilterComponent implements OnInit {
     }
   }
   private followFilter(array, form, booleanStat){
-
+      
       let alignment = form.alignment[0];
       let sex = form.sex;
      
@@ -135,17 +129,17 @@ export class FilterComponent implements OnInit {
   
     if(alignment != undefined && sex != ""){ //si align tiene texto
 
-        if((sex === element.gender.toLowerCase() && (sex === 'male')) && ( alignment === 'good') && (element.alignment.toLowerCase()=== 'good')){
+        if((sex === element.appearance.gender.toLowerCase() && (sex === 'male')) && ( alignment === 'good') && (element.biography.alignment.toLowerCase()=== 'good')){
         
           this.pushArray(element);
           }
-          else if((sex === element.gender.toLowerCase() && (sex === 'male')) && ( alignment === 'bad') && (element.alignment.toLowerCase()=== 'bad')){
+          else if((sex === element.appearance.gender.toLowerCase() && (sex === 'male')) && ( alignment === 'bad') && (element.biography.alignment.toLowerCase()=== 'bad')){
             this.pushArray(element);
           }
-        if((sex ===  element.gender.toLowerCase()&& (sex === 'female')) && ( alignment === 'good') && (element.alignment.toLowerCase()=== 'good')){
+        if((sex ===  element.appearance.gender.toLowerCase()&& (sex === 'female')) && ( alignment === 'good') && (element.biography.alignment.toLowerCase()=== 'good')){
           this.pushArray(element);
 
-        } else if((sex === element.gender.toLowerCase()&& (sex === 'female')) && ( alignment === 'bad') && (element.alignment.toLowerCase()=== 'bad')){
+        } else if((sex === element.appearance.gender.toLowerCase()&& (sex === 'female')) && ( alignment === 'bad') && (element.biography.alignment.toLowerCase()=== 'bad')){
           this.pushArray(element);
         }
     
@@ -154,11 +148,11 @@ export class FilterComponent implements OnInit {
     else{
           if(sex != ""){
           
-              if(sex === "male" && element.gender.toLowerCase() === 'male'){
+              if(sex === "male" && element.appearance.gender.toLowerCase() === 'male'){
                 this.pushArray(element);
             
               }
-              else if(sex === "female" && element.gender.toLowerCase() === 'female'){
+              else if(sex === "female" && element.appearance.gender.toLowerCase() === 'female'){
                 this.pushArray(element);
               }
 
@@ -179,15 +173,38 @@ export class FilterComponent implements OnInit {
     
   });
     if(alignment === undefined && sex === undefined){
-      return array;
+      const arrayFilter = []
+      array.forEach(element => {
+           const filtrado = {
+          name : element.name,
+          image : element.image.url,
+          alignment : element.biography.alignment,
+          id : element.id,
+          gender : element.appearance.gender
+       }
+        arrayFilter.push(filtrado);
+      });
+      
+      return arrayFilter;
     }
 
     return this.arrayFilter;
    
     }
-private pushArray(result: InterfaceFilteHeroes){
+private pushArray(result: any){
   
-    const {speed, intelligence ,strength,durability,power, combat, ...filtrado } = result
+    // const {speed, intelligence ,strength,durability,power, combat, ...filtrado } = result
+        // const {powerStats, connections, appearance,work, ...filtrado } = result
+        const filtrado = {
+          name : result.name,
+          image : result.image.url,
+          alignment : result.biography.alignment,
+          id : result.id,
+          gender : result.appearance.gender
+
+
+        }
+   
     this.arrayFilter.push(filtrado);
     
   }
