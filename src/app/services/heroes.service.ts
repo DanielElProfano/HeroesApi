@@ -44,6 +44,7 @@ export class HeroesService {
            id : response.id,
          
            }
+        console.log(formatResult);
         return formatResult;
        }
      }),

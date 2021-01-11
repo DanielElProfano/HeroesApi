@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{title}}{{hero.name}}</title>
+</head>
+<body>
+    <div class="main">
+        <H1>Details of: {{hero.name}}</H1>>
+        <div>
+            <img src="{{hero.image.url}}" alt="image of {{hero.name}}">
+            <ul>General:
+                
+                <li>Name: {{hero.name}}</li>
+                <li>Gender: {{hero.appearance.gender}}</li>
+                <li>Alignment: {{hero.biography.alignment}}</li>
+                <li>Full name: {{hero.biography.fullName}}</li>
+            </ul>
+            <ul>
+                <li>Speed: {{hero.powerStats.speed}}</li>
+                <li>Intelligence: {{hero.powerStats.intelligence}}</li>
+                <li>strength: {{hero.powerStats.strength}}</li>
+                <li>Power: {{hero.powerStats.power}}</li>
+                <li>Durability: {{hero.powerStats.durability}}</li>
+                <li>Combat: {{hero.powerStats.combat}}</li>
+
+
+            </ul> 
+
+        </div>
+    </div>
+</body>
+</html>

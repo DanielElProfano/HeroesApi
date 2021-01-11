@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{title}}</title>
+</head>
+<body>
+    <div class="main">
+        <H1>LISTADO DE SUPERHEROES</H1>>
+        <div>
+            <ul>
+                {{#each heroes}}
+                <li>
+                    <p>Name: {{name}}</p>
+                    <a href="/node/heroDetail/{{id}}">Get details</a>
+                </li>
+                 {{/each}}
+            </ul> 
+
+        </div>
+    </div>
+</body>
+</html>

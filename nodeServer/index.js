@@ -1,20 +1,33 @@
 const express = require('express');
 const fetch = require('node-fetch');
-const Hero = require('./model/Hero')
+const Hero = require('./model/Hero');
 require('./db');
-const heroRoutes = require('./routes/hero.routes')
+const heroRoutes = require('./routes/hero.routes');
+const indexRoutes = require('./routes/index.routes');
 const server = express();
 const PORT = 5000;
 const API_URL = 'http://localhost:3000/allHeroes/';
+const path = require('path');
 
-server.use((req, res, next) => {  //middleware que crea un header en cada respusta.
+
+//usamos handlel bar
+
+
+server.use((req, res, next) => {  //f');
   res.header('Access-Control-Allow-Origin', '*');
   res.header('Access-Control-Allow-Headers', 'Authorization, X-API-KEY, Origin, X-Requested-With, Content-Type, Accept, Access-Control-Allow-Request-Method');
   res.header('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, DELETE');
   res.header('Allow', 'GET, POST, OPTIONS, PUT, DELETE');
   next();
 });
+
+server.set('views', path.join(__dirname, 'views'));
+server.set('view engine', 'hbs');
+
+server.use('/node', indexRoutes);
 server.use('/hero', heroRoutes);
+
+
 
 
 server.use('*', (req, res, next) => {
@@ -32,7 +45,5 @@ server.listen(PORT, () =>
     
     )
 const router = express.Router();
-
-
 
 server.use('/', router);
